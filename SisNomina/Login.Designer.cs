@@ -34,14 +34,14 @@ namespace SisNomina
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonEntrada = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textUsername = new System.Windows.Forms.TextBox();
             this.textpasword = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,13 +50,13 @@ namespace SisNomina
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.YellowGreen;
             this.label1.Location = new System.Drawing.Point(77, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 36);
+            this.label1.Size = new System.Drawing.Size(122, 37);
             this.label1.TabIndex = 1;
-            this.label1.Text = "LOG IN";
+            this.label1.Text = "LOGIN";
             // 
             // panel1
             // 
@@ -80,6 +80,68 @@ namespace SisNomina
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(236, 1);
             this.panel3.TabIndex = 5;
+            // 
+            // buttonEntrada
+            // 
+            this.buttonEntrada.BackColor = System.Drawing.Color.YellowGreen;
+            this.buttonEntrada.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
+            this.buttonEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEntrada.ForeColor = System.Drawing.Color.White;
+            this.buttonEntrada.Location = new System.Drawing.Point(29, 320);
+            this.buttonEntrada.Name = "buttonEntrada";
+            this.buttonEntrada.Size = new System.Drawing.Size(236, 31);
+            this.buttonEntrada.TabIndex = 3;
+            this.buttonEntrada.Text = "Entrar";
+            this.buttonEntrada.UseVisualStyleBackColor = false;
+            this.buttonEntrada.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label2.Location = new System.Drawing.Point(160, 290);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Limpiar Campos";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label3.Location = new System.Drawing.Point(121, 366);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Salir";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textUsername
+            // 
+            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textUsername.Location = new System.Drawing.Point(71, 181);
+            this.textUsername.Multiline = true;
+            this.textUsername.Name = "textUsername";
+            this.textUsername.Size = new System.Drawing.Size(194, 24);
+            this.textUsername.TabIndex = 1;
+            // 
+            // textpasword
+            // 
+            this.textpasword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textpasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textpasword.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textpasword.Location = new System.Drawing.Point(71, 242);
+            this.textpasword.Multiline = true;
+            this.textpasword.Name = "textpasword";
+            this.textpasword.PasswordChar = '*';
+            this.textpasword.Size = new System.Drawing.Size(194, 24);
+            this.textpasword.TabIndex = 2;
             // 
             // pictureBox3
             // 
@@ -112,68 +174,6 @@ namespace SisNomina
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // buttonEntrada
-            // 
-            this.buttonEntrada.BackColor = System.Drawing.Color.YellowGreen;
-            this.buttonEntrada.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
-            this.buttonEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEntrada.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrada.ForeColor = System.Drawing.Color.White;
-            this.buttonEntrada.Location = new System.Drawing.Point(29, 320);
-            this.buttonEntrada.Name = "buttonEntrada";
-            this.buttonEntrada.Size = new System.Drawing.Size(236, 31);
-            this.buttonEntrada.TabIndex = 3;
-            this.buttonEntrada.Text = "Entrar";
-            this.buttonEntrada.UseVisualStyleBackColor = false;
-            this.buttonEntrada.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.label2.Location = new System.Drawing.Point(160, 290);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Limpiar Campos";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.YellowGreen;
-            this.label3.Location = new System.Drawing.Point(121, 366);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Salir";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // textUsername
-            // 
-            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textUsername.Location = new System.Drawing.Point(71, 181);
-            this.textUsername.Multiline = true;
-            this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(194, 24);
-            this.textUsername.TabIndex = 1;
-            // 
-            // textpasword
-            // 
-            this.textpasword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textpasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textpasword.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textpasword.Location = new System.Drawing.Point(71, 242);
-            this.textpasword.Multiline = true;
-            this.textpasword.Name = "textpasword";
-            this.textpasword.PasswordChar = '*';
-            this.textpasword.Size = new System.Drawing.Size(194, 24);
-            this.textpasword.TabIndex = 2;
             // 
             // Login
             // 

@@ -8,3 +8,16 @@ C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.exe
 C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.pdb
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.exe
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.pdb
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\bin\Debug\SisNomina.exe.config
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\bin\Debug\SisNomina.exe
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\bin\Debug\SisNomina.pdb
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.AssemblyReference.cache
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.SuggestedBindingRedirects.cache
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Login.resources
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Properties.Resources.resources
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.GenerateResource.cache
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.CoreCompileInputs.cache
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.exe
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.pdb
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Splash.resources
+C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.MenuPrincipal.resources
