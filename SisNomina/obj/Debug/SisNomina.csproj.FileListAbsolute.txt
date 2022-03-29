@@ -1,0 +1,10 @@
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.AssemblyReference.cache
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Login.resources
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Properties.Resources.resources
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.GenerateResource.cache
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.CoreCompileInputs.cache
+C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.exe.config
+C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.exe
+C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.pdb
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.exe
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.pdb
