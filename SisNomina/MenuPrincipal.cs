@@ -18,6 +18,7 @@ namespace SisNomina
         bool consultExpand;
         bool reportExpand;
         bool toolExpand;
+        bool helpExpand;
 
         public MenuPrincipal()
         {
@@ -172,7 +173,7 @@ namespace SisNomina
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            reportTimer.Start();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -198,6 +199,82 @@ namespace SisNomina
                 {
                     consultExpand = true;
                     consultTimer.Stop();
+                }
+            }
+        }
+
+        private void reportTimer_Tick(object sender, EventArgs e)
+        {
+            if (reportExpand)
+            {
+                reportContainer.Height += 10;
+                if (reportContainer.Height == reportContainer.MaximumSize.Height)
+                {
+                    reportExpand = false;
+                    reportTimer.Stop();
+                }
+            }
+            else
+            {
+                reportContainer.Height -= 10;
+                if (reportContainer.Height == consultContainer.MinimumSize.Height)
+                {
+                    reportExpand = true;
+                    reportTimer.Stop();
+                }
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            toolTimer.Start();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            helpTimer.Start();
+        }
+
+        private void toolTimer_Tick(object sender, EventArgs e)
+        {
+            if (toolExpand)
+            {
+                toolContainer.Height += 10;
+                if (toolContainer.Height == toolContainer.MaximumSize.Height)
+                {
+                    toolExpand = false;
+                    toolTimer.Stop();
+                }
+            }
+            else
+            {
+                toolContainer.Height -= 10;
+                if (toolContainer.Height == toolContainer.MinimumSize.Height)
+                {
+                    toolExpand = true;
+                    toolTimer.Stop();
+                }
+            }
+        }
+
+        private void helpTimer_Tick(object sender, EventArgs e)
+        {
+            if (helpExpand)
+            {
+                helpContainer.Height += 10;
+                if (helpContainer.Height == reportContainer.MaximumSize.Height)
+                {
+                    helpExpand = false;
+                    helpTimer.Stop();
+                }
+            }
+            else
+            {
+                helpContainer.Height -= 10;
+                if (helpContainer.Height == consultContainer.MinimumSize.Height)
+                {
+                    helpExpand = true;
+                    helpTimer.Stop();
                 }
             }
         }
