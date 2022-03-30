@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SisNomina
 {
-    public partial class MenuPrincipal : Form
+    public partial class Frm_lookWorkHours : Form
     {
         bool sidebarExpand=true;
         bool maintenceExpand;
@@ -20,7 +20,7 @@ namespace SisNomina
         bool toolExpand;
         bool helpExpand;
 
-        public MenuPrincipal()
+        public Frm_lookWorkHours()
         {
             InitializeComponent();
         }

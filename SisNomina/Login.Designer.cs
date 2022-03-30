@@ -58,11 +58,11 @@ namespace SisNomina
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.ForestGreen;
             this.label1.Location = new System.Drawing.Point(96, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 36);
+            this.label1.Size = new System.Drawing.Size(122, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOGIN";
             // 
@@ -111,7 +111,7 @@ namespace SisNomina
             this.label2.ForeColor = System.Drawing.Color.YellowGreen;
             this.label2.Location = new System.Drawing.Point(160, 282);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.Size = new System.Drawing.Size(119, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Limpiar Campos";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -123,7 +123,7 @@ namespace SisNomina
             this.label3.ForeColor = System.Drawing.Color.YellowGreen;
             this.label3.Location = new System.Drawing.Point(121, 356);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.Size = new System.Drawing.Size(39, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Salir";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -142,7 +142,7 @@ namespace SisNomina
             // textpasword
             // 
             this.textpasword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textpasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textpasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textpasword.ForeColor = System.Drawing.Color.YellowGreen;
             this.textpasword.Location = new System.Drawing.Point(71, 242);
             this.textpasword.Multiline = true;

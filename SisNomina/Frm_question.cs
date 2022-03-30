@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace SisNomina
 {
-    public partial class MenuPrincipal : Form
+    public partial class Frm_question : Form
     {
         bool sidebarExpand=true;
         bool maintenceExpand;
@@ -20,7 +20,7 @@ namespace SisNomina
         bool toolExpand;
         bool helpExpand;
 
-        public MenuPrincipal()
+        public Frm_question()
         {
             InitializeComponent();
         }
@@ -137,8 +137,7 @@ namespace SisNomina
 
         private void button15_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Frm_lookInNomin().Show();
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -170,8 +169,7 @@ namespace SisNomina
 
         private void button16_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new Frm_lookPayments().Show();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -320,48 +318,6 @@ namespace SisNomina
         {
             this.Hide();
             new Frm_addReduce().Show();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_lookNomin().Show();
-        }
-
-        private void button16s_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_lookWorkHours().Show();
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_lookOTs().Show();
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_editEmployee().Show();
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_changePassword().Show();
-        }
-
-        private void button21_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_instrution().Show();
-        }
-
-        private void button22_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Frm_question().Show();
         }
     }
 }
