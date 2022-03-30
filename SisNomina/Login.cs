@@ -34,7 +34,7 @@ namespace SisNomina
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textUsername.Text=="Name" && textpasword.Text=="Password")
+            if(textUsername.Text=="1" && textpasword.Text=="1")
             {
                 new MenuPrincipal().Show();
                 this.Hide();

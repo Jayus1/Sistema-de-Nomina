@@ -151,13 +151,16 @@
   <data name="Espiral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Espiral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Opciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Opciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Proceso" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Proceso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Utilitarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Utilitarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Opciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Opciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SubMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SubMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

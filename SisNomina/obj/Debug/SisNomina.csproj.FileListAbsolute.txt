@@ -21,3 +21,5 @@ C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomi
 C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.pdb
 C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Splash.resources
 C:\Users\Julio Sierra\Source\Repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.MenuPrincipal.resources
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.MenuPrincipal.resources
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Splash.resources
