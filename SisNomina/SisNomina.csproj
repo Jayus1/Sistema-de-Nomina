@@ -61,11 +61,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_addEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addEmployee.Designer.cs">
+      <DependentUpon>Frm_addEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_createUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_createUser.Designer.cs">
+      <DependentUpon>Frm_createUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_question.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_question.Designer.cs">
+      <DependentUpon>Frm_question.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lookWorkHours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lookWorkHours.Designer.cs">
+      <DependentUpon>Frm_lookWorkHours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lookPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lookPayments.Designer.cs">
+      <DependentUpon>Frm_lookPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lookOTs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lookOTs.Designer.cs">
+      <DependentUpon>Frm_lookOTs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lookNomin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lookNomin.Designer.cs">
+      <DependentUpon>Frm_lookNomin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_lookInNomin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_lookInNomin.Designer.cs">
+      <DependentUpon>Frm_lookInNomin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_editUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_editUser.Designer.cs">
+      <DependentUpon>Frm_editUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addOT.Designer.cs">
+      <DependentUpon>Frm_addOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_addReduce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_addReduce.Designer.cs">
+      <DependentUpon>Frm_addReduce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_editEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_editEmployee.Designer.cs">
+      <DependentUpon>Frm_editEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_changePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_changePassword.Designer.cs">
+      <DependentUpon>Frm_changePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_instrution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_instrution.Designer.cs">
+      <DependentUpon>Frm_instrution.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -86,8 +170,50 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_addEmployee.resx">
+      <DependentUpon>Frm_addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_createUser.resx">
+      <DependentUpon>Frm_createUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_question.resx">
+      <DependentUpon>Frm_question.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lookWorkHours.resx">
+      <DependentUpon>Frm_lookWorkHours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lookPayments.resx">
+      <DependentUpon>Frm_lookPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lookOTs.resx">
+      <DependentUpon>Frm_lookOTs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lookNomin.resx">
+      <DependentUpon>Frm_lookNomin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_lookInNomin.resx">
+      <DependentUpon>Frm_lookInNomin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_editUser.resx">
+      <DependentUpon>Frm_editUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addOT.resx">
+      <DependentUpon>Frm_addOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_addReduce.resx">
+      <DependentUpon>Frm_addReduce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_editEmployee.resx">
+      <DependentUpon>Frm_editEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_changePassword.resx">
+      <DependentUpon>Frm_changePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_instrution.resx">
+      <DependentUpon>Frm_instrution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

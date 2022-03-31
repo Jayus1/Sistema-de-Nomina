@@ -12,9 +12,9 @@ namespace SisNomina
 {
     public partial class MenuPrincipal : Form
     {
-        bool sidebarExpand;
-        bool processExpand;
+        bool sidebarExpand=true;
         bool maintenceExpand;
+        bool processExpand;
         bool consultExpand;
         bool reportExpand;
         bool toolExpand;
@@ -59,7 +59,8 @@ namespace SisNomina
 
         private void button1_Click(object sender, EventArgs e)
         {
-            maintenceTimer.Start();
+            this.Hide();
+            new Frm_createUser().Show();
         }
 
         private void homeContainer_Paint(object sender, PaintEventArgs e)
@@ -136,7 +137,8 @@ namespace SisNomina
 
         private void button15_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Frm_lookInNomin().Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -158,7 +160,7 @@ namespace SisNomina
             else
             {
                 processContainer.Height -= 10;
-                if (processContainer.Height == maintenceContainer.MinimumSize.Height)
+                if (processContainer.Height == processContainer.MinimumSize.Height)
                 {
                     processExpand = true;
                     processTimer.Stop();
@@ -168,7 +170,8 @@ namespace SisNomina
 
         private void button16_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new Frm_lookPayments().Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -217,7 +220,7 @@ namespace SisNomina
             else
             {
                 reportContainer.Height -= 10;
-                if (reportContainer.Height == consultContainer.MinimumSize.Height)
+                if (reportContainer.Height == reportContainer.MinimumSize.Height)
                 {
                     reportExpand = true;
                     reportTimer.Stop();
@@ -262,7 +265,7 @@ namespace SisNomina
             if (helpExpand)
             {
                 helpContainer.Height += 10;
-                if (helpContainer.Height == reportContainer.MaximumSize.Height)
+                if (helpContainer.Height == helpContainer.MaximumSize.Height)
                 {
                     helpExpand = false;
                     helpTimer.Stop();
@@ -271,12 +274,114 @@ namespace SisNomina
             else
             {
                 helpContainer.Height -= 10;
-                if (helpContainer.Height == consultContainer.MinimumSize.Height)
+                if (helpContainer.Height == helpContainer.MinimumSize.Height)
                 {
                     helpExpand = true;
                     helpTimer.Stop();
                 }
             }
+        }
+
+        private void panel18_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new MenuPrincipal().Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_editUser().Show();
+        }
+
+        private void buttoMaintence(object sender, EventArgs e)
+        {
+            maintenceTimer.Start();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_addEmployee().Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_addOT().Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_addReduce().Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_lookNomin().Show();
+        }
+
+        private void button16s_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_lookWorkHours().Show();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_lookOTs().Show();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_editEmployee().Show();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_changePassword().Show();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_instrution().Show();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Frm_question().Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
