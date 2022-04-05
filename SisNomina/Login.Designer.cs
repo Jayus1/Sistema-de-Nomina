@@ -1,4 +1,5 @@
 ﻿
+
 namespace SisNomina
 {
     partial class Login

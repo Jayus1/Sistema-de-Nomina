@@ -115,6 +115,7 @@ namespace SisNomina
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -193,7 +194,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -971,52 +972,53 @@ namespace SisNomina
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.comboBox1.Location = new System.Drawing.Point(442, 341);
+            this.comboBox1.Location = new System.Drawing.Point(438, 333);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(174, 32);
             this.comboBox1.TabIndex = 54;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(221, 256);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 21);
+            this.label5.Size = new System.Drawing.Size(106, 24);
             this.label5.TabIndex = 53;
             this.label5.Text = "Contraseña";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(558, 260);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(196, 21);
+            this.label6.Size = new System.Drawing.Size(203, 24);
             this.label6.TabIndex = 52;
             this.label6.Text = "Constraseña de Nuevo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(221, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 21);
+            this.label3.Size = new System.Drawing.Size(148, 24);
             this.label3.TabIndex = 50;
             this.label3.Text = "Id del Empleado";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(558, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 21);
+            this.label4.Size = new System.Drawing.Size(97, 24);
             this.label4.TabIndex = 51;
             this.label4.Text = "Username";
             // 
@@ -1026,10 +1028,10 @@ namespace SisNomina
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox1.Location = new System.Drawing.Point(647, 167);
+            this.textBox1.Location = new System.Drawing.Point(652, 166);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 24);
+            this.textBox1.Size = new System.Drawing.Size(180, 24);
             this.textBox1.TabIndex = 39;
             // 
             // panel31
@@ -1119,13 +1121,25 @@ namespace SisNomina
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
             this.label2.Location = new System.Drawing.Point(407, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 42);
+            this.label2.Size = new System.Drawing.Size(268, 42);
             this.label2.TabIndex = 38;
             this.label2.Text = "Editar Usuario";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBox3.Location = new System.Drawing.Point(757, 260);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(180, 24);
+            this.textBox3.TabIndex = 57;
             // 
             // Frm_editUser
             // 
@@ -1133,6 +1147,7 @@ namespace SisNomina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1135, 678);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button23);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.comboBox1);
@@ -1290,6 +1305,7 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

@@ -59,8 +59,9 @@ namespace SisNomina
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_createUser().Show();
+            this.Hide();
+            
         }
 
         private void homeContainer_Paint(object sender, PaintEventArgs e)
@@ -137,8 +138,8 @@ namespace SisNomina
 
         private void button15_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookInNomin().Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -170,8 +171,8 @@ namespace SisNomina
 
         private void button16_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookPayments().Show();
+            this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -289,14 +290,14 @@ namespace SisNomina
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new MenuPrincipal().Show();
+            this.Hide();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_editUser().Show();
+            this.Hide();
         }
 
         private void buttoMaintence(object sender, EventArgs e)
@@ -306,62 +307,62 @@ namespace SisNomina
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_addEmployee().Show();
+            this.Hide();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_addOT().Show();
+            this.Hide();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_addReduce().Show();
+            this.Hide();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookNomin().Show();
+            this.Hide();
         }
 
         private void button16s_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookWorkHours().Show();
+            this.Hide();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookOTs().Show();
+            this.Hide();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_editEmployee().Show();
+            this.Hide();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_changePassword().Show();
+            this.Hide();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_instrution().Show();
+            this.Hide();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_question().Show();
+            this.Hide();
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -59,8 +59,8 @@ namespace SisNomina
 
         private void button1_Click(object sender, EventArgs e)
         {
+            new Frm_createUser().Show(); 
             this.Hide();
-            new Frm_createUser().Show();
         }
 
         private void homeContainer_Paint(object sender, PaintEventArgs e)
@@ -287,14 +287,14 @@ namespace SisNomina
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new MenuPrincipal().Show();
+            this.Hide();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_editUser().Show();
+            this.Hide();
         }
 
         private void buttoMaintence(object sender, EventArgs e)
@@ -304,20 +304,20 @@ namespace SisNomina
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_addEmployee().Show();
+            this.Hide();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_addOT().Show();
+            this.Hide();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_addReduce().Show();
+            this.Hide();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -351,6 +351,11 @@ namespace SisNomina
         }
 
         private void panel32_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
