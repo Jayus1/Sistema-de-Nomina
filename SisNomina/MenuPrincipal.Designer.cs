@@ -191,7 +191,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -323,7 +323,7 @@ namespace SisNomina
             this.buttonMaintence.Name = "buttonMaintence";
             this.buttonMaintence.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonMaintence.Size = new System.Drawing.Size(209, 62);
-            this.buttonMaintence.TabIndex = 1;
+            this.buttonMaintence.TabIndex = 2;
             this.buttonMaintence.Text = "           Mantenimiento";
             this.buttonMaintence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMaintence.UseVisualStyleBackColor = false;
@@ -445,7 +445,7 @@ namespace SisNomina
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(221, 81);
-            this.button4.TabIndex = 1;
+            this.button4.TabIndex = 3;
             this.button4.Text = "           Proceso";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
@@ -511,7 +511,7 @@ namespace SisNomina
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(221, 85);
-            this.button5.TabIndex = 1;
+            this.button5.TabIndex = 4;
             this.button5.Text = "           Consulta";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
@@ -653,7 +653,7 @@ namespace SisNomina
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(216, 65);
-            this.button6.TabIndex = 1;
+            this.button6.TabIndex = 5;
             this.button6.Text = "           Reportes";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -745,7 +745,7 @@ namespace SisNomina
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(218, 72);
-            this.button7.TabIndex = 1;
+            this.button7.TabIndex = 6;
             this.button7.Text = "          Utilitarios";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = true;
@@ -839,7 +839,7 @@ namespace SisNomina
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button8.Size = new System.Drawing.Size(221, 72);
-            this.button8.TabIndex = 1;
+            this.button8.TabIndex = 7;
             this.button8.Text = "           Ayuda";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = false;
@@ -865,7 +865,7 @@ namespace SisNomina
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonExit.Size = new System.Drawing.Size(221, 72);
-            this.buttonExit.TabIndex = 1;
+            this.buttonExit.TabIndex = 8;
             this.buttonExit.Text = "           Salir";
             this.buttonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -962,11 +962,11 @@ namespace SisNomina
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
             this.label2.Location = new System.Drawing.Point(422, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(282, 42);
+            this.label2.Size = new System.Drawing.Size(279, 42);
             this.label2.TabIndex = 4;
             this.label2.Text = "Menu Principal";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -1011,7 +1011,7 @@ namespace SisNomina
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(492, 403);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(195, 32);
+            this.label6.Size = new System.Drawing.Size(194, 32);
             this.label6.TabIndex = 5;
             this.label6.Text = "Departamento";
             // 
@@ -1032,7 +1032,7 @@ namespace SisNomina
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(222, 453);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 32);
+            this.label8.Size = new System.Drawing.Size(151, 32);
             this.label8.TabIndex = 5;
             this.label8.Text = "Direccion:";
             // 
@@ -1042,7 +1042,7 @@ namespace SisNomina
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(370, 453);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(313, 32);
+            this.label9.Size = new System.Drawing.Size(312, 32);
             this.label9.TabIndex = 5;
             this.label9.Text = "Direccion del empleado";
             // 
@@ -1052,7 +1052,7 @@ namespace SisNomina
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(373, 494);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(316, 32);
+            this.label10.Size = new System.Drawing.Size(315, 32);
             this.label10.TabIndex = 5;
             this.label10.Text = "Telefono de Contacto:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -1063,7 +1063,7 @@ namespace SisNomina
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(685, 493);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(309, 32);
+            this.label11.Size = new System.Drawing.Size(308, 32);
             this.label11.TabIndex = 5;
             this.label11.Text = "Telefono del Empleado";
             // 
@@ -1073,7 +1073,7 @@ namespace SisNomina
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(706, 453);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(245, 32);
+            this.label12.Size = new System.Drawing.Size(244, 32);
             this.label12.TabIndex = 5;
             this.label12.Text = "Sueldo por Hora:";
             // 
@@ -1083,7 +1083,7 @@ namespace SisNomina
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(943, 453);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 32);
+            this.label13.Size = new System.Drawing.Size(179, 32);
             this.label13.TabIndex = 5;
             this.label13.Text = "SueldoxHora";
             // 

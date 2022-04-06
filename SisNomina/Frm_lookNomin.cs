@@ -324,44 +324,44 @@ namespace SisNomina
 
         private void button12_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookNomin().Show();
+            this.Hide();
         }
 
         private void button16s_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookWorkHours().Show();
+            this.Hide();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_lookOTs().Show();
+            this.Hide();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_editEmployee().Show();
+            this.Hide();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_changePassword().Show();
+            this.Hide();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_instrution().Show();
+            this.Hide();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Frm_question().Show();
+            this.Hide();
         }
     }
 }

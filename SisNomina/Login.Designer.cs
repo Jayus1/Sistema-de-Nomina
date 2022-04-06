@@ -131,6 +131,7 @@ namespace SisNomina
             // 
             // textUsername
             // 
+            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
@@ -142,10 +143,11 @@ namespace SisNomina
             // 
             // textpasword
             // 
+            this.textpasword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textpasword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textpasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textpasword.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textpasword.Location = new System.Drawing.Point(71, 242);
+            this.textpasword.Location = new System.Drawing.Point(65, 242);
             this.textpasword.Multiline = true;
             this.textpasword.Name = "textpasword";
             this.textpasword.PasswordChar = '*';

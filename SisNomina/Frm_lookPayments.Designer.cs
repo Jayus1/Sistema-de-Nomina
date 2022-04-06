@@ -182,7 +182,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -943,10 +943,10 @@ namespace SisNomina
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(334, 128);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(323, 128);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 21);
+            this.label11.Size = new System.Drawing.Size(144, 24);
             this.label11.TabIndex = 57;
             this.label11.Text = "Id de Empleado";
             // 
@@ -959,7 +959,7 @@ namespace SisNomina
             this.textBox7.Location = new System.Drawing.Point(473, 125);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(126, 24);
+            this.textBox7.Size = new System.Drawing.Size(115, 24);
             this.textBox7.TabIndex = 54;
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
@@ -980,6 +980,8 @@ namespace SisNomina
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(200, 178);
             this.dataGridView1.Name = "dataGridView1";
@@ -989,21 +991,21 @@ namespace SisNomina
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
             this.label3.Location = new System.Drawing.Point(410, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(330, 42);
+            this.label3.Size = new System.Drawing.Size(339, 42);
             this.label3.TabIndex = 59;
             this.label3.Text = "Historial de Pagos";
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Bauhaus 93", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(699, 128);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(79, 25);
+            this.checkBox1.Size = new System.Drawing.Size(83, 28);
             this.checkBox1.TabIndex = 67;
             this.checkBox1.Text = "Todos";
             this.checkBox1.UseVisualStyleBackColor = true;
