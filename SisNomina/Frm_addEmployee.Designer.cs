@@ -122,10 +122,12 @@ namespace SisNomina
             this.panel35 = new System.Windows.Forms.Panel();
             this.panel39 = new System.Windows.Forms.Panel();
             this.textUsername = new System.Windows.Forms.TextBox();
+            this.panel29 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel34 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -133,8 +135,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -214,7 +214,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -971,27 +971,30 @@ namespace SisNomina
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.pictureBox4);
             this.panelMenu.Controls.Add(this.pictureBox3);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMenu.Location = new System.Drawing.Point(62, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1224, 773);
+            this.panelMenu.Size = new System.Drawing.Size(1095, 678);
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(583, 574);
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(600, 557);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(97, 36);
-            this.button14.TabIndex = 53;
+            this.button14.Size = new System.Drawing.Size(123, 54);
+            this.button14.TabIndex = 12;
             this.button14.Text = "Guardar";
             this.button14.UseVisualStyleBackColor = true;
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(307, 574);
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(307, 557);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(99, 37);
-            this.button13.TabIndex = 54;
+            this.button13.Size = new System.Drawing.Size(123, 54);
+            this.button13.TabIndex = 11;
             this.button13.Text = "Limpiar";
             this.button13.UseVisualStyleBackColor = true;
             // 
@@ -1002,21 +1005,22 @@ namespace SisNomina
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(546, 496);
+            this.checkBox1.Location = new System.Drawing.Point(557, 479);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 28);
-            this.checkBox1.TabIndex = 44;
+            this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Activo";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(558, 321);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(600, 321);
             this.dateTimePicker1.MaxDate = new System.DateTime(2022, 4, 6, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(340, 29);
+            this.dateTimePicker1.Size = new System.Drawing.Size(134, 29);
             this.dateTimePicker1.TabIndex = 6;
             this.dateTimePicker1.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
@@ -1068,11 +1072,11 @@ namespace SisNomina
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox6.Location = new System.Drawing.Point(633, 400);
+            this.textBox6.Location = new System.Drawing.Point(643, 402);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(265, 24);
-            this.textBox6.TabIndex = 33;
+            this.textBox6.TabIndex = 8;
             // 
             // textBox3
             // 
@@ -1080,7 +1084,7 @@ namespace SisNomina
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox3.Location = new System.Drawing.Point(583, 213);
+            this.textBox3.Location = new System.Drawing.Point(592, 213);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(188, 24);
@@ -1093,7 +1097,7 @@ namespace SisNomina
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox1.Location = new System.Drawing.Point(576, 127);
+            this.textBox1.Location = new System.Drawing.Point(585, 127);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(194, 24);
@@ -1173,11 +1177,12 @@ namespace SisNomina
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox4.Location = new System.Drawing.Point(246, 307);
+            this.textBox4.Location = new System.Drawing.Point(249, 308);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(303, 24);
             this.textBox4.TabIndex = 5;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged_1);
             // 
             // textBox7
             // 
@@ -1185,11 +1190,12 @@ namespace SisNomina
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox7.Location = new System.Drawing.Point(308, 488);
+            this.textBox7.Location = new System.Drawing.Point(304, 483);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(105, 24);
-            this.textBox7.TabIndex = 34;
+            this.textBox7.Size = new System.Drawing.Size(123, 24);
+            this.textBox7.TabIndex = 9;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox5
             // 
@@ -1197,7 +1203,7 @@ namespace SisNomina
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox5.Location = new System.Drawing.Point(225, 400);
+            this.textBox5.Location = new System.Drawing.Point(232, 401);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(181, 24);
@@ -1209,7 +1215,7 @@ namespace SisNomina
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox2.Location = new System.Drawing.Point(234, 213);
+            this.textBox2.Location = new System.Drawing.Point(233, 212);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(166, 24);
@@ -1258,9 +1264,9 @@ namespace SisNomina
             // panel39
             // 
             this.panel39.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel39.Location = new System.Drawing.Point(156, 508);
+            this.panel39.Location = new System.Drawing.Point(160, 507);
             this.panel39.Name = "panel39";
-            this.panel39.Size = new System.Drawing.Size(246, 1);
+            this.panel39.Size = new System.Drawing.Size(270, 1);
             this.panel39.TabIndex = 40;
             // 
             // textUsername
@@ -1269,11 +1275,19 @@ namespace SisNomina
             this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textUsername.Location = new System.Drawing.Point(240, 127);
+            this.textUsername.Location = new System.Drawing.Point(237, 126);
             this.textUsername.Multiline = true;
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(190, 24);
             this.textUsername.TabIndex = 1;
+            // 
+            // panel29
+            // 
+            this.panel29.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel29.Location = new System.Drawing.Point(154, 238);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(246, 1);
+            this.panel29.TabIndex = 41;
             // 
             // panel32
             // 
@@ -1304,6 +1318,13 @@ namespace SisNomina
             this.panel26.TabIndex = 27;
             this.panel26.Paint += new System.Windows.Forms.PaintEventHandler(this.panel26_Paint);
             // 
+            // panel28
+            // 
+            this.panel28.Location = new System.Drawing.Point(154, 234);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(232, 1);
+            this.panel28.TabIndex = 25;
+            // 
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.DarkOliveGreen;
@@ -1322,18 +1343,18 @@ namespace SisNomina
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(378, 22);
+            this.label2.Location = new System.Drawing.Point(366, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(345, 42);
+            this.label2.Size = new System.Drawing.Size(338, 42);
             this.label2.TabIndex = 21;
             this.label2.Text = "Agregar Empleado";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox2.Location = new System.Drawing.Point(963, -98);
+            this.pictureBox2.Location = new System.Drawing.Point(967, -102);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(238, 201);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1363,27 +1384,12 @@ namespace SisNomina
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox3.Location = new System.Drawing.Point(-100, 575);
+            this.pictureBox3.Location = new System.Drawing.Point(-100, 567);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(244, 195);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
-            // 
-            // panel28
-            // 
-            this.panel28.Location = new System.Drawing.Point(154, 234);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(232, 1);
-            this.panel28.TabIndex = 25;
-            // 
-            // panel29
-            // 
-            this.panel29.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel29.Location = new System.Drawing.Point(154, 238);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(246, 1);
-            this.panel29.TabIndex = 41;
             // 
             // Frm_addEmployee
             // 

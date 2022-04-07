@@ -92,10 +92,13 @@ namespace SisNomina
             this.reportTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panelAddReduce = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.panel29 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -105,12 +108,10 @@ namespace SisNomina
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -142,6 +143,7 @@ namespace SisNomina
             this.panel23.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panelAddReduce.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -189,7 +191,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -223,7 +225,7 @@ namespace SisNomina
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(221, 98);
-            this.button3.TabIndex = 1;
+            this.button3.TabIndex = 6;
             this.button3.Text = "           Inicio";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
@@ -321,7 +323,7 @@ namespace SisNomina
             this.buttonMaintence.Name = "buttonMaintence";
             this.buttonMaintence.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonMaintence.Size = new System.Drawing.Size(209, 62);
-            this.buttonMaintence.TabIndex = 1;
+            this.buttonMaintence.TabIndex = 7;
             this.buttonMaintence.Text = "           Mantenimiento";
             this.buttonMaintence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMaintence.UseVisualStyleBackColor = false;
@@ -443,7 +445,7 @@ namespace SisNomina
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(221, 81);
-            this.button4.TabIndex = 1;
+            this.button4.TabIndex = 8;
             this.button4.Text = "           Proceso";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
@@ -509,7 +511,7 @@ namespace SisNomina
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(221, 85);
-            this.button5.TabIndex = 1;
+            this.button5.TabIndex = 9;
             this.button5.Text = "           Consulta";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
@@ -651,7 +653,7 @@ namespace SisNomina
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(216, 65);
-            this.button6.TabIndex = 1;
+            this.button6.TabIndex = 10;
             this.button6.Text = "           Reportes";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
@@ -743,7 +745,7 @@ namespace SisNomina
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(218, 72);
-            this.button7.TabIndex = 1;
+            this.button7.TabIndex = 11;
             this.button7.Text = "          Utilitarios";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = true;
@@ -837,7 +839,7 @@ namespace SisNomina
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button8.Size = new System.Drawing.Size(221, 72);
-            this.button8.TabIndex = 1;
+            this.button8.TabIndex = 12;
             this.button8.Text = "           Ayuda";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = false;
@@ -863,7 +865,7 @@ namespace SisNomina
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonExit.Size = new System.Drawing.Size(221, 72);
-            this.buttonExit.TabIndex = 1;
+            this.buttonExit.TabIndex = 13;
             this.buttonExit.Text = "           Salir";
             this.buttonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -907,140 +909,61 @@ namespace SisNomina
             this.helpTimer.Interval = 1;
             this.helpTimer.Tick += new System.EventHandler(this.helpTimer_Tick);
             // 
-            // pictureBox2
+            // panelAddReduce
             // 
-            this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox2.Location = new System.Drawing.Point(1007, -111);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(238, 201);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.panelAddReduce.Controls.Add(this.button14);
+            this.panelAddReduce.Controls.Add(this.button13);
+            this.panelAddReduce.Controls.Add(this.label5);
+            this.panelAddReduce.Controls.Add(this.textBox2);
+            this.panelAddReduce.Controls.Add(this.panel28);
+            this.panelAddReduce.Controls.Add(this.panel29);
+            this.panelAddReduce.Controls.Add(this.label4);
+            this.panelAddReduce.Controls.Add(this.textBox1);
+            this.panelAddReduce.Controls.Add(this.label3);
+            this.panelAddReduce.Controls.Add(this.panel27);
+            this.panelAddReduce.Controls.Add(this.textUsername);
+            this.panelAddReduce.Controls.Add(this.panel26);
+            this.panelAddReduce.Controls.Add(this.panel16);
+            this.panelAddReduce.Controls.Add(this.panel17);
+            this.panelAddReduce.Controls.Add(this.label2);
+            this.panelAddReduce.Controls.Add(this.pictureBox2);
+            this.panelAddReduce.Controls.Add(this.pictureBox1);
+            this.panelAddReduce.Controls.Add(this.pictureBox4);
+            this.panelAddReduce.Controls.Add(this.pictureBox3);
+            this.panelAddReduce.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelAddReduce.Location = new System.Drawing.Point(62, 0);
+            this.panelAddReduce.Name = "panelAddReduce";
+            this.panelAddReduce.Size = new System.Drawing.Size(1073, 678);
+            this.panelAddReduce.TabIndex = 1;
             // 
-            // pictureBox1
+            // button14
             // 
-            this.pictureBox1.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox1.Location = new System.Drawing.Point(1020, 560);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 195);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(669, 500);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(114, 51);
+            this.button14.TabIndex = 5;
+            this.button14.Text = "Guardar";
+            this.button14.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
+            // button13
             // 
-            this.pictureBox4.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox4.Location = new System.Drawing.Point(-53, -111);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(256, 205);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox3.Location = new System.Drawing.Point(-35, 569);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(244, 195);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(379, 277);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 24);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Cantidad";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox1.Location = new System.Drawing.Point(469, 274);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 28);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(379, 221);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 24);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "Nombre del Recorte";
-            // 
-            // panel27
-            // 
-            this.panel27.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel27.Location = new System.Drawing.Point(448, 304);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(200, 1);
-            this.panel27.TabIndex = 27;
-            // 
-            // textUsername
-            // 
-            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textUsername.Location = new System.Drawing.Point(561, 215);
-            this.textUsername.Multiline = true;
-            this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(182, 24);
-            this.textUsername.TabIndex = 13;
-            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
-            // 
-            // panel26
-            // 
-            this.panel26.Location = new System.Drawing.Point(383, 297);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(236, 1);
-            this.panel26.TabIndex = 21;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel16.Location = new System.Drawing.Point(383, 243);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(350, 1);
-            this.panel16.TabIndex = 28;
-            // 
-            // panel17
-            // 
-            this.panel17.Location = new System.Drawing.Point(383, 239);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(232, 1);
-            this.panel17.TabIndex = 24;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(441, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(307, 42);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Agregar Recorte";
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(305, 499);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(114, 52);
+            this.button13.TabIndex = 4;
+            this.button13.Text = "Limpiar";
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(379, 321);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(358, 312);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(212, 24);
-            this.label5.TabIndex = 41;
+            this.label5.Size = new System.Drawing.Size(272, 29);
+            this.label5.TabIndex = 60;
             this.label5.Text = "Descripcion del Recorte";
             // 
             // textBox2
@@ -1050,45 +973,153 @@ namespace SisNomina
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox2.Location = new System.Drawing.Point(383, 350);
+            this.textBox2.Location = new System.Drawing.Point(363, 369);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(350, 85);
-            this.textBox2.TabIndex = 38;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Size = new System.Drawing.Size(350, 103);
+            this.textBox2.TabIndex = 3;
             // 
             // panel28
             // 
             this.panel28.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel28.Location = new System.Drawing.Point(383, 343);
+            this.panel28.Location = new System.Drawing.Point(363, 341);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(350, 1);
-            this.panel28.TabIndex = 40;
+            this.panel28.TabIndex = 59;
             // 
             // panel29
             // 
-            this.panel29.Location = new System.Drawing.Point(383, 339);
+            this.panel29.Location = new System.Drawing.Point(363, 358);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(232, 1);
-            this.panel29.TabIndex = 39;
+            this.panel29.TabIndex = 58;
             // 
-            // button14
+            // label4
             // 
-            this.button14.Location = new System.Drawing.Point(646, 486);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(97, 36);
-            this.button14.TabIndex = 43;
-            this.button14.Text = "Guardar";
-            this.button14.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(380, 253);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 29);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Cantidad";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // button13
+            // textBox1
             // 
-            this.button13.Location = new System.Drawing.Point(370, 486);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(99, 37);
-            this.button13.TabIndex = 42;
-            this.button13.Text = "Limpiar";
-            this.button13.UseVisualStyleBackColor = true;
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBox1.Location = new System.Drawing.Point(495, 253);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 28);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(314, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(232, 29);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Nombre del Recorte";
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel27.Location = new System.Drawing.Point(409, 282);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(280, 1);
+            this.panel27.TabIndex = 53;
+            // 
+            // textUsername
+            // 
+            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textUsername.Location = new System.Drawing.Point(552, 183);
+            this.textUsername.Multiline = true;
+            this.textUsername.Name = "textUsername";
+            this.textUsername.Size = new System.Drawing.Size(182, 24);
+            this.textUsername.TabIndex = 1;
+            // 
+            // panel26
+            // 
+            this.panel26.Location = new System.Drawing.Point(363, 316);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(236, 1);
+            this.panel26.TabIndex = 51;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel16.Location = new System.Drawing.Point(343, 209);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(400, 1);
+            this.panel16.TabIndex = 54;
+            // 
+            // panel17
+            // 
+            this.panel17.Location = new System.Drawing.Point(440, 259);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(232, 1);
+            this.panel17.TabIndex = 52;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label2.Location = new System.Drawing.Point(354, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(387, 54);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Agregar Recorte";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox2.Location = new System.Drawing.Point(951, -98);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(238, 201);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 46;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox1.Location = new System.Drawing.Point(951, 564);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 195);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox4.Location = new System.Drawing.Point(-106, -102);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(256, 205);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 47;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox3.Location = new System.Drawing.Point(-103, 571);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(244, 195);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 44;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // Frm_addReduce
             // 
@@ -1096,26 +1127,8 @@ namespace SisNomina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1135, 678);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.panel28);
-            this.Controls.Add(this.panel29);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel27);
-            this.Controls.Add(this.textUsername);
-            this.Controls.Add(this.panel26);
-            this.Controls.Add(this.panel16);
-            this.Controls.Add(this.panel17);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelAddReduce);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_addReduce";
@@ -1154,12 +1167,13 @@ namespace SisNomina
             this.panel23.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panelAddReduce.ResumeLayout(false);
+            this.panelAddReduce.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1183,10 +1197,6 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Timer maintenceTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel processContainer;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button button11;
@@ -1230,6 +1240,13 @@ namespace SisNomina
         private System.Windows.Forms.Panel consultContainer;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panelAddReduce;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
@@ -1239,12 +1256,10 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 
