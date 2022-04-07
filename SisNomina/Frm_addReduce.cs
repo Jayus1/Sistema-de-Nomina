@@ -383,5 +383,15 @@ namespace SisNomina
         {
 
         }
+
+        private void textUsername_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelAddReduce_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -138,6 +138,11 @@
   <metadata name="helpTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>744, 17</value>
   </metadata>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Seleccionar el boton menu para abrir las opciones, luego seleccionas la categoria 
+de la ventana a la cual se quiere mover y por ultimo cuando aparesca el sub menu, 
+selecciona la ventana a la que quiere ir.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

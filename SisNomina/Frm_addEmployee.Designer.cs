@@ -92,7 +92,7 @@ namespace SisNomina
             this.reportTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
-            this.panelMenu = new System.Windows.Forms.Panel();
+            this.paneAddEmployee = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -135,6 +135,7 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -166,11 +167,12 @@ namespace SisNomina
             this.panel23.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panelMenu.SuspendLayout();
+            this.paneAddEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -214,7 +216,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -926,57 +928,57 @@ namespace SisNomina
             this.helpTimer.Interval = 1;
             this.helpTimer.Tick += new System.EventHandler(this.helpTimer_Tick);
             // 
-            // panelMenu
+            // paneAddEmployee
             // 
-            this.panelMenu.AutoSize = true;
-            this.panelMenu.Controls.Add(this.button14);
-            this.panelMenu.Controls.Add(this.button13);
-            this.panelMenu.Controls.Add(this.checkBox1);
-            this.panelMenu.Controls.Add(this.dateTimePicker1);
-            this.panelMenu.Controls.Add(this.label8);
-            this.panelMenu.Controls.Add(this.label10);
-            this.panelMenu.Controls.Add(this.label6);
-            this.panelMenu.Controls.Add(this.label4);
-            this.panelMenu.Controls.Add(this.textBox6);
-            this.panelMenu.Controls.Add(this.textBox3);
-            this.panelMenu.Controls.Add(this.textBox1);
-            this.panelMenu.Controls.Add(this.label7);
-            this.panelMenu.Controls.Add(this.label9);
-            this.panelMenu.Controls.Add(this.label11);
-            this.panelMenu.Controls.Add(this.label5);
-            this.panelMenu.Controls.Add(this.panel37);
-            this.panelMenu.Controls.Add(this.panel31);
-            this.panelMenu.Controls.Add(this.label3);
-            this.panelMenu.Controls.Add(this.textBox4);
-            this.panelMenu.Controls.Add(this.textBox7);
-            this.panelMenu.Controls.Add(this.textBox5);
-            this.panelMenu.Controls.Add(this.textBox2);
-            this.panelMenu.Controls.Add(this.panel36);
-            this.panelMenu.Controls.Add(this.panel27);
-            this.panelMenu.Controls.Add(this.panel30);
-            this.panelMenu.Controls.Add(this.panel33);
-            this.panelMenu.Controls.Add(this.panel35);
-            this.panelMenu.Controls.Add(this.panel39);
-            this.panelMenu.Controls.Add(this.textUsername);
-            this.panelMenu.Controls.Add(this.panel29);
-            this.panelMenu.Controls.Add(this.panel32);
-            this.panelMenu.Controls.Add(this.panel34);
-            this.panelMenu.Controls.Add(this.panel38);
-            this.panelMenu.Controls.Add(this.panel26);
-            this.panelMenu.Controls.Add(this.panel28);
-            this.panelMenu.Controls.Add(this.panel16);
-            this.panelMenu.Controls.Add(this.panel17);
-            this.panelMenu.Controls.Add(this.label2);
-            this.panelMenu.Controls.Add(this.pictureBox2);
-            this.panelMenu.Controls.Add(this.pictureBox1);
-            this.panelMenu.Controls.Add(this.pictureBox4);
-            this.panelMenu.Controls.Add(this.pictureBox3);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenu.Location = new System.Drawing.Point(62, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(1095, 678);
-            this.panelMenu.TabIndex = 1;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
+            this.paneAddEmployee.AutoSize = true;
+            this.paneAddEmployee.Controls.Add(this.button14);
+            this.paneAddEmployee.Controls.Add(this.button13);
+            this.paneAddEmployee.Controls.Add(this.checkBox1);
+            this.paneAddEmployee.Controls.Add(this.dateTimePicker1);
+            this.paneAddEmployee.Controls.Add(this.label8);
+            this.paneAddEmployee.Controls.Add(this.label10);
+            this.paneAddEmployee.Controls.Add(this.label6);
+            this.paneAddEmployee.Controls.Add(this.label4);
+            this.paneAddEmployee.Controls.Add(this.textBox6);
+            this.paneAddEmployee.Controls.Add(this.textBox3);
+            this.paneAddEmployee.Controls.Add(this.textBox1);
+            this.paneAddEmployee.Controls.Add(this.label7);
+            this.paneAddEmployee.Controls.Add(this.label9);
+            this.paneAddEmployee.Controls.Add(this.label11);
+            this.paneAddEmployee.Controls.Add(this.label5);
+            this.paneAddEmployee.Controls.Add(this.panel37);
+            this.paneAddEmployee.Controls.Add(this.panel31);
+            this.paneAddEmployee.Controls.Add(this.label3);
+            this.paneAddEmployee.Controls.Add(this.textBox4);
+            this.paneAddEmployee.Controls.Add(this.textBox7);
+            this.paneAddEmployee.Controls.Add(this.textBox5);
+            this.paneAddEmployee.Controls.Add(this.textBox2);
+            this.paneAddEmployee.Controls.Add(this.panel36);
+            this.paneAddEmployee.Controls.Add(this.panel27);
+            this.paneAddEmployee.Controls.Add(this.panel30);
+            this.paneAddEmployee.Controls.Add(this.panel33);
+            this.paneAddEmployee.Controls.Add(this.panel35);
+            this.paneAddEmployee.Controls.Add(this.panel39);
+            this.paneAddEmployee.Controls.Add(this.textUsername);
+            this.paneAddEmployee.Controls.Add(this.panel29);
+            this.paneAddEmployee.Controls.Add(this.panel32);
+            this.paneAddEmployee.Controls.Add(this.panel34);
+            this.paneAddEmployee.Controls.Add(this.panel38);
+            this.paneAddEmployee.Controls.Add(this.panel26);
+            this.paneAddEmployee.Controls.Add(this.panel28);
+            this.paneAddEmployee.Controls.Add(this.panel16);
+            this.paneAddEmployee.Controls.Add(this.panel17);
+            this.paneAddEmployee.Controls.Add(this.label2);
+            this.paneAddEmployee.Controls.Add(this.pictureBox2);
+            this.paneAddEmployee.Controls.Add(this.pictureBox1);
+            this.paneAddEmployee.Controls.Add(this.pictureBox4);
+            this.paneAddEmployee.Controls.Add(this.pictureBox3);
+            this.paneAddEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paneAddEmployee.Location = new System.Drawing.Point(62, 0);
+            this.paneAddEmployee.Name = "paneAddEmployee";
+            this.paneAddEmployee.Size = new System.Drawing.Size(1095, 678);
+            this.paneAddEmployee.TabIndex = 1;
+            this.paneAddEmployee.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // button14
             // 
@@ -1343,11 +1345,11 @@ namespace SisNomina
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
             this.label2.Location = new System.Drawing.Point(366, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(338, 42);
+            this.label2.Size = new System.Drawing.Size(345, 42);
             this.label2.TabIndex = 21;
             this.label2.Text = "Agregar Empleado";
             // 
@@ -1391,13 +1393,18 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Frm_addEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1157, 678);
-            this.Controls.Add(this.panelMenu);
+            this.Controls.Add(this.paneAddEmployee);
             this.Controls.Add(this.sidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1437,12 +1444,13 @@ namespace SisNomina
             this.panel23.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
-            this.panelMenu.PerformLayout();
+            this.paneAddEmployee.ResumeLayout(false);
+            this.paneAddEmployee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1511,7 +1519,7 @@ namespace SisNomina
         private System.Windows.Forms.Panel consultContainer;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Panel paneAddEmployee;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.CheckBox checkBox1;
@@ -1554,6 +1562,7 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel28;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
     }
 }
 
