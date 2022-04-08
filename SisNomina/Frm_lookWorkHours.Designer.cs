@@ -92,17 +92,17 @@ namespace SisNomina
             this.reportTimer = new System.Windows.Forms.Timer(this.components);
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panelLookWorkHours = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel39 = new System.Windows.Forms.Panel();
-            this.panel38 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -134,11 +134,12 @@ namespace SisNomina
             this.panel23.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panelLookWorkHours.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -182,7 +183,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -900,55 +901,44 @@ namespace SisNomina
             this.helpTimer.Interval = 1;
             this.helpTimer.Tick += new System.EventHandler(this.helpTimer_Tick);
             // 
-            // pictureBox2
+            // panelLookWorkHours
             // 
-            this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox2.Location = new System.Drawing.Point(1007, -111);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(238, 201);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.panelLookWorkHours.Controls.Add(this.checkBox1);
+            this.panelLookWorkHours.Controls.Add(this.label3);
+            this.panelLookWorkHours.Controls.Add(this.dataGridView1);
+            this.panelLookWorkHours.Controls.Add(this.label11);
+            this.panelLookWorkHours.Controls.Add(this.textBox7);
+            this.panelLookWorkHours.Controls.Add(this.panel39);
+            this.panelLookWorkHours.Controls.Add(this.pictureBox2);
+            this.panelLookWorkHours.Controls.Add(this.pictureBox1);
+            this.panelLookWorkHours.Controls.Add(this.pictureBox4);
+            this.panelLookWorkHours.Controls.Add(this.pictureBox3);
+            this.panelLookWorkHours.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLookWorkHours.Location = new System.Drawing.Point(62, 0);
+            this.panelLookWorkHours.Name = "panelLookWorkHours";
+            this.panelLookWorkHours.Size = new System.Drawing.Size(1073, 678);
+            this.panelLookWorkHours.TabIndex = 1;
             // 
-            // pictureBox1
+            // checkBox1
             // 
-            this.pictureBox1.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox1.Location = new System.Drawing.Point(1020, 560);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 195);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox4.Location = new System.Drawing.Point(-53, -111);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(256, 205);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox3.Location = new System.Drawing.Point(-35, 569);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(244, 195);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(643, 141);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(102, 33);
+            this.checkBox1.TabIndex = 77;
+            this.checkBox1.Text = "Todos";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(351, 52);
+            this.label3.Location = new System.Drawing.Point(212, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(545, 42);
-            this.label3.TabIndex = 65;
+            this.label3.Size = new System.Drawing.Size(694, 55);
+            this.label3.TabIndex = 76;
             this.label3.Text = "Registro de Horas Trabajadas";
             // 
             // dataGridView1
@@ -956,21 +946,20 @@ namespace SisNomina
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(184, 182);
+            this.dataGridView1.Location = new System.Drawing.Point(102, 195);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(875, 397);
-            this.dataGridView1.TabIndex = 64;
+            this.dataGridView1.Size = new System.Drawing.Size(817, 397);
+            this.dataGridView1.TabIndex = 75;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(405, 138);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(234, 143);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 24);
-            this.label11.TabIndex = 63;
+            this.label11.Size = new System.Drawing.Size(184, 29);
+            this.label11.TabIndex = 74;
             this.label11.Text = "Id de Empleado";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // textBox7
             // 
@@ -978,37 +967,59 @@ namespace SisNomina
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox7.Location = new System.Drawing.Point(555, 135);
+            this.textBox7.Location = new System.Drawing.Point(424, 150);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(126, 24);
-            this.textBox7.TabIndex = 60;
+            this.textBox7.TabIndex = 71;
             // 
             // panel39
             // 
             this.panel39.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel39.Location = new System.Drawing.Point(424, 162);
+            this.panel39.Location = new System.Drawing.Point(304, 175);
             this.panel39.Name = "panel39";
             this.panel39.Size = new System.Drawing.Size(246, 1);
-            this.panel39.TabIndex = 62;
+            this.panel39.TabIndex = 73;
             // 
-            // panel38
+            // pictureBox2
             // 
-            this.panel38.Location = new System.Drawing.Point(424, 158);
-            this.panel38.Name = "panel38";
-            this.panel38.Size = new System.Drawing.Size(232, 1);
-            this.panel38.TabIndex = 61;
+            this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox2.Location = new System.Drawing.Point(938, -98);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(238, 201);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 67;
+            this.pictureBox2.TabStop = false;
             // 
-            // checkBox1
+            // pictureBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(779, 137);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(83, 28);
-            this.checkBox1.TabIndex = 66;
-            this.checkBox1.Text = "Todos";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox1.Location = new System.Drawing.Point(951, 573);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 195);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox4.Location = new System.Drawing.Point(-122, -98);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(256, 205);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 69;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox3.Location = new System.Drawing.Point(-104, 582);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(244, 195);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 70;
+            this.pictureBox3.TabStop = false;
             // 
             // Frm_lookWorkHours
             // 
@@ -1016,18 +1027,8 @@ namespace SisNomina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1135, 678);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.panel39);
-            this.Controls.Add(this.panel38);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelLookWorkHours);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_lookWorkHours";
@@ -1066,13 +1067,14 @@ namespace SisNomina
             this.panel23.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panelLookWorkHours.ResumeLayout(false);
+            this.panelLookWorkHours.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1096,10 +1098,6 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Timer maintenceTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel processContainer;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button button11;
@@ -1143,13 +1141,17 @@ namespace SisNomina
         private System.Windows.Forms.Panel consultContainer;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panelLookWorkHours;
+        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Panel panel39;
-        private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
 

@@ -378,5 +378,26 @@ namespace SisNomina
         {
 
         }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            new Frm_editUser().Show();
+            this.Close();
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

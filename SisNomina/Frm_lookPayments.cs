@@ -368,5 +368,10 @@ namespace SisNomina
         {
 
         }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -172,7 +172,7 @@ namespace SisNomina
             this.sidebar.MaximumSize = new System.Drawing.Size(213, 678);
             this.sidebar.MinimumSize = new System.Drawing.Size(62, 678);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(62, 678);
+            this.sidebar.Size = new System.Drawing.Size(213, 678);
             this.sidebar.TabIndex = 0;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -196,7 +196,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -246,7 +246,7 @@ namespace SisNomina
             this.maintenceContainer.MaximumSize = new System.Drawing.Size(213, 149);
             this.maintenceContainer.MinimumSize = new System.Drawing.Size(213, 52);
             this.maintenceContainer.Name = "maintenceContainer";
-            this.maintenceContainer.Size = new System.Drawing.Size(213, 56);
+            this.maintenceContainer.Size = new System.Drawing.Size(213, 52);
             this.maintenceContainer.TabIndex = 1;
             this.maintenceContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.homeContainer_Paint);
             // 
@@ -276,6 +276,7 @@ namespace SisNomina
             this.button2.Text = "           Editar Usuario";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
             // 
             // panel3
             // 
@@ -340,7 +341,7 @@ namespace SisNomina
             this.processContainer.Controls.Add(this.panel13);
             this.processContainer.Controls.Add(this.panel12);
             this.processContainer.Controls.Add(this.panel7);
-            this.processContainer.Location = new System.Drawing.Point(3, 208);
+            this.processContainer.Location = new System.Drawing.Point(3, 204);
             this.processContainer.MaximumSize = new System.Drawing.Size(213, 202);
             this.processContainer.MinimumSize = new System.Drawing.Size(213, 54);
             this.processContainer.Name = "processContainer";
@@ -372,6 +373,7 @@ namespace SisNomina
             this.button11.Text = "           Agregar Reduccion";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // panel13
             // 
@@ -398,6 +400,7 @@ namespace SisNomina
             this.button10.Text = "           Poner Horas Extras";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // panel12
             // 
@@ -424,6 +427,7 @@ namespace SisNomina
             this.button9.Text = "           Agregar Empleado";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // panel7
             // 
@@ -458,7 +462,7 @@ namespace SisNomina
             this.consultContainer.Controls.Add(this.panel18);
             this.consultContainer.Controls.Add(this.panel8);
             this.consultContainer.Controls.Add(this.panel15);
-            this.consultContainer.Location = new System.Drawing.Point(3, 268);
+            this.consultContainer.Location = new System.Drawing.Point(3, 264);
             this.consultContainer.MaximumSize = new System.Drawing.Size(213, 159);
             this.consultContainer.MinimumSize = new System.Drawing.Size(213, 64);
             this.consultContainer.Name = "consultContainer";
@@ -550,7 +554,7 @@ namespace SisNomina
             this.reportContainer.Controls.Add(this.panel20);
             this.reportContainer.Controls.Add(this.panel19);
             this.reportContainer.Controls.Add(this.panel9);
-            this.reportContainer.Location = new System.Drawing.Point(3, 338);
+            this.reportContainer.Location = new System.Drawing.Point(3, 334);
             this.reportContainer.MaximumSize = new System.Drawing.Size(213, 199);
             this.reportContainer.MinimumSize = new System.Drawing.Size(210, 52);
             this.reportContainer.Name = "reportContainer";
@@ -664,7 +668,7 @@ namespace SisNomina
             this.toolContainer.Controls.Add(this.panel24);
             this.toolContainer.Controls.Add(this.panel22);
             this.toolContainer.Controls.Add(this.panel10);
-            this.toolContainer.Location = new System.Drawing.Point(3, 396);
+            this.toolContainer.Location = new System.Drawing.Point(3, 392);
             this.toolContainer.MaximumSize = new System.Drawing.Size(213, 175);
             this.toolContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.toolContainer.Name = "toolContainer";
@@ -754,7 +758,7 @@ namespace SisNomina
             this.helpContainer.Controls.Add(this.panel25);
             this.helpContainer.Controls.Add(this.panel23);
             this.helpContainer.Controls.Add(this.panel4);
-            this.helpContainer.Location = new System.Drawing.Point(3, 453);
+            this.helpContainer.Location = new System.Drawing.Point(3, 449);
             this.helpContainer.MaximumSize = new System.Drawing.Size(213, 181);
             this.helpContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.helpContainer.Name = "helpContainer";
@@ -843,7 +847,7 @@ namespace SisNomina
             // panel5
             // 
             this.panel5.Controls.Add(this.buttonExit);
-            this.panel5.Location = new System.Drawing.Point(3, 510);
+            this.panel5.Location = new System.Drawing.Point(3, 506);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(213, 52);
             this.panel5.TabIndex = 2;
@@ -931,9 +935,9 @@ namespace SisNomina
             this.panelAddUser.Controls.Add(this.pictureBox4);
             this.panelAddUser.Controls.Add(this.pictureBox3);
             this.panelAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAddUser.Location = new System.Drawing.Point(62, 0);
+            this.panelAddUser.Location = new System.Drawing.Point(213, 0);
             this.panelAddUser.Name = "panelAddUser";
-            this.panelAddUser.Size = new System.Drawing.Size(1073, 678);
+            this.panelAddUser.Size = new System.Drawing.Size(922, 678);
             this.panelAddUser.TabIndex = 1;
             // 
             // button23
@@ -965,7 +969,7 @@ namespace SisNomina
             "Usuario"});
             this.comboBox1.Location = new System.Drawing.Point(458, 373);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 37);
+            this.comboBox1.Size = new System.Drawing.Size(184, 37);
             this.comboBox1.TabIndex = 5;
             // 
             // label5
