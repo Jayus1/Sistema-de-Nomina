@@ -382,22 +382,65 @@ namespace SisNomina
         private void button2_Click_2(object sender, EventArgs e)
         {
             new Frm_editUser().Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-
+            new Frm_addEmployee().Show();
+            this.Hide();
         }
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-
+            new Frm_addReduce().Show();
+            this.Hide();
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
+            new Frm_addOT().Show();
+        }
 
+        private void buttonMaintence_Click(object sender, EventArgs e)
+        {
+            maintenceTimer.Start();
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            new Frm_lookNomin().Show();
+            this.Hide();
+        }
+
+        private void button18_Click_1(object sender, EventArgs e)
+        {
+            new Frm_lookOTs().Show();
+            this.Hide();
+        }
+
+        private void button19_Click_1(object sender, EventArgs e)
+        {
+            new Frm_editEmployee().Show();
+            this.Hide();
+        }
+
+        private void button20_Click_1(object sender, EventArgs e)
+        {
+            new Frm_changePassword().Show();
+            this.Hide();
+        }
+
+        private void button21_Click_1(object sender, EventArgs e)
+        {
+            new Frm_instrution().Show();
+            this.Hide();
+        }
+
+        private void button22_Click_1(object sender, EventArgs e)
+        {
+            new Frm_question().Show();
+            this.Hide();
         }
     }
 }

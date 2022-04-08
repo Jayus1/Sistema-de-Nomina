@@ -172,7 +172,7 @@ namespace SisNomina
             this.sidebar.MaximumSize = new System.Drawing.Size(213, 678);
             this.sidebar.MinimumSize = new System.Drawing.Size(62, 678);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(213, 678);
+            this.sidebar.Size = new System.Drawing.Size(62, 678);
             this.sidebar.TabIndex = 0;
             this.sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -196,7 +196,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -332,7 +332,7 @@ namespace SisNomina
             this.buttonMaintence.Text = "           Mantenimiento";
             this.buttonMaintence.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMaintence.UseVisualStyleBackColor = false;
-            this.buttonMaintence.Click += new System.EventHandler(this.button1_Click);
+            this.buttonMaintence.Click += new System.EventHandler(this.buttonMaintence_Click);
             // 
             // processContainer
             // 
@@ -546,6 +546,7 @@ namespace SisNomina
             this.button12.Text = "           Ver Nomina";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
             // 
             // reportContainer
             // 
@@ -584,6 +585,7 @@ namespace SisNomina
             this.button18.Text = "           Ver Historial \r\n          de Horas Extras";
             this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click_1);
             // 
             // panel20
             // 
@@ -605,7 +607,7 @@ namespace SisNomina
             this.button17.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button17.Size = new System.Drawing.Size(221, 62);
             this.button17.TabIndex = 2;
-            this.button17.Text = "           Ver Historial \r\n          de Horas Trabajadas";
+            this.button17.Text = "           Ver Historial \r\n           de Horas Trabajadas";
             this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button16_Click);
@@ -699,6 +701,7 @@ namespace SisNomina
             this.button20.Text = "          Cambiar \r\n          Contraseña";
             this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click_1);
             // 
             // panel22
             // 
@@ -724,6 +727,7 @@ namespace SisNomina
             this.button19.Text = "          Editar Informacion \r\n          de Empleado";
             this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click_1);
             // 
             // panel10
             // 
@@ -787,9 +791,10 @@ namespace SisNomina
             this.button22.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button22.Size = new System.Drawing.Size(221, 70);
             this.button22.TabIndex = 1;
-            this.button22.Text = "           Preguntas \r\n          Frecuentes";
+            this.button22.Text = "           Preguntas \r\n           Frecuentes";
             this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click_1);
             // 
             // panel23
             // 
@@ -816,6 +821,7 @@ namespace SisNomina
             this.button21.Text = "           Instucciones del uso \r\n           de la Aplicacion";
             this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click_1);
             // 
             // panel4
             // 
@@ -935,9 +941,9 @@ namespace SisNomina
             this.panelAddUser.Controls.Add(this.pictureBox4);
             this.panelAddUser.Controls.Add(this.pictureBox3);
             this.panelAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAddUser.Location = new System.Drawing.Point(213, 0);
+            this.panelAddUser.Location = new System.Drawing.Point(62, 0);
             this.panelAddUser.Name = "panelAddUser";
-            this.panelAddUser.Size = new System.Drawing.Size(922, 678);
+            this.panelAddUser.Size = new System.Drawing.Size(1073, 678);
             this.panelAddUser.TabIndex = 1;
             // 
             // button23
