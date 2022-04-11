@@ -12,6 +12,7 @@ namespace SisNomina
 {
     public partial class Login : Form
     {
+        Usuarios usuarioLogin=new Usuarios();
         public Login()
         {
             InitializeComponent();
@@ -34,9 +35,9 @@ namespace SisNomina
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textUsername.Text=="1" && textpasword.Text=="1")
+            if (usuarioLogin.LogIn(textUsername.Text, textpasword.Text, ref usuarioLogin) == true)
             {
-                new MenuPrincipal().Show();
+                new MenuPrincipal(usuarioLogin).Show(); 
                 this.Hide();
             }
             else

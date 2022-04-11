@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SisNomina
-{
+{   
+    
     public partial class MenuPrincipal : Form
     {
         bool sidebarExpand=true;
@@ -19,10 +20,23 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
-
         public MenuPrincipal()
         {
             InitializeComponent();
+
+        }
+        public MenuPrincipal(Usuarios usuarios)
+        {
+            InitializeComponent();
+            
+            labelNombre.Text = usuarios.Name+" "+usuarios.Apellido;
+            labelDireccion.Text = usuarios.Departamento;
+            labelSueldoXHora.Text = Convert.ToString(usuarios.SueldoPorHora);
+            labelPuestoDeTrabajo.Text = usuarios.Puesto;
+            labelTelefono.Text = Convert.ToString(usuarios.Telefono);
+            labeID.Text = Convert.ToString(usuarios.IdPersona);
+            labeDepartamento.Text = usuarios.Departamento;
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -386,6 +400,11 @@ namespace SisNomina
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelApellido_Click(object sender, EventArgs e)
         {
 
         }
