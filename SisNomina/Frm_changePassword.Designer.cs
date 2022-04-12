@@ -98,10 +98,10 @@ namespace SisNomina
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textPasswordNN = new System.Windows.Forms.TextBox();
+            this.textPasswordN = new System.Windows.Forms.TextBox();
             this.panel33 = new System.Windows.Forms.Panel();
-            this.textUsername = new System.Windows.Forms.TextBox();
+            this.textPasswordC = new System.Windows.Forms.TextBox();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
@@ -916,10 +916,10 @@ namespace SisNomina
             this.panel16.Controls.Add(this.label7);
             this.panel16.Controls.Add(this.label5);
             this.panel16.Controls.Add(this.label3);
-            this.panel16.Controls.Add(this.textBox1);
-            this.panel16.Controls.Add(this.textBox2);
+            this.panel16.Controls.Add(this.textPasswordNN);
+            this.panel16.Controls.Add(this.textPasswordN);
             this.panel16.Controls.Add(this.panel33);
-            this.panel16.Controls.Add(this.textUsername);
+            this.panel16.Controls.Add(this.textPasswordC);
             this.panel16.Controls.Add(this.panel29);
             this.panel16.Controls.Add(this.panel32);
             this.panel16.Controls.Add(this.panel28);
@@ -945,6 +945,7 @@ namespace SisNomina
             this.button14.TabIndex = 5;
             this.button14.Text = "Guardar";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -955,6 +956,7 @@ namespace SisNomina
             this.button13.TabIndex = 4;
             this.button13.Text = "Limpiar";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
             // 
             // label7
             // 
@@ -987,30 +989,30 @@ namespace SisNomina
             this.label3.TabIndex = 42;
             this.label3.Text = "Contraseña Actual";
             // 
-            // textBox1
+            // textPasswordNN
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox1.Location = new System.Drawing.Point(595, 398);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 24);
-            this.textBox1.TabIndex = 3;
+            this.textPasswordNN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textPasswordNN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPasswordNN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordNN.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textPasswordNN.Location = new System.Drawing.Point(595, 398);
+            this.textPasswordNN.Multiline = true;
+            this.textPasswordNN.Name = "textPasswordNN";
+            this.textPasswordNN.Size = new System.Drawing.Size(210, 24);
+            this.textPasswordNN.TabIndex = 3;
             // 
-            // textBox2
+            // textPasswordN
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox2.Location = new System.Drawing.Point(490, 312);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(190, 24);
-            this.textBox2.TabIndex = 2;
+            this.textPasswordN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textPasswordN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPasswordN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordN.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textPasswordN.Location = new System.Drawing.Point(490, 312);
+            this.textPasswordN.Multiline = true;
+            this.textPasswordN.Name = "textPasswordN";
+            this.textPasswordN.PasswordChar = '*';
+            this.textPasswordN.Size = new System.Drawing.Size(190, 24);
+            this.textPasswordN.TabIndex = 2;
             // 
             // panel33
             // 
@@ -1020,19 +1022,19 @@ namespace SisNomina
             this.panel33.Size = new System.Drawing.Size(510, 1);
             this.panel33.TabIndex = 37;
             // 
-            // textUsername
+            // textPasswordC
             // 
-            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textUsername.Location = new System.Drawing.Point(490, 212);
-            this.textUsername.Multiline = true;
-            this.textUsername.Name = "textUsername";
-            this.textUsername.PasswordChar = '*';
-            this.textUsername.Size = new System.Drawing.Size(190, 24);
-            this.textUsername.TabIndex = 1;
-            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
+            this.textPasswordC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textPasswordC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPasswordC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordC.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textPasswordC.Location = new System.Drawing.Point(490, 212);
+            this.textPasswordC.Multiline = true;
+            this.textPasswordC.Name = "textPasswordC";
+            this.textPasswordC.PasswordChar = '*';
+            this.textPasswordC.Size = new System.Drawing.Size(190, 24);
+            this.textPasswordC.TabIndex = 1;
+            this.textPasswordC.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
             // 
             // panel29
             // 
@@ -1248,10 +1250,10 @@ namespace SisNomina
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textPasswordNN;
+        private System.Windows.Forms.TextBox textPasswordN;
         private System.Windows.Forms.Panel panel33;
-        private System.Windows.Forms.TextBox textUsername;
+        private System.Windows.Forms.TextBox textPasswordC;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Panel panel28;

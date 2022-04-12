@@ -24,6 +24,7 @@ namespace SisNomina
         public Frm_addEmployee()
         {
             InitializeComponent();
+            dateTimeFecha.MaxDate = DateTime.Today;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -425,35 +426,38 @@ namespace SisNomina
             textBoxSueldo.Clear();
             textCedula.Clear();
             textDireccion.Clear();
+            textTelefono.Clear();
+            dateTimeFecha.Text=DateTime.Now.ToShortDateString();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             BD.Connect();
 
-            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeNacimiento,Direccion,Telefono) values ('@nombre','@apellido','"+textCedula.Text+"','@Fecha','@Direccion','"+textTelefono.Text+"')";
+            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeNacimiento,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@nombre",textNombre.Text);
             command.Parameters.AddWithValue("@apellido", textApellido.Text);
             command.Parameters.AddWithValue("@Departamento", textBoxDepartamento.Text);
-            //command.Parameters.AddWithValue("@cedula", textCedula.Text);
+            command.Parameters.AddWithValue("@cedula", textCedula.Text);
             command.Parameters.AddWithValue("@direccion", textDireccion.Text);
-           // command.Parameters.AddWithValue("@telefono", textTelefono.Text);
-            command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value.ToString());
+            command.Parameters.AddWithValue("@telefono", textTelefono.Text);
+            command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
             command.ExecuteNonQuery();
 
             querys = "Select ID FROM Persona WHERE Cedula= @cedula";
             command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@cedula", textCedula.Text);
             SqlDataReader reader = command.ExecuteReader();
-            string identificador=null;
+            Int32 identificador=0;
 
             while(reader.Read())
             {
-                identificador = reader.GetString(0);
+                identificador = reader.GetInt32(0);
             }
 
-            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoXHora, Activo) VALUES ('@IdPersona','@puesto','@departamento','@sueldo','@activo')";
+            reader.Close();
+            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoXHora, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo)";
             command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@IdPersona", identificador);
             command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
@@ -470,7 +474,8 @@ namespace SisNomina
             textBoxSueldo.Clear();
             textCedula.Clear();
             textDireccion.Clear();
-
+            textTelefono.Clear();
+            dateTimeFecha.Text = DateTime.Now.ToShortDateString();
 
             BD.Disconnect();
         }

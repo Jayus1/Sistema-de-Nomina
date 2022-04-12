@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -441,6 +442,67 @@ namespace SisNomina
         {
             new Frm_question().Show();
             this.Hide();
+        }
+
+        private void panelAddUser_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            textUsername.Clear();
+            textID.Clear();
+            textPassword.Clear();
+            textPasswordN.Clear();
+            comboBoxRango.Items.Clear();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            int IdPersona=0;
+            BD.Connect();
+
+            String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@ID",textID.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    IdPersona = reader.GetInt32(0);
+                }
+                if (textPassword.Text == textPasswordN.Text)
+                {
+                    reader.Close();
+                    querys = "INSERT INTO Usuario (IdPersona, Username, Contraseña, Privilegio) VALUES ( @IdPersona, @UserName, @Contraseña, @Privilegio)";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@IdPersona", Convert.ToString(IdPersona));
+                    command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                    command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items.ToString());
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Se ha creado el usuario exitosamente!!!");
+
+                    textUsername.Clear();
+                    textID.Clear();
+                    textPassword.Clear();
+                    textPasswordN.Clear();
+                    comboBoxRango.Items.Clear();
+                    BD.Disconnect();
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas son diferentes");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El empleado no se encuentra");
+            }
         }
     }
 }

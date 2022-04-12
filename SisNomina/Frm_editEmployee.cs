@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,8 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
-
+        int IdEmpleado;
+        int IdPersona;
         public Frm_editEmployee()
         {
             InitializeComponent();
@@ -382,6 +384,110 @@ namespace SisNomina
         private void panelEditEmployee_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textID.Clear();
+            textNombre.Clear();
+            textApellido.Clear();
+            textBoxDepartamento.Clear();
+            textBoxPuesto.Clear();
+            textBoxSueldo.Clear();
+            textTelefono.Clear();
+            textCedula.Clear();
+            textDireccion.Clear();
+            dateTimeFecha.Text = DateTime.Now.ToShortDateString();
+            checkBoxActivo.Checked = true;
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            string querys = "SELECT Persona.Nombres, Persona.Apellido, Persona.Cedula, Persona.FechaDeNacimiento, Persona.Direccion, Persona.Telefono, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoXHora, Empleado.Activo, Persona.ID FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@ID", textID.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if(reader.HasRows)
+            {
+
+                while (reader.Read())
+                {
+                    textNombre.Text = reader.GetString(0);
+                    textApellido.Text = reader.GetString(1);
+                    textCedula.Text = reader.GetString(2);
+                    dateTimeFecha.Text = Convert.ToString(reader.GetString(3));
+                    textDireccion.Text = reader.GetString(4);
+                    textTelefono.Text = reader.GetString(5);
+                    textBoxPuesto.Text = reader.GetString(6);
+                    textBoxDepartamento.Text = reader.GetString(7);
+                    textBoxSueldo.Text = reader.GetString(8);
+                    IdEmpleado = Convert.ToInt32(textID.Text);
+                    if (reader.GetString(9) == "1")
+                    {
+                        checkBoxActivo.Checked = true;
+                    }
+                    else
+                    {
+                        checkBoxActivo.Checked = false;
+                    }
+                    IdPersona = reader.GetInt32(10);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este ID no le pertenece a ningun usuario");
+                textID.Clear();
+            }
+
+
+            BD.Disconnect();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeNacimiento= @fecha, Direccion= @direccion, Telefono= @telefono WHERE ID= @IdPersona;" +
+                "UPDATE Empleado SET Puesto= @puesto, Departamento= @departamento, SueldoXHora= @SueldoXHora, Activo= @activo WHERE ID= @IdEmpleado;";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@nombre", textNombre.Text);
+            command.Parameters.AddWithValue("@apellido", textApellido.Text);
+            command.Parameters.AddWithValue("@cedula",textCedula.Text);
+            command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
+            command.Parameters.AddWithValue("@direccion", textDireccion.Text);
+            command.Parameters.AddWithValue("@telefono", textTelefono.Text);
+            command.Parameters.AddWithValue("IdPersona",IdPersona);
+            command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
+            command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
+            command.Parameters.AddWithValue("@SueldoXHora", textBoxSueldo.Text);
+            if (checkBoxActivo.Checked==true)
+            {
+                command.Parameters.AddWithValue("@activo",1);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@activo", 0);
+            }
+            command.ExecuteNonQuery();
+
+            MessageBox.Show("El empleado fue actualizado exitosamente");
+
+            textID.Clear();
+            textNombre.Clear();
+            textApellido.Clear();
+            textBoxDepartamento.Clear();
+            textBoxPuesto.Clear();
+            textBoxSueldo.Clear();
+            textTelefono.Clear();
+            textCedula.Clear();
+            textDireccion.Clear();
+            dateTimeFecha.Text = DateTime.Now.ToShortDateString();
+            checkBoxActivo.Checked = true;
+
+            BD.Disconnect();
         }
     }
 }

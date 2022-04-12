@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -397,6 +398,51 @@ namespace SisNomina
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            textPasswordC.Clear();
+            textPasswordN.Clear();
+            textPasswordNN.Clear();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            string querys = "SELECT Contraseña FROM Usuario WHERE Contrseña= @Password";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@Password", textPasswordC.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                if(textPasswordN.Text==textPasswordNN.Text)
+                {
+                    querys = "UPDATE Usuario SET Contraseña= @PasswordN WHERE Contraseña= @Password";
+                    command=new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@PasswordN", textPasswordN.Text);
+                    command.Parameters.AddWithValue("@Password", textPasswordC.Text);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Contraseña cambiada exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no coinciden");
+                }
+            }
+            else
+            {
+                MessageBox.Show("La contraseña actual es incorrecta");
+            }
+
+            textPasswordC.Clear();
+            textPasswordN.Clear();
+            textPasswordNN.Clear();
+
+            BD.Disconnect();
         }
     }
 }
