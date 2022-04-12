@@ -99,6 +99,8 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dbSistemaNominaDataSet = new SisNomina.dbSistemaNominaDataSet();
+            this.dbSistemaNominaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -136,6 +138,8 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -913,9 +917,11 @@ namespace SisNomina
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.dbSistemaNominaDataSetBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(140, 142);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(779, 427);
@@ -973,6 +979,16 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 55;
             this.pictureBox3.TabStop = false;
             // 
+            // dbSistemaNominaDataSet
+            // 
+            this.dbSistemaNominaDataSet.DataSetName = "dbSistemaNominaDataSet";
+            this.dbSistemaNominaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dbSistemaNominaDataSetBindingSource
+            // 
+            this.dbSistemaNominaDataSetBindingSource.DataSource = this.dbSistemaNominaDataSet;
+            this.dbSistemaNominaDataSetBindingSource.Position = 0;
+            // 
             // Frm_lookNomin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1026,6 +1042,8 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1100,6 +1118,8 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.BindingSource dbSistemaNominaDataSetBindingSource;
+        private dbSistemaNominaDataSet dbSistemaNominaDataSet;
     }
 }
 
