@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,8 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
-
+        int IdPersona;
+        int IdEmpleado;
         public Frm_editUser()
         {
             InitializeComponent();
@@ -377,6 +379,97 @@ namespace SisNomina
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            textUsername.Clear();
+            textID.Clear();
+            textPassword.Clear();
+            textPasswordN.Clear();
+            comboBoxRango.Items.Clear();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@ID", textID.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    IdPersona = reader.GetInt32(0);
+                }
+                if (textPassword.Text == textPasswordN.Text)
+                {
+                    querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                    command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                    command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items.ToString());
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("Se ha editado el usuario exitosamente!!!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas son diferentes");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El empleado no se encuentra");
+            }
+            textUsername.Clear();
+            textID.Clear();
+            textPassword.Clear();
+            textPasswordN.Clear();
+            comboBoxRango.Items.Clear();
+            BD.Disconnect();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@ID", textID.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    IdPersona = reader.GetInt32(0);
+                    reader.Close();
+                    querys = "SELECT Username,Contraseña, Privilegio FROM Usuario WHERE IdPersona= @IdPersona";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                    reader = command.ExecuteReader();
+
+                    while(reader.Read())
+                    {
+                        textUsername.Text = reader.GetString(0);
+                        textPassword.Text = reader.GetString(1);
+                        comboBoxRango.Text = reader.GetString(2);
+                    }
+
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("El empleado no se encuentra");
+            }
+            BD.Disconnect();
         }
     }
 }

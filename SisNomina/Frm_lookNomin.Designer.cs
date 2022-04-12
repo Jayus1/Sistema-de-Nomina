@@ -179,7 +179,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -920,6 +920,7 @@ namespace SisNomina
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(779, 427);
             this.dataGridView1.TabIndex = 57;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label3
             // 

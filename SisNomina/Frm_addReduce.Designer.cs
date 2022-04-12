@@ -97,13 +97,13 @@ namespace SisNomina
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.panel29 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.textUsername = new System.Windows.Forms.TextBox();
+            this.textRecorte = new System.Windows.Forms.TextBox();
             this.panel26 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -915,13 +915,13 @@ namespace SisNomina
             this.panelAddReduce.Controls.Add(this.button14);
             this.panelAddReduce.Controls.Add(this.button13);
             this.panelAddReduce.Controls.Add(this.label5);
-            this.panelAddReduce.Controls.Add(this.textBox2);
+            this.panelAddReduce.Controls.Add(this.textBoxDescripcion);
             this.panelAddReduce.Controls.Add(this.panel29);
             this.panelAddReduce.Controls.Add(this.label4);
-            this.panelAddReduce.Controls.Add(this.textBox1);
+            this.panelAddReduce.Controls.Add(this.textBoxCantidad);
             this.panelAddReduce.Controls.Add(this.label3);
             this.panelAddReduce.Controls.Add(this.panel27);
-            this.panelAddReduce.Controls.Add(this.textUsername);
+            this.panelAddReduce.Controls.Add(this.textRecorte);
             this.panelAddReduce.Controls.Add(this.panel26);
             this.panelAddReduce.Controls.Add(this.panel16);
             this.panelAddReduce.Controls.Add(this.panel17);
@@ -954,6 +954,7 @@ namespace SisNomina
             this.button14.TabIndex = 5;
             this.button14.Text = "Guardar";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -964,6 +965,7 @@ namespace SisNomina
             this.button13.TabIndex = 4;
             this.button13.Text = "Limpiar";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // label5
             // 
@@ -975,18 +977,18 @@ namespace SisNomina
             this.label5.TabIndex = 60;
             this.label5.Text = "Descripcion del Recorte";
             // 
-            // textBox2
+            // textBoxDescripcion
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox2.Location = new System.Drawing.Point(319, 361);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(447, 103);
-            this.textBox2.TabIndex = 3;
+            this.textBoxDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxDescripcion.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDescripcion.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBoxDescripcion.Location = new System.Drawing.Point(319, 361);
+            this.textBoxDescripcion.Multiline = true;
+            this.textBoxDescripcion.Name = "textBoxDescripcion";
+            this.textBoxDescripcion.Size = new System.Drawing.Size(447, 103);
+            this.textBoxDescripcion.TabIndex = 3;
             // 
             // panel29
             // 
@@ -1006,17 +1008,18 @@ namespace SisNomina
             this.label4.Text = "Cantidad";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox1
+            // textBoxCantidad
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox1.Location = new System.Drawing.Point(495, 251);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 28);
-            this.textBox1.TabIndex = 2;
+            this.textBoxCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCantidad.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBoxCantidad.Location = new System.Drawing.Point(495, 251);
+            this.textBoxCantidad.Multiline = true;
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(179, 28);
+            this.textBoxCantidad.TabIndex = 2;
+            this.textBoxCantidad.TextChanged += new System.EventHandler(this.textBoxCantidad_TextChanged);
             // 
             // label3
             // 
@@ -1037,18 +1040,18 @@ namespace SisNomina
             this.panel27.Size = new System.Drawing.Size(280, 1);
             this.panel27.TabIndex = 53;
             // 
-            // textUsername
+            // textRecorte
             // 
-            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textUsername.Location = new System.Drawing.Point(552, 182);
-            this.textUsername.Multiline = true;
-            this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(182, 24);
-            this.textUsername.TabIndex = 1;
-            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged_1);
+            this.textRecorte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textRecorte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textRecorte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textRecorte.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textRecorte.Location = new System.Drawing.Point(552, 182);
+            this.textRecorte.Multiline = true;
+            this.textRecorte.Name = "textRecorte";
+            this.textRecorte.Size = new System.Drawing.Size(182, 24);
+            this.textRecorte.TabIndex = 1;
+            this.textRecorte.TextChanged += new System.EventHandler(this.textUsername_TextChanged_1);
             // 
             // panel26
             // 
@@ -1247,14 +1250,14 @@ namespace SisNomina
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxDescripcion;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.TextBox textUsername;
+        private System.Windows.Forms.TextBox textRecorte;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;

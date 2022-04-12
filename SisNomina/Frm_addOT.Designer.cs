@@ -96,14 +96,12 @@ namespace SisNomina
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel29 = new System.Windows.Forms.Panel();
             this.textUsername = new System.Windows.Forms.TextBox();
             this.panel27 = new System.Windows.Forms.Panel();
@@ -115,6 +113,8 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeFin = new System.Windows.Forms.DateTimePicker();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -194,7 +194,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -914,17 +914,17 @@ namespace SisNomina
             // 
             // panelAddOT
             // 
+            this.panelAddOT.Controls.Add(this.dateTimeFin);
+            this.panelAddOT.Controls.Add(this.dateTimeInicio);
             this.panelAddOT.Controls.Add(this.button14);
             this.panelAddOT.Controls.Add(this.button13);
             this.panelAddOT.Controls.Add(this.label5);
-            this.panelAddOT.Controls.Add(this.dateTimePicker1);
+            this.panelAddOT.Controls.Add(this.dateTimeFecha);
             this.panelAddOT.Controls.Add(this.label8);
             this.panelAddOT.Controls.Add(this.textBox1);
             this.panelAddOT.Controls.Add(this.label4);
             this.panelAddOT.Controls.Add(this.label2);
             this.panelAddOT.Controls.Add(this.label3);
-            this.panelAddOT.Controls.Add(this.textBox3);
-            this.panelAddOT.Controls.Add(this.textBox2);
             this.panelAddOT.Controls.Add(this.panel29);
             this.panelAddOT.Controls.Add(this.textUsername);
             this.panelAddOT.Controls.Add(this.panel27);
@@ -952,6 +952,7 @@ namespace SisNomina
             this.button14.TabIndex = 6;
             this.button14.Text = "Guardar";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -962,6 +963,7 @@ namespace SisNomina
             this.button13.TabIndex = 5;
             this.button13.Text = "Limpiar";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // label5
             // 
@@ -975,17 +977,17 @@ namespace SisNomina
             this.label5.Text = "Agregar Horas Extras";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // dateTimePicker1
+            // dateTimeFecha
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(595, 237);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(148, 29);
-            this.dateTimePicker1.TabIndex = 2;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeFecha.Location = new System.Drawing.Point(595, 237);
+            this.dateTimeFecha.MaxDate = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
+            this.dateTimeFecha.Name = "dateTimeFecha";
+            this.dateTimeFecha.Size = new System.Drawing.Size(148, 35);
+            this.dateTimeFecha.TabIndex = 2;
+            this.dateTimeFecha.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
             // 
             // label8
             // 
@@ -1039,31 +1041,6 @@ namespace SisNomina
             this.label3.TabIndex = 64;
             this.label3.Text = "Id del Empleado";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox3.Location = new System.Drawing.Point(759, 362);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 24);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox2.Location = new System.Drawing.Point(273, 355);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 24);
-            this.textBox2.TabIndex = 3;
             // 
             // panel29
             // 
@@ -1161,6 +1138,25 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 50;
             this.pictureBox3.TabStop = false;
+            // 
+            // dateTimeInicio
+            // 
+            this.dateTimeInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimeInicio.Location = new System.Drawing.Point(273, 347);
+            this.dateTimeInicio.Name = "dateTimeInicio";
+            this.dateTimeInicio.Size = new System.Drawing.Size(161, 31);
+            this.dateTimeInicio.TabIndex = 70;
+            this.dateTimeInicio.ValueChanged += new System.EventHandler(this.dateTimeInico_ValueChanged);
+            // 
+            // dateTimeFin
+            // 
+            this.dateTimeFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimeFin.Location = new System.Drawing.Point(759, 354);
+            this.dateTimeFin.Name = "dateTimeFin";
+            this.dateTimeFin.Size = new System.Drawing.Size(161, 31);
+            this.dateTimeFin.TabIndex = 71;
             // 
             // Frm_addOT
             // 
@@ -1285,14 +1281,12 @@ namespace SisNomina
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.Panel panel27;
@@ -1304,6 +1298,8 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DateTimePicker dateTimeFin;
+        private System.Windows.Forms.DateTimePicker dateTimeInicio;
     }
 }
 

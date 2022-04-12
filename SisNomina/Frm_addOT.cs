@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,9 @@ namespace SisNomina
         public Frm_addOT()
         {
             InitializeComponent();
+            dateTimeFecha.MaxDate=DateTime.Today;
+            dateTimeInicio.Value = DateTime.Now;
+            dateTimeFin.Value = DateTime.Now;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -390,6 +394,41 @@ namespace SisNomina
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textUsername.Clear();
+            dateTimeInicio.Text = DateTime.Now.ToString();
+            dateTimeFin.Text = DateTime.Now.ToString();
+            dateTimeFecha.Value = DateTime.Today;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            string querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin) VALUES ( @Id, @Fecha, @Inicio, @Fin)";
+            SqlCommand commnad= new SqlCommand(querys, BD._connection);
+            commnad.Parameters.AddWithValue("@Id",textUsername.Text);
+            commnad.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
+            commnad.Parameters.AddWithValue("@Inicio", dateTimeInicio.Value);
+            commnad.Parameters.AddWithValue("@Fin", dateTimeFin.Value);
+            commnad.ExecuteNonQuery();
+
+            MessageBox.Show("Las Horas extras fueron registradas exitosamente");
+
+            textUsername.Clear();
+            dateTimeInicio.Text = DateTime.Now.ToString();
+            dateTimeFin.Text = DateTime.Now.ToString();
+            dateTimeFecha.Value = DateTime.Today;
+
+            BD.Disconnect();
+        }
+
+        private void dateTimeInico_ValueChanged(object sender, EventArgs e)
         {
 
         }

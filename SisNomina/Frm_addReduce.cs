@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -392,6 +393,38 @@ namespace SisNomina
         private void panelAddReduce_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textRecorte.Clear();
+            textBoxCantidad.Clear();
+            textBoxDescripcion.Clear();
+        }
+
+        private void textBoxCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+
+            string querys = "INSERT INTO Recortes (Nombre, Recorte, Descripcion) Values ( @nombre, @recorte, @descripcion) ";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@nombre", textRecorte.Text);
+            command.Parameters.AddWithValue("@recorte", textBoxCantidad.Text);
+            command.Parameters.AddWithValue("@descripcion",textBoxDescripcion.Text);
+            command.ExecuteNonQuery();
+
+            MessageBox.Show("El recorte fue agregado exitosamente");
+
+            textRecorte.Clear();
+            textBoxCantidad.Clear();
+            textBoxDescripcion.Clear();
+
+            BD.Disconnect();
         }
     }
 }

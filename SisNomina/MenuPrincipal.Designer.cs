@@ -112,6 +112,7 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -193,7 +194,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -913,6 +914,7 @@ namespace SisNomina
             // 
             // panelMenuPrincipal
             // 
+            this.panelMenuPrincipal.Controls.Add(this.label3);
             this.panelMenuPrincipal.Controls.Add(this.pictureBox6);
             this.panelMenuPrincipal.Controls.Add(this.labeID);
             this.panelMenuPrincipal.Controls.Add(this.label12);
@@ -936,6 +938,7 @@ namespace SisNomina
             this.panelMenuPrincipal.Name = "panelMenuPrincipal";
             this.panelMenuPrincipal.Size = new System.Drawing.Size(1073, 678);
             this.panelMenuPrincipal.TabIndex = 1;
+            this.panelMenuPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuPrincipal_Paint);
             // 
             // pictureBox6
             // 
@@ -950,20 +953,20 @@ namespace SisNomina
             // labeID
             // 
             this.labeID.AutoSize = true;
-            this.labeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeID.Location = new System.Drawing.Point(305, 318);
             this.labeID.Name = "labeID";
-            this.labeID.Size = new System.Drawing.Size(36, 29);
+            this.labeID.Size = new System.Drawing.Size(44, 33);
             this.labeID.TabIndex = 23;
             this.labeID.Text = "ID";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(573, 453);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(566, 450);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(244, 32);
+            this.label12.Size = new System.Drawing.Size(276, 37);
             this.label12.TabIndex = 22;
             this.label12.Text = "Sueldo por Hora:";
             // 
@@ -971,9 +974,9 @@ namespace SisNomina
             // 
             this.labelDireccion.AutoSize = true;
             this.labelDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDireccion.Location = new System.Drawing.Point(168, 457);
+            this.labelDireccion.Location = new System.Drawing.Point(247, 453);
             this.labelDireccion.Name = "labelDireccion";
-            this.labelDireccion.Size = new System.Drawing.Size(312, 32);
+            this.labelDireccion.Size = new System.Drawing.Size(313, 32);
             this.labelDireccion.TabIndex = 21;
             this.labelDireccion.Text = "Direccion del empleado";
             // 
@@ -981,9 +984,9 @@ namespace SisNomina
             // 
             this.labelSueldoXHora.AutoSize = true;
             this.labelSueldoXHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSueldoXHora.Location = new System.Drawing.Point(810, 453);
+            this.labelSueldoXHora.Location = new System.Drawing.Point(839, 453);
             this.labelSueldoXHora.Name = "labelSueldoXHora";
-            this.labelSueldoXHora.Size = new System.Drawing.Size(179, 32);
+            this.labelSueldoXHora.Size = new System.Drawing.Size(180, 32);
             this.labelSueldoXHora.TabIndex = 20;
             this.labelSueldoXHora.Text = "SueldoxHora";
             // 
@@ -991,29 +994,29 @@ namespace SisNomina
             // 
             this.labelTelefono.AutoSize = true;
             this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTelefono.Location = new System.Drawing.Point(573, 506);
+            this.labelTelefono.Location = new System.Drawing.Point(555, 506);
             this.labelTelefono.Name = "labelTelefono";
-            this.labelTelefono.Size = new System.Drawing.Size(308, 32);
+            this.labelTelefono.Size = new System.Drawing.Size(309, 32);
             this.labelTelefono.TabIndex = 19;
             this.labelTelefono.Text = "Telefono del Empleado";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(261, 507);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(207, 503);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(315, 32);
+            this.label10.Size = new System.Drawing.Size(353, 37);
             this.label10.TabIndex = 18;
             this.label10.Text = "Telefono de Contacto:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 457);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(83, 448);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 32);
+            this.label8.Size = new System.Drawing.Size(169, 37);
             this.label8.TabIndex = 17;
             this.label8.Text = "Direccion:";
             // 
@@ -1023,7 +1026,7 @@ namespace SisNomina
             this.labeDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labeDepartamento.Location = new System.Drawing.Point(344, 410);
             this.labeDepartamento.Name = "labeDepartamento";
-            this.labeDepartamento.Size = new System.Drawing.Size(194, 32);
+            this.labeDepartamento.Size = new System.Drawing.Size(195, 32);
             this.labeDepartamento.TabIndex = 24;
             this.labeDepartamento.Text = "Departamento";
             // 
@@ -1040,10 +1043,10 @@ namespace SisNomina
             // labelPrivilegio
             // 
             this.labelPrivilegio.AutoSize = true;
-            this.labelPrivilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrivilegio.Location = new System.Drawing.Point(400, 316);
+            this.labelPrivilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrivilegio.Location = new System.Drawing.Point(404, 318);
             this.labelPrivilegio.Name = "labelPrivilegio";
-            this.labelPrivilegio.Size = new System.Drawing.Size(124, 31);
+            this.labelPrivilegio.Size = new System.Drawing.Size(135, 33);
             this.labelPrivilegio.TabIndex = 15;
             this.labelPrivilegio.Text = "Privilegio";
             this.labelPrivilegio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1051,10 +1054,10 @@ namespace SisNomina
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.Location = new System.Drawing.Point(330, 269);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(150, 42);
+            this.labelNombre.Size = new System.Drawing.Size(162, 46);
             this.labelNombre.TabIndex = 13;
             this.labelNombre.Text = "Nombre";
             this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1120,6 +1123,16 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(246, 316);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 37);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "ID:";
             // 
             // MenuPrincipal
             // 
@@ -1261,6 +1274,7 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label3;
     }
 }
 

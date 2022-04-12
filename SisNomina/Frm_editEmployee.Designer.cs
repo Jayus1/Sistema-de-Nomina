@@ -93,21 +93,21 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panelEditEmployee = new System.Windows.Forms.Panel();
+            this.textBoxSueldo = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxActivo = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.panel40 = new System.Windows.Forms.Panel();
             this.panel41 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDepartamento = new System.Windows.Forms.TextBox();
+            this.textTelefono = new System.Windows.Forms.TextBox();
+            this.textApellido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -115,16 +115,16 @@ namespace SisNomina
             this.panel31 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textDireccion = new System.Windows.Forms.TextBox();
+            this.textBoxPuesto = new System.Windows.Forms.TextBox();
+            this.textCedula = new System.Windows.Forms.TextBox();
             this.panel36 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
             this.panel35 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textUsername = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.panel29 = new System.Windows.Forms.Panel();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -139,6 +139,7 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button23 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -939,20 +940,21 @@ namespace SisNomina
             // 
             // panelEditEmployee
             // 
-            this.panelEditEmployee.Controls.Add(this.textBox8);
+            this.panelEditEmployee.Controls.Add(this.button23);
+            this.panelEditEmployee.Controls.Add(this.textBoxSueldo);
             this.panelEditEmployee.Controls.Add(this.button14);
             this.panelEditEmployee.Controls.Add(this.button13);
-            this.panelEditEmployee.Controls.Add(this.checkBox1);
+            this.panelEditEmployee.Controls.Add(this.checkBoxActivo);
             this.panelEditEmployee.Controls.Add(this.label12);
             this.panelEditEmployee.Controls.Add(this.panel41);
-            this.panelEditEmployee.Controls.Add(this.dateTimePicker1);
+            this.panelEditEmployee.Controls.Add(this.dateTimeFecha);
             this.panelEditEmployee.Controls.Add(this.label8);
             this.panelEditEmployee.Controls.Add(this.label10);
             this.panelEditEmployee.Controls.Add(this.label6);
             this.panelEditEmployee.Controls.Add(this.label4);
-            this.panelEditEmployee.Controls.Add(this.textBox6);
-            this.panelEditEmployee.Controls.Add(this.textBox3);
-            this.panelEditEmployee.Controls.Add(this.textBox1);
+            this.panelEditEmployee.Controls.Add(this.textBoxDepartamento);
+            this.panelEditEmployee.Controls.Add(this.textTelefono);
+            this.panelEditEmployee.Controls.Add(this.textApellido);
             this.panelEditEmployee.Controls.Add(this.label7);
             this.panelEditEmployee.Controls.Add(this.label9);
             this.panelEditEmployee.Controls.Add(this.label5);
@@ -960,16 +962,16 @@ namespace SisNomina
             this.panelEditEmployee.Controls.Add(this.panel31);
             this.panelEditEmployee.Controls.Add(this.label11);
             this.panelEditEmployee.Controls.Add(this.label3);
-            this.panelEditEmployee.Controls.Add(this.textBox4);
-            this.panelEditEmployee.Controls.Add(this.textBox5);
-            this.panelEditEmployee.Controls.Add(this.textBox2);
+            this.panelEditEmployee.Controls.Add(this.textDireccion);
+            this.panelEditEmployee.Controls.Add(this.textBoxPuesto);
+            this.panelEditEmployee.Controls.Add(this.textCedula);
             this.panelEditEmployee.Controls.Add(this.panel36);
             this.panelEditEmployee.Controls.Add(this.panel27);
             this.panelEditEmployee.Controls.Add(this.panel30);
             this.panelEditEmployee.Controls.Add(this.panel33);
             this.panelEditEmployee.Controls.Add(this.panel35);
-            this.panelEditEmployee.Controls.Add(this.textBox7);
-            this.panelEditEmployee.Controls.Add(this.textUsername);
+            this.panelEditEmployee.Controls.Add(this.textID);
+            this.panelEditEmployee.Controls.Add(this.textNombre);
             this.panelEditEmployee.Controls.Add(this.panel29);
             this.panelEditEmployee.Controls.Add(this.panel32);
             this.panelEditEmployee.Controls.Add(this.panel34);
@@ -991,6 +993,18 @@ namespace SisNomina
             this.panelEditEmployee.TabIndex = 1;
             this.panelEditEmployee.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEditEmployee_Paint);
             // 
+            // textBoxSueldo
+            // 
+            this.textBoxSueldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxSueldo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSueldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSueldo.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBoxSueldo.Location = new System.Drawing.Point(349, 517);
+            this.textBoxSueldo.Multiline = true;
+            this.textBoxSueldo.Name = "textBoxSueldo";
+            this.textBoxSueldo.Size = new System.Drawing.Size(110, 24);
+            this.textBoxSueldo.TabIndex = 11;
+            // 
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1000,6 +1014,7 @@ namespace SisNomina
             this.button14.TabIndex = 14;
             this.button14.Text = "Guardar";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button13
             // 
@@ -1010,20 +1025,21 @@ namespace SisNomina
             this.button13.TabIndex = 13;
             this.button13.Text = "Limpiar";
             this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // checkBox1
+            // checkBoxActivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(588, 522);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 34);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxActivo.AutoSize = true;
+            this.checkBoxActivo.Checked = true;
+            this.checkBoxActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxActivo.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBoxActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxActivo.Location = new System.Drawing.Point(588, 522);
+            this.checkBoxActivo.Name = "checkBoxActivo";
+            this.checkBoxActivo.Size = new System.Drawing.Size(102, 34);
+            this.checkBoxActivo.TabIndex = 12;
+            this.checkBoxActivo.Text = "Activo";
+            this.checkBoxActivo.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -1035,17 +1051,13 @@ namespace SisNomina
             this.label12.TabIndex = 92;
             this.label12.Text = "Sueldo Por Hora";
             // 
-            // textBox8
+            // panel41
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox8.Location = new System.Drawing.Point(349, 517);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(110, 24);
-            this.textBox8.TabIndex = 11;
+            this.panel41.Controls.Add(this.panel40);
+            this.panel41.Location = new System.Drawing.Point(206, 543);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(260, 1);
+            this.panel41.TabIndex = 90;
             // 
             // panel40
             // 
@@ -1055,26 +1067,18 @@ namespace SisNomina
             this.panel40.Size = new System.Drawing.Size(246, 1);
             this.panel40.TabIndex = 91;
             // 
-            // panel41
+            // dateTimeFecha
             // 
-            this.panel41.Controls.Add(this.panel40);
-            this.panel41.Location = new System.Drawing.Point(206, 543);
-            this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(260, 1);
-            this.panel41.TabIndex = 90;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(652, 386);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 31);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimeFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeFecha.Location = new System.Drawing.Point(652, 386);
+            this.dateTimeFecha.MaxDate = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
+            this.dateTimeFecha.Name = "dateTimeFecha";
+            this.dateTimeFecha.Size = new System.Drawing.Size(137, 31);
+            this.dateTimeFecha.TabIndex = 8;
+            this.dateTimeFecha.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label8
             // 
@@ -1116,41 +1120,41 @@ namespace SisNomina
             this.label4.TabIndex = 79;
             this.label4.Text = "Apellido";
             // 
-            // textBox6
+            // textBoxDepartamento
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox6.Location = new System.Drawing.Point(649, 454);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(265, 24);
-            this.textBox6.TabIndex = 10;
+            this.textBoxDepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxDepartamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDepartamento.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBoxDepartamento.Location = new System.Drawing.Point(649, 454);
+            this.textBoxDepartamento.Multiline = true;
+            this.textBoxDepartamento.Name = "textBoxDepartamento";
+            this.textBoxDepartamento.Size = new System.Drawing.Size(265, 24);
+            this.textBoxDepartamento.TabIndex = 10;
             // 
-            // textBox3
+            // textTelefono
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox3.Location = new System.Drawing.Point(620, 284);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 24);
-            this.textBox3.TabIndex = 5;
+            this.textTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTelefono.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textTelefono.Location = new System.Drawing.Point(620, 284);
+            this.textTelefono.Multiline = true;
+            this.textTelefono.Name = "textTelefono";
+            this.textTelefono.Size = new System.Drawing.Size(194, 24);
+            this.textTelefono.TabIndex = 5;
             // 
-            // textBox1
+            // textApellido
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox1.Location = new System.Drawing.Point(605, 190);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 24);
-            this.textBox1.TabIndex = 3;
+            this.textApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textApellido.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textApellido.Location = new System.Drawing.Point(605, 190);
+            this.textApellido.Multiline = true;
+            this.textApellido.Name = "textApellido";
+            this.textApellido.Size = new System.Drawing.Size(194, 24);
+            this.textApellido.TabIndex = 3;
             // 
             // label7
             // 
@@ -1218,42 +1222,42 @@ namespace SisNomina
             this.label3.TabIndex = 82;
             this.label3.Text = "Nombre";
             // 
-            // textBox4
+            // textDireccion
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox4.Location = new System.Drawing.Point(276, 373);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(303, 24);
-            this.textBox4.TabIndex = 7;
+            this.textDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDireccion.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textDireccion.Location = new System.Drawing.Point(276, 373);
+            this.textDireccion.Multiline = true;
+            this.textDireccion.Name = "textDireccion";
+            this.textDireccion.Size = new System.Drawing.Size(303, 24);
+            this.textDireccion.TabIndex = 7;
             // 
-            // textBox5
+            // textBoxPuesto
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox5.Location = new System.Drawing.Point(262, 446);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(186, 24);
-            this.textBox5.TabIndex = 9;
+            this.textBoxPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxPuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPuesto.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textBoxPuesto.Location = new System.Drawing.Point(262, 446);
+            this.textBoxPuesto.Multiline = true;
+            this.textBoxPuesto.Name = "textBoxPuesto";
+            this.textBoxPuesto.Size = new System.Drawing.Size(186, 24);
+            this.textBoxPuesto.TabIndex = 9;
             // 
-            // textBox2
+            // textCedula
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox2.Location = new System.Drawing.Point(262, 285);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 24);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textCedula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCedula.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textCedula.Location = new System.Drawing.Point(262, 285);
+            this.textCedula.Multiline = true;
+            this.textCedula.Name = "textCedula";
+            this.textCedula.Size = new System.Drawing.Size(190, 24);
+            this.textCedula.TabIndex = 4;
+            this.textCedula.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // panel36
             // 
@@ -1293,30 +1297,30 @@ namespace SisNomina
             this.panel35.Size = new System.Drawing.Size(270, 1);
             this.panel35.TabIndex = 78;
             // 
-            // textBox7
+            // textID
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox7.Location = new System.Drawing.Point(497, 140);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(146, 24);
-            this.textBox7.TabIndex = 1;
+            this.textID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textID.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textID.Location = new System.Drawing.Point(497, 140);
+            this.textID.Multiline = true;
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(146, 24);
+            this.textID.TabIndex = 1;
             // 
-            // textUsername
+            // textNombre
             // 
-            this.textUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUsername.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textUsername.Location = new System.Drawing.Point(278, 190);
-            this.textUsername.Multiline = true;
-            this.textUsername.Name = "textUsername";
-            this.textUsername.Size = new System.Drawing.Size(190, 24);
-            this.textUsername.TabIndex = 2;
-            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
+            this.textNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombre.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textNombre.Location = new System.Drawing.Point(278, 190);
+            this.textNombre.Multiline = true;
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(190, 24);
+            this.textNombre.TabIndex = 2;
+            this.textNombre.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
             // 
             // panel29
             // 
@@ -1434,6 +1438,17 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 50;
             this.pictureBox3.TabStop = false;
+            // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(672, 126);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(117, 46);
+            this.button23.TabIndex = 93;
+            this.button23.Text = "Buscar";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // Frm_editEmployee
             // 
@@ -1558,19 +1573,19 @@ namespace SisNomina
         private System.Windows.Forms.Panel panelEditEmployee;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxActivo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxSueldo;
         private System.Windows.Forms.Panel panel40;
         private System.Windows.Forms.Panel panel41;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeFecha;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDepartamento;
+        private System.Windows.Forms.TextBox textTelefono;
+        private System.Windows.Forms.TextBox textApellido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label5;
@@ -1578,16 +1593,16 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textDireccion;
+        private System.Windows.Forms.TextBox textBoxPuesto;
+        private System.Windows.Forms.TextBox textCedula;
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Panel panel35;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textUsername;
+        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Panel panel34;
@@ -1602,6 +1617,7 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button23;
     }
 }
 

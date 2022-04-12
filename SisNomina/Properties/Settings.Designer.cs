@@ -34,5 +34,16 @@ namespace SisNomina.Properties {
                 this["Administrador"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-0SC2BM1;Initial Catalog=dbSistemaNomina;Integrated Security=T" +
+            "rue")]
+        public string dbSistemaNominaConnectionString {
+            get {
+                return ((string)(this["dbSistemaNominaConnectionString"]));
+            }
+        }
     }
 }

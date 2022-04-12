@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ namespace SisNomina
 {
     public partial class Login : Form
     {
-        Usuarios usuarioLogin=new Usuarios();
         public Login()
         {
             InitializeComponent();
@@ -35,9 +35,22 @@ namespace SisNomina
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (usuarioLogin.LogIn(textUsername.Text, textpasword.Text, ref usuarioLogin) == true)
+            BD.Connect();
+
+            string querys = "SELECT IdPersona, Username, Contraseña, Privilegio FROM Usuario WHERE Username= @username AND Contraseña= @password";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@username", textUsername.Text);
+            command.Parameters.AddWithValue("@password", textpasword.Text);
+            SqlDataReader lector = command.ExecuteReader();
+
+            while (lector.Read())
             {
-                new MenuPrincipal(usuarioLogin).Show(); 
+                BD.IdPersona = lector.GetInt32(0);
+            }
+
+            if (lector.HasRows == true)
+            {
+                new MenuPrincipal().Show(); 
                 this.Hide();
             }
             else
@@ -47,6 +60,7 @@ namespace SisNomina
                 textUsername.Clear();
                 textUsername.Focus();
             }
+            BD.Disconnect();
         }
 
         private void label2_Click(object sender, EventArgs e)
