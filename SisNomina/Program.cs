@@ -17,7 +17,6 @@ namespace SisNomina
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Splash());
-            Usuarios usuarios = new Usuarios();
         }
     }
 }

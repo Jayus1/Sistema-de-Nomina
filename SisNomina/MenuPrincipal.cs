@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,19 +25,38 @@ namespace SisNomina
         {
             InitializeComponent();
 
-        }
-        public MenuPrincipal(Usuarios usuarios)
-        {
-            InitializeComponent();
-            
-            labelNombre.Text = usuarios.Name+" "+usuarios.Apellido;
-            labelDireccion.Text = usuarios.Departamento;
-            labelSueldoXHora.Text = Convert.ToString(usuarios.SueldoPorHora);
-            labelPuestoDeTrabajo.Text = usuarios.Puesto;
-            labelTelefono.Text = Convert.ToString(usuarios.Telefono);
-            labeID.Text = Convert.ToString(usuarios.IdPersona);
-            labeDepartamento.Text = usuarios.Departamento;
-            
+            BD.Connect();
+
+            String querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion, Persona.Telefono, Empleado.SueldoXHora, Empleado.ID, Empleado.Puesto, Empleado.Departamento FROM Persona INNER JOIN Empleado ON Persona.Id=Empleado.IdPersona WHERE Persona.Id= @IdPersona";
+            SqlCommand command = new SqlCommand(querys,BD._connection);
+            command.Parameters.AddWithValue("@IdPersona", BD.IdPersona);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                labelNombre.Text = reader.GetString(0) + " " + reader.GetString(1);
+                labelDireccion.Text = reader.GetString(2);
+                labelTelefono.Text = Convert.ToString(reader.GetInt64(3));
+
+                labelSueldoXHora.Text =Convert.ToString( Convert.ToInt32((Decimal)reader.GetSqlMoney(4)));
+                labelPuestoDeTrabajo.Text = reader.GetString(6);
+                labeID.Text = Convert.ToString(reader.GetInt32(5));
+                BD.IdEmpleado = reader.GetInt32(5);
+                labeDepartamento.Text = reader.GetString(7);
+            }
+            reader.Close();
+            querys = "SELECT Privilegio FROM Usuario WHERE Id = @IdPersona ";
+            command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@IdPersona", BD.IdPersona);
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                labelPrivilegio.Text = reader.GetString(0);
+                BD.privilegio= reader.GetString(0);
+            }
+            reader.Close();
+            BD.Disconnect();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -405,6 +425,11 @@ namespace SisNomina
         }
 
         private void labelApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMenuPrincipal_Paint(object sender, PaintEventArgs e)
         {
 
         }

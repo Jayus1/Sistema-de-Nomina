@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace SisNomina
 {
-    abstract public class BD
+    public class BD
     {
 
-        private static string _connectionstring= "Data Source=DESKTOP-4EK1U3G;Initial Catalog=BdNomina;Integrated Security=True";
+        private static string _connectionstring= "Data Source=DESKTOP-0SC2BM1;Initial Catalog=dbSistemaNomina;Integrated Security=True";
         public static SqlConnection _connection;
+        public static int IdPersona;
+        public static int IdEmpleado;
+        public static string privilegio;
 
         //public DB(string server, string db, string user, string password)
         //{
