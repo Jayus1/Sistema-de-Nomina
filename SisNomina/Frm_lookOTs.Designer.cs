@@ -93,17 +93,18 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panelLookOTs = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxTodos = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
             this.panel39 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOT = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -136,7 +137,7 @@ namespace SisNomina
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelLookOTs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -904,12 +905,13 @@ namespace SisNomina
             // 
             // panelLookOTs
             // 
-            this.panelLookOTs.Controls.Add(this.checkBox1);
+            this.panelLookOTs.Controls.Add(this.button13);
+            this.panelLookOTs.Controls.Add(this.checkBoxTodos);
             this.panelLookOTs.Controls.Add(this.label11);
-            this.panelLookOTs.Controls.Add(this.textBox7);
+            this.panelLookOTs.Controls.Add(this.textID);
             this.panelLookOTs.Controls.Add(this.panel39);
             this.panelLookOTs.Controls.Add(this.panel38);
-            this.panelLookOTs.Controls.Add(this.dataGridView1);
+            this.panelLookOTs.Controls.Add(this.dataGridViewOT);
             this.panelLookOTs.Controls.Add(this.label3);
             this.panelLookOTs.Controls.Add(this.pictureBox2);
             this.panelLookOTs.Controls.Add(this.pictureBox1);
@@ -920,39 +922,41 @@ namespace SisNomina
             this.panelLookOTs.Name = "panelLookOTs";
             this.panelLookOTs.Size = new System.Drawing.Size(1073, 678);
             this.panelLookOTs.TabIndex = 1;
+            this.panelLookOTs.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLookOTs_Paint);
             // 
-            // checkBox1
+            // checkBoxTodos
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(636, 154);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(102, 33);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Todos";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxTodos.AutoSize = true;
+            this.checkBoxTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTodos.Location = new System.Drawing.Point(711, 155);
+            this.checkBoxTodos.Name = "checkBoxTodos";
+            this.checkBoxTodos.Size = new System.Drawing.Size(102, 33);
+            this.checkBoxTodos.TabIndex = 2;
+            this.checkBoxTodos.Text = "Todos";
+            this.checkBoxTodos.UseVisualStyleBackColor = true;
+            this.checkBoxTodos.CheckedChanged += new System.EventHandler(this.checkBoxTodos_CheckedChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(210, 155);
+            this.label11.Location = new System.Drawing.Point(163, 157);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(184, 29);
             this.label11.TabIndex = 77;
             this.label11.Text = "Id de Empleado";
             // 
-            // textBox7
+            // textID
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox7.Location = new System.Drawing.Point(400, 160);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(112, 24);
-            this.textBox7.TabIndex = 1;
+            this.textID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textID.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textID.Location = new System.Drawing.Point(353, 161);
+            this.textID.Multiline = true;
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(142, 24);
+            this.textID.TabIndex = 1;
             // 
             // panel39
             // 
@@ -969,15 +973,15 @@ namespace SisNomina
             this.panel38.Size = new System.Drawing.Size(232, 1);
             this.panel38.TabIndex = 75;
             // 
-            // dataGridView1
+            // dataGridViewOT
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(124, 211);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(795, 365);
-            this.dataGridView1.TabIndex = 73;
+            this.dataGridViewOT.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewOT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewOT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOT.Location = new System.Drawing.Point(124, 211);
+            this.dataGridViewOT.Name = "dataGridViewOT";
+            this.dataGridViewOT.Size = new System.Drawing.Size(795, 365);
+            this.dataGridViewOT.TabIndex = 73;
             // 
             // label3
             // 
@@ -1030,6 +1034,17 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(519, 145);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(128, 47);
+            this.button13.TabIndex = 84;
+            this.button13.Text = "Buscar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // Frm_lookOTs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1078,7 +1093,7 @@ namespace SisNomina
             this.panel5.ResumeLayout(false);
             this.panelLookOTs.ResumeLayout(false);
             this.panelLookOTs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1151,17 +1166,18 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panelLookOTs;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxTodos;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewOT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button13;
     }
 }
 

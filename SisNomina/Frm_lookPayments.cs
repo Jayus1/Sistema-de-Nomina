@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace SisNomina
         public Frm_lookPayments()
         {
             InitializeComponent();
+            if (BD.privilegio == "Administrador")
+            {
+                checkBoxTodos.Enabled = true;
+            }
+            else
+            {
+                checkBoxTodos.Enabled = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -372,6 +381,43 @@ namespace SisNomina
         private void panel16_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            dataGridViewPay.DataSource = null;
+            dataGridViewPay.Rows.Clear();
+
+            BD.Connect();
+
+            String querys = "SELECT * FROM Nomina WHERE IdEmpleado= @IdEmpleado";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@IdEmpleado", textBoxID.Text);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            dataGridViewPay.DataSource = dataTable;
+
+            BD.Disconnect();
+        }
+
+        private void checkBoxTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridViewPay.DataSource = null;
+            dataGridViewPay.Rows.Clear();
+            BD.Connect();
+
+            String querys = "SELECT * FROM Nomina";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            dataGridViewPay.DataSource = dataTable;
+
+            BD.Disconnect();
         }
     }
 }

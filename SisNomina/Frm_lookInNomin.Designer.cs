@@ -93,18 +93,17 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panel16 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelID = new System.Windows.Forms.Label();
+            this.labelDireccion = new System.Windows.Forms.Label();
+            this.labelSueldo = new System.Windows.Forms.Label();
+            this.labelTelefono = new System.Windows.Forms.Label();
+            this.labelDepartamento = new System.Windows.Forms.Label();
+            this.labelPuetoDeTrabajo = new System.Windows.Forms.Label();
+            this.labelPrivilegio = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.dataGridViewNomina = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
             this.panel39 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -112,6 +111,7 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -144,7 +144,7 @@ namespace SisNomina
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -912,18 +912,18 @@ namespace SisNomina
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.label7);
-            this.panel16.Controls.Add(this.label9);
-            this.panel16.Controls.Add(this.label13);
-            this.panel16.Controls.Add(this.label2);
-            this.panel16.Controls.Add(this.label6);
-            this.panel16.Controls.Add(this.label5);
-            this.panel16.Controls.Add(this.label4);
-            this.panel16.Controls.Add(this.label14);
-            this.panel16.Controls.Add(this.label8);
-            this.panel16.Controls.Add(this.dataGridView1);
+            this.panel16.Controls.Add(this.button13);
+            this.panel16.Controls.Add(this.labelID);
+            this.panel16.Controls.Add(this.labelDireccion);
+            this.panel16.Controls.Add(this.labelSueldo);
+            this.panel16.Controls.Add(this.labelTelefono);
+            this.panel16.Controls.Add(this.labelDepartamento);
+            this.panel16.Controls.Add(this.labelPuetoDeTrabajo);
+            this.panel16.Controls.Add(this.labelPrivilegio);
+            this.panel16.Controls.Add(this.labelNombre);
+            this.panel16.Controls.Add(this.dataGridViewNomina);
             this.panel16.Controls.Add(this.label11);
-            this.panel16.Controls.Add(this.textBox7);
+            this.panel16.Controls.Add(this.textID);
             this.panel16.Controls.Add(this.panel39);
             this.panel16.Controls.Add(this.panel38);
             this.panel16.Controls.Add(this.label3);
@@ -936,110 +936,100 @@ namespace SisNomina
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1073, 678);
             this.panel16.TabIndex = 1;
+            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
-            // label7
+            // labelID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(432, 225);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 24);
-            this.label7.TabIndex = 77;
-            this.label7.Text = "ID";
+            this.labelID.AutoSize = true;
+            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelID.Location = new System.Drawing.Point(432, 225);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(27, 24);
+            this.labelID.TabIndex = 77;
+            this.labelID.Text = "ID";
             // 
-            // label9
+            // labelDireccion
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(134, 232);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(211, 24);
-            this.label9.TabIndex = 78;
-            this.label9.Text = "Direccion del empleado";
+            this.labelDireccion.AutoSize = true;
+            this.labelDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDireccion.Location = new System.Drawing.Point(134, 225);
+            this.labelDireccion.Name = "labelDireccion";
+            this.labelDireccion.Size = new System.Drawing.Size(211, 24);
+            this.labelDireccion.TabIndex = 78;
+            this.labelDireccion.Text = "Direccion del empleado";
             // 
-            // label13
+            // labelSueldo
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(569, 225);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(121, 24);
-            this.label13.TabIndex = 79;
-            this.label13.Text = "SueldoxHora";
+            this.labelSueldo.AutoSize = true;
+            this.labelSueldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSueldo.Location = new System.Drawing.Point(569, 225);
+            this.labelSueldo.Name = "labelSueldo";
+            this.labelSueldo.Size = new System.Drawing.Size(121, 24);
+            this.labelSueldo.TabIndex = 79;
+            this.labelSueldo.Text = "SueldoxHora";
             // 
-            // label2
+            // labelTelefono
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(702, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 24);
-            this.label2.TabIndex = 80;
-            this.label2.Text = "Telefono del Empleado";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.labelTelefono.AutoSize = true;
+            this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono.Location = new System.Drawing.Point(702, 180);
+            this.labelTelefono.Name = "labelTelefono";
+            this.labelTelefono.Size = new System.Drawing.Size(208, 24);
+            this.labelTelefono.TabIndex = 80;
+            this.labelTelefono.Text = "Telefono del Empleado";
+            this.labelTelefono.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label6
+            // labelDepartamento
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(749, 225);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 24);
-            this.label6.TabIndex = 81;
-            this.label6.Text = "Departamento";
+            this.labelDepartamento.AutoSize = true;
+            this.labelDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDepartamento.Location = new System.Drawing.Point(749, 225);
+            this.labelDepartamento.Name = "labelDepartamento";
+            this.labelDepartamento.Size = new System.Drawing.Size(128, 24);
+            this.labelDepartamento.TabIndex = 81;
+            this.labelDepartamento.Text = "Departamento";
             // 
-            // label5
+            // labelPuetoDeTrabajo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(342, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(164, 24);
-            this.label5.TabIndex = 82;
-            this.label5.Text = "Puesto de Trabajo";
+            this.labelPuetoDeTrabajo.AutoSize = true;
+            this.labelPuetoDeTrabajo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPuetoDeTrabajo.Location = new System.Drawing.Point(342, 180);
+            this.labelPuetoDeTrabajo.Name = "labelPuetoDeTrabajo";
+            this.labelPuetoDeTrabajo.Size = new System.Drawing.Size(164, 24);
+            this.labelPuetoDeTrabajo.TabIndex = 82;
+            this.labelPuetoDeTrabajo.Text = "Puesto de Trabajo";
             // 
-            // label4
+            // labelPrivilegio
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(569, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 24);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Privilegio";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelPrivilegio.AutoSize = true;
+            this.labelPrivilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrivilegio.Location = new System.Drawing.Point(569, 180);
+            this.labelPrivilegio.Name = "labelPrivilegio";
+            this.labelPrivilegio.Size = new System.Drawing.Size(86, 24);
+            this.labelPrivilegio.TabIndex = 74;
+            this.labelPrivilegio.Text = "Privilegio";
+            this.labelPrivilegio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label14
+            // labelNombre
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(218, 180);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 24);
-            this.label14.TabIndex = 75;
-            this.label14.Text = "Apellido";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(182, 183);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(79, 24);
+            this.labelNombre.TabIndex = 76;
+            this.labelNombre.Text = "Nombre";
+            this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
+            // dataGridViewNomina
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(137, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 24);
-            this.label8.TabIndex = 76;
-            this.label8.Text = "Nombre";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(138, 283);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(781, 319);
-            this.dataGridView1.TabIndex = 73;
+            this.dataGridViewNomina.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewNomina.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNomina.Location = new System.Drawing.Point(138, 283);
+            this.dataGridViewNomina.Name = "dataGridViewNomina";
+            this.dataGridViewNomina.Size = new System.Drawing.Size(781, 319);
+            this.dataGridViewNomina.TabIndex = 73;
             // 
             // label11
             // 
@@ -1051,17 +1041,17 @@ namespace SisNomina
             this.label11.TabIndex = 72;
             this.label11.Text = "Id de Empleado";
             // 
-            // textBox7
+            // textID
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBox7.Location = new System.Drawing.Point(570, 139);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(122, 24);
-            this.textBox7.TabIndex = 1;
+            this.textID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textID.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textID.Location = new System.Drawing.Point(570, 139);
+            this.textID.Multiline = true;
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(122, 24);
+            this.textID.TabIndex = 1;
             // 
             // panel39
             // 
@@ -1129,6 +1119,17 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 64;
             this.pictureBox3.TabStop = false;
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(706, 125);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(128, 47);
+            this.button13.TabIndex = 83;
+            this.button13.Text = "Buscar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // Frm_lookInNomin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1177,7 +1178,7 @@ namespace SisNomina
             this.panel5.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1250,18 +1251,17 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Label labelDireccion;
+        private System.Windows.Forms.Label labelSueldo;
+        private System.Windows.Forms.Label labelTelefono;
+        private System.Windows.Forms.Label labelDepartamento;
+        private System.Windows.Forms.Label labelPuetoDeTrabajo;
+        private System.Windows.Forms.Label labelPrivilegio;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.DataGridView dataGridViewNomina;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Panel panel38;
         private System.Windows.Forms.Label label3;
@@ -1269,6 +1269,7 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button13;
     }
 }
 

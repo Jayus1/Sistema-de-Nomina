@@ -93,14 +93,14 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panel16 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewNomina = new System.Windows.Forms.DataGridView();
+            this.dbSistemaNominaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSistemaNominaDataSet = new SisNomina.dbSistemaNominaDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.dbSistemaNominaDataSet = new SisNomina.dbSistemaNominaDataSet();
-            this.dbSistemaNominaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -133,13 +133,13 @@ namespace SisNomina
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNomina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -183,7 +183,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -903,7 +903,7 @@ namespace SisNomina
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.dataGridView1);
+            this.panel16.Controls.Add(this.dataGridViewNomina);
             this.panel16.Controls.Add(this.label3);
             this.panel16.Controls.Add(this.pictureBox2);
             this.panel16.Controls.Add(this.pictureBox1);
@@ -914,19 +914,30 @@ namespace SisNomina
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1073, 678);
             this.panel16.TabIndex = 1;
+            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
-            // dataGridView1
+            // dataGridViewNomina
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.dbSistemaNominaDataSetBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(140, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(779, 427);
-            this.dataGridView1.TabIndex = 57;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewNomina.AutoGenerateColumns = false;
+            this.dataGridViewNomina.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewNomina.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNomina.DataSource = this.dbSistemaNominaDataSetBindingSource;
+            this.dataGridViewNomina.Location = new System.Drawing.Point(140, 142);
+            this.dataGridViewNomina.Name = "dataGridViewNomina";
+            this.dataGridViewNomina.Size = new System.Drawing.Size(779, 427);
+            this.dataGridViewNomina.TabIndex = 57;
+            this.dataGridViewNomina.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dbSistemaNominaDataSetBindingSource
+            // 
+            this.dbSistemaNominaDataSetBindingSource.DataSource = this.dbSistemaNominaDataSet;
+            this.dbSistemaNominaDataSetBindingSource.Position = 0;
+            // 
+            // dbSistemaNominaDataSet
+            // 
+            this.dbSistemaNominaDataSet.DataSetName = "dbSistemaNominaDataSet";
+            this.dbSistemaNominaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -980,16 +991,6 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 55;
             this.pictureBox3.TabStop = false;
             // 
-            // dbSistemaNominaDataSet
-            // 
-            this.dbSistemaNominaDataSet.DataSetName = "dbSistemaNominaDataSet";
-            this.dbSistemaNominaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dbSistemaNominaDataSetBindingSource
-            // 
-            this.dbSistemaNominaDataSetBindingSource.DataSource = this.dbSistemaNominaDataSet;
-            this.dbSistemaNominaDataSetBindingSource.Position = 0;
-            // 
             // Frm_lookNomin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1038,13 +1039,13 @@ namespace SisNomina
             this.panel5.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNomina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSistemaNominaDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1113,7 +1114,7 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewNomina;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;

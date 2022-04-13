@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -367,6 +368,47 @@ namespace SisNomina
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+            string querys = "SELECT Persona.Nombres, Persona.Apellido,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoXHora, Empleado.ID, Empleado.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@ID", textID.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if(reader.HasRows)
+            {
+                while(reader.Read())
+                {
+                    labelNombre.Text = reader.GetString(0)+ " "+reader.GetString(1);
+                    labelPuetoDeTrabajo.Text = reader.GetString(3);
+                    labelDireccion.Text = reader.GetString(2);
+                    labelDepartamento.Text = reader.GetString(4);
+                    labelSueldo.Text = Convert.ToString((decimal)reader.GetSqlMoney(5));
+                    labelID.Text = Convert.ToString(reader.GetInt32(6));
+                    labelTelefono.Text = Convert.ToString(reader.GetInt64(7));
+                }
+            }
+            else
+            {
+                MessageBox.Show("El ID no pertenece a ningun empleado");
+            }
+
+            querys = "SELECT * FROM Nomina Where IdEmpleado= @Id";
+            command = new SqlCommand(querys,BD._connection);
+            command.Parameters.AddWithValue("@Id",labelID.Text);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGridViewNomina.DataSource = dataTable;
+
+            BD.Disconnect();
+        }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace SisNomina
         public Frm_lookOTs()
         {
             InitializeComponent();
+            if (BD.privilegio == "Administrador")
+            {
+                checkBoxTodos.Enabled = true;
+            }
+            else
+            {
+                checkBoxTodos.Enabled = false;
+            }    
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -362,6 +371,49 @@ namespace SisNomina
         {
             new Frm_question().Show();
             this.Hide();
+        }
+
+        private void panelLookOTs_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            dataGridViewOT.DataSource = null;
+            dataGridViewOT.Rows.Clear();
+
+            BD.Connect();
+
+            String querys = "SELECT IdEmpleado,Fecha,HoraInicio,HoraFin FROM HorasExtras WHERE IdEmpleado= @IdEmpleado";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            dataGridViewOT.DataSource = dataTable;
+
+            BD.Disconnect();
+        }
+
+        private void checkBoxTodos_CheckedChanged(object sender, EventArgs e)
+        {
+
+            dataGridViewOT.DataSource = null;
+            dataGridViewOT.Rows.Clear();
+            BD.Connect();
+
+            String querys = "SELECT * FROM HorasExtras";
+            SqlCommand command = new SqlCommand(querys,BD._connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            dataGridViewOT.DataSource = dataTable;
+
+            BD.Disconnect();
         }
     }
 }

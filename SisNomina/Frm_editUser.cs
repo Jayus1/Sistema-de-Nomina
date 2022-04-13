@@ -21,7 +21,7 @@ namespace SisNomina
         bool toolExpand;
         bool helpExpand;
         int IdPersona;
-        int IdEmpleado;
+        //int IdEmpleado;
         public Frm_editUser()
         {
             InitializeComponent();
