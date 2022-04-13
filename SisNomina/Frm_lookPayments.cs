@@ -390,7 +390,7 @@ namespace SisNomina
 
             BD.Connect();
 
-            String querys = "SELECT * FROM Nomina WHERE IdEmpleado= @IdEmpleado";
+            String querys = "SELECT * FROM Pagos WHERE IdEmpleado= @IdEmpleado";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@IdEmpleado", textBoxID.Text);
 

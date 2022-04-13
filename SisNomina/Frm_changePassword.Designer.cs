@@ -993,19 +993,21 @@ namespace SisNomina
             // 
             this.textPasswordNN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textPasswordNN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPasswordNN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordNN.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPasswordNN.ForeColor = System.Drawing.Color.YellowGreen;
             this.textPasswordNN.Location = new System.Drawing.Point(595, 398);
             this.textPasswordNN.Multiline = true;
             this.textPasswordNN.Name = "textPasswordNN";
+            this.textPasswordNN.PasswordChar = '*';
             this.textPasswordNN.Size = new System.Drawing.Size(210, 24);
             this.textPasswordNN.TabIndex = 3;
+            
             // 
             // textPasswordN
             // 
             this.textPasswordN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textPasswordN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPasswordN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordN.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPasswordN.ForeColor = System.Drawing.Color.YellowGreen;
             this.textPasswordN.Location = new System.Drawing.Point(490, 312);
             this.textPasswordN.Multiline = true;
@@ -1026,7 +1028,7 @@ namespace SisNomina
             // 
             this.textPasswordC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textPasswordC.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPasswordC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPasswordC.ForeColor = System.Drawing.Color.YellowGreen;
             this.textPasswordC.Location = new System.Drawing.Point(490, 212);
             this.textPasswordC.Multiline = true;

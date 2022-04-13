@@ -434,7 +434,7 @@ namespace SisNomina
         {
             BD.Connect();
 
-            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeNacimiento,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)";
+            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeIngreso,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@nombre",textNombre.Text);
             command.Parameters.AddWithValue("@apellido", textApellido.Text);
@@ -457,7 +457,7 @@ namespace SisNomina
             }
 
             reader.Close();
-            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoXHora, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo)";
+            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoFijo, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo)";
             command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@IdPersona", identificador);
             command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);

@@ -405,7 +405,7 @@ namespace SisNomina
         {
             BD.Connect();
 
-            string querys = "SELECT Persona.Nombres, Persona.Apellido, Persona.Cedula, Persona.FechaDeNacimiento, Persona.Direccion, Persona.Telefono, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoXHora, Empleado.Activo, Persona.ID FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
+            string querys = "SELECT Persona.Nombres, Persona.Apellidos, Persona.Cedula, Persona.FechaDeIngreso, Persona.Direccion, Persona.Telefono, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo, Empleado.Activo, Persona.ID FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@ID", textID.Text);
             SqlDataReader reader = command.ExecuteReader();
@@ -417,15 +417,15 @@ namespace SisNomina
                 {
                     textNombre.Text = reader.GetString(0);
                     textApellido.Text = reader.GetString(1);
-                    textCedula.Text = reader.GetString(2);
-                    dateTimeFecha.Text = Convert.ToString(reader.GetString(3));
+                    textCedula.Text = Convert.ToString(reader.GetInt64(2));
+                    dateTimeFecha.Text = reader.GetDateTime(3).ToString();
                     textDireccion.Text = reader.GetString(4);
-                    textTelefono.Text = reader.GetString(5);
-                    textBoxPuesto.Text = reader.GetString(6);
+                    textTelefono.Text = Convert.ToString(reader.GetInt64(5));
+                    textBoxPuesto.Text =reader.GetString(6);
                     textBoxDepartamento.Text = reader.GetString(7);
-                    textBoxSueldo.Text = reader.GetString(8);
+                    textBoxSueldo.Text = Convert.ToString(reader.GetInt32(8));
                     IdEmpleado = Convert.ToInt32(textID.Text);
-                    if (reader.GetString(9) == "1")
+                    if (reader.GetBoolean(9) == true)
                     {
                         checkBoxActivo.Checked = true;
                     }
@@ -450,8 +450,8 @@ namespace SisNomina
         {
             BD.Connect();
 
-            String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeNacimiento= @fecha, Direccion= @direccion, Telefono= @telefono WHERE ID= @IdPersona;" +
-                "UPDATE Empleado SET Puesto= @puesto, Departamento= @departamento, SueldoXHora= @SueldoXHora, Activo= @activo WHERE ID= @IdEmpleado;";
+            String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeIngreso= @fecha, Direccion= @direccion, Telefono= @telefono WHERE ID= @IdPersona;" +
+                "UPDATE Empleado SET Puesto= @puesto, Departamento= @departamento, SueldoFijo= @Sueldo, Activo= @activo WHERE ID= @IdEmpleado;";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@nombre", textNombre.Text);
             command.Parameters.AddWithValue("@apellido", textApellido.Text);
@@ -459,10 +459,11 @@ namespace SisNomina
             command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
             command.Parameters.AddWithValue("@direccion", textDireccion.Text);
             command.Parameters.AddWithValue("@telefono", textTelefono.Text);
-            command.Parameters.AddWithValue("IdPersona",IdPersona);
+            command.Parameters.AddWithValue("@IdPersona",IdPersona);
             command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
             command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
-            command.Parameters.AddWithValue("@SueldoXHora", textBoxSueldo.Text);
+            command.Parameters.AddWithValue("@Sueldo", textBoxSueldo.Text);
+            command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
             if (checkBoxActivo.Checked==true)
             {
                 command.Parameters.AddWithValue("@activo",1);

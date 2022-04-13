@@ -1014,7 +1014,7 @@ namespace SisNomina
             this.textBoxCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCantidad.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBoxCantidad.Location = new System.Drawing.Point(495, 251);
+            this.textBoxCantidad.Location = new System.Drawing.Point(495, 254);
             this.textBoxCantidad.Multiline = true;
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(179, 28);

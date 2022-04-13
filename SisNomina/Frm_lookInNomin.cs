@@ -373,7 +373,7 @@ namespace SisNomina
         private void button13_Click(object sender, EventArgs e)
         {
             BD.Connect();
-            string querys = "SELECT Persona.Nombres, Persona.Apellido,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoXHora, Empleado.ID, Empleado.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
+            string querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo, Empleado.ID, Persona.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@ID", textID.Text);
             SqlDataReader reader = command.ExecuteReader();
@@ -386,7 +386,7 @@ namespace SisNomina
                     labelPuetoDeTrabajo.Text = reader.GetString(3);
                     labelDireccion.Text = reader.GetString(2);
                     labelDepartamento.Text = reader.GetString(4);
-                    labelSueldo.Text = Convert.ToString((decimal)reader.GetSqlMoney(5));
+                    labelSueldo.Text = Convert.ToString(reader.GetInt32(5));
                     labelID.Text = Convert.ToString(reader.GetInt32(6));
                     labelTelefono.Text = Convert.ToString(reader.GetInt64(7));
                 }
@@ -395,8 +395,8 @@ namespace SisNomina
             {
                 MessageBox.Show("El ID no pertenece a ningun empleado");
             }
-
-            querys = "SELECT * FROM Nomina Where IdEmpleado= @Id";
+            reader.Close();
+            querys = "SELECT * FROM Pagos Where IdEmpleado= @Id";
             command = new SqlCommand(querys,BD._connection);
             command.Parameters.AddWithValue("@Id",labelID.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);

@@ -1037,9 +1037,9 @@ namespace SisNomina
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(571, 293);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(215, 25);
+            this.label8.Size = new System.Drawing.Size(179, 25);
             this.label8.TabIndex = 43;
-            this.label8.Text = "Fecha de Nacimiento";
+            this.label8.Text = "Fecha de Ingreso";
             // 
             // label10
             // 
@@ -1136,9 +1136,9 @@ namespace SisNomina
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(148, 483);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(150, 24);
+            this.label11.Size = new System.Drawing.Size(106, 24);
             this.label11.TabIndex = 51;
-            this.label11.Text = "Sueldo Por Hora";
+            this.label11.Text = "Sueldo Fijo";
             // 
             // label5
             // 

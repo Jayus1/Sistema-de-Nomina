@@ -27,7 +27,7 @@ namespace SisNomina
 
             BD.Connect();
 
-            String querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion, Persona.Telefono, Empleado.SueldoXHora, Empleado.ID, Empleado.Puesto, Empleado.Departamento FROM Persona INNER JOIN Empleado ON Persona.Id=Empleado.IdPersona WHERE Persona.Id= @IdPersona";
+            String querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion, Persona.Telefono, Empleado.SueldoFijo, Empleado.ID, Empleado.Puesto, Empleado.Departamento FROM Persona INNER JOIN Empleado ON Persona.Id=Empleado.IdPersona WHERE Persona.Id= @IdPersona";
             SqlCommand command = new SqlCommand(querys,BD._connection);
             command.Parameters.AddWithValue("@IdPersona", BD.IdPersona);
             SqlDataReader reader = command.ExecuteReader();
@@ -38,7 +38,7 @@ namespace SisNomina
                 labelDireccion.Text = reader.GetString(2);
                 labelTelefono.Text = Convert.ToString(reader.GetInt64(3));
 
-                labelSueldoXHora.Text =Convert.ToString( Convert.ToInt32((Decimal)reader.GetSqlMoney(4)));
+                labelSueldoXHora.Text =Convert.ToString(reader.GetInt32(4));
                 labelPuestoDeTrabajo.Text = reader.GetString(6);
                 labeID.Text = Convert.ToString(reader.GetInt32(5));
                 BD.IdEmpleado = reader.GetInt32(5);

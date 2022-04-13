@@ -93,6 +93,7 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panel16 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
             this.textPasswordN = new System.Windows.Forms.TextBox();
             this.button23 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -115,7 +116,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -945,6 +945,17 @@ namespace SisNomina
             this.panel16.TabIndex = 1;
             this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(695, 149);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(128, 47);
+            this.button13.TabIndex = 78;
+            this.button13.Text = "Buscar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // textPasswordN
             // 
             this.textPasswordN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -954,6 +965,7 @@ namespace SisNomina
             this.textPasswordN.Location = new System.Drawing.Point(748, 375);
             this.textPasswordN.Multiline = true;
             this.textPasswordN.Name = "textPasswordN";
+            this.textPasswordN.PasswordChar = '*';
             this.textPasswordN.Size = new System.Drawing.Size(180, 24);
             this.textPasswordN.TabIndex = 4;
             // 
@@ -1060,6 +1072,7 @@ namespace SisNomina
             this.textPassword.Location = new System.Drawing.Point(293, 373);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(178, 24);
             this.textPassword.TabIndex = 3;
             this.textPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -1165,17 +1178,6 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 58;
             this.pictureBox3.TabStop = false;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(695, 149);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(128, 47);
-            this.button13.TabIndex = 78;
-            this.button13.Text = "Buscar";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Frm_editUser
             // 
