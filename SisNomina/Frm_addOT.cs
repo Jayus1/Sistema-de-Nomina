@@ -25,8 +25,8 @@ namespace SisNomina
         {
             InitializeComponent();
             dateTimeFecha.MaxDate=DateTime.Today;
-            dateTimeInicio.Value = DateTime.Now;
-            dateTimeFin.Value = DateTime.Now;
+            numericInicio.Value = 1;
+            numericFin.Value = 1;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -401,28 +401,51 @@ namespace SisNomina
         private void button13_Click(object sender, EventArgs e)
         {
             textUsername.Clear();
-            dateTimeInicio.Text = DateTime.Now.ToString();
-            dateTimeFin.Text = DateTime.Now.ToString();
+            numericFin.Value = 1;
+            numericInicio.Value=1;
             dateTimeFecha.Value = DateTime.Today;
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             BD.Connect();
+            float sueldo=0;
+            float sueldoXHora;
+            float sueldoExtra;
+            float sueldoExtraTotal;
 
-            string querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin) VALUES ( @Id, @Fecha, @Inicio, @Fin)";
-            SqlCommand commnad= new SqlCommand(querys, BD._connection);
-            commnad.Parameters.AddWithValue("@Id",textUsername.Text);
-            commnad.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
-            commnad.Parameters.AddWithValue("@Inicio", dateTimeInicio.Value);
-            commnad.Parameters.AddWithValue("@Fin", dateTimeFin.Value);
-            commnad.ExecuteNonQuery();
+
+            string querys = "SELECT SueldoFijo FROM Empleado WHERE ID= @id";
+            SqlCommand command = new SqlCommand(querys,BD._connection);
+            command.Parameters.AddWithValue("@id", textUsername.Text);
+
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                sueldo =(float)reader.GetInt32(0);
+            }
+            reader.Close();
+            sueldoXHora = (sueldo / 30) / 8;
+            sueldoExtra = sueldoXHora + (sueldoXHora * 0.35f);
+            sueldoExtraTotal = (Convert.ToInt32(numericFin.Value)-Convert.ToInt32(numericInicio.Value)) * sueldoExtra;
+            sueldoExtraTotal = Convert.ToSingle(sueldoExtraTotal.ToString("N2"));
+
+            querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total)";
+            command= new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@Id",Convert.ToInt32(textUsername.Text));
+            command.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
+            command.Parameters.AddWithValue("@Inicio", numericInicio.Value);
+            command.Parameters.AddWithValue("@Fin", numericFin.Value);
+            command.Parameters.AddWithValue("@Total", sueldoExtraTotal);
+            command.ExecuteNonQuery();
+
+
 
             MessageBox.Show("Las Horas extras fueron registradas exitosamente");
 
             textUsername.Clear();
-            dateTimeInicio.Text = DateTime.Now.ToString();
-            dateTimeFin.Text = DateTime.Now.ToString();
+            numericFin.Value = 1;
+            numericInicio.Value = 1;
             dateTimeFecha.Value = DateTime.Today;
 
             BD.Disconnect();

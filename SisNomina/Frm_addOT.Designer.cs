@@ -113,8 +113,8 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeFin = new System.Windows.Forms.DateTimePicker();
+            this.numericInicio = new System.Windows.Forms.NumericUpDown();
+            this.numericFin = new System.Windows.Forms.NumericUpDown();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -151,6 +151,8 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericInicio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFin)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -914,8 +916,8 @@ namespace SisNomina
             // 
             // panelAddOT
             // 
-            this.panelAddOT.Controls.Add(this.dateTimeFin);
-            this.panelAddOT.Controls.Add(this.dateTimeInicio);
+            this.panelAddOT.Controls.Add(this.numericFin);
+            this.panelAddOT.Controls.Add(this.numericInicio);
             this.panelAddOT.Controls.Add(this.button14);
             this.panelAddOT.Controls.Add(this.button13);
             this.panelAddOT.Controls.Add(this.label5);
@@ -1139,24 +1141,51 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 50;
             this.pictureBox3.TabStop = false;
             // 
-            // dateTimeInicio
+            // numericInicio
             // 
-            this.dateTimeInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimeInicio.Location = new System.Drawing.Point(273, 347);
-            this.dateTimeInicio.Name = "dateTimeInicio";
-            this.dateTimeInicio.Size = new System.Drawing.Size(161, 31);
-            this.dateTimeInicio.TabIndex = 70;
-            this.dateTimeInicio.ValueChanged += new System.EventHandler(this.dateTimeInico_ValueChanged);
+            this.numericInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericInicio.Location = new System.Drawing.Point(274, 352);
+            this.numericInicio.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericInicio.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericInicio.Name = "numericInicio";
+            this.numericInicio.Size = new System.Drawing.Size(120, 29);
+            this.numericInicio.TabIndex = 74;
+            this.numericInicio.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // dateTimeFin
+            // numericFin
             // 
-            this.dateTimeFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimeFin.Location = new System.Drawing.Point(759, 354);
-            this.dateTimeFin.Name = "dateTimeFin";
-            this.dateTimeFin.Size = new System.Drawing.Size(161, 31);
-            this.dateTimeFin.TabIndex = 71;
+            this.numericFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericFin.Location = new System.Drawing.Point(772, 354);
+            this.numericFin.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericFin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericFin.Name = "numericFin";
+            this.numericFin.Size = new System.Drawing.Size(120, 29);
+            this.numericFin.TabIndex = 75;
+            this.numericFin.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Frm_addOT
             // 
@@ -1210,6 +1239,8 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericInicio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1298,8 +1329,8 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.DateTimePicker dateTimeFin;
-        private System.Windows.Forms.DateTimePicker dateTimeInicio;
+        private System.Windows.Forms.NumericUpDown numericFin;
+        private System.Windows.Forms.NumericUpDown numericInicio;
     }
 }
 

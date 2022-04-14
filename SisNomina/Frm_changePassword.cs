@@ -411,19 +411,22 @@ namespace SisNomina
         {
             BD.Connect();
 
-            string querys = "SELECT Contraseña FROM Usuario WHERE Contrseña= @Password";
+            string querys = "SELECT Contraseña FROM Usuario WHERE Contraseña= @Password AND IdPersona= @id";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@Password", textPasswordC.Text);
+            command.Parameters.AddWithValue("@id", BD.IdPersona);
             SqlDataReader reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
                 if(textPasswordN.Text==textPasswordNN.Text)
                 {
-                    querys = "UPDATE Usuario SET Contraseña= @PasswordN WHERE Contraseña= @Password";
+                    reader.Close();
+                    querys = "UPDATE Usuario SET Contraseña= @PasswordN WHERE Contraseña= @Password AND IdPersona= @id";
                     command=new SqlCommand(querys, BD._connection);
                     command.Parameters.AddWithValue("@PasswordN", textPasswordN.Text);
                     command.Parameters.AddWithValue("@Password", textPasswordC.Text);
+                    command.Parameters.AddWithValue("@id", BD.IdPersona);
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Contraseña cambiada exitosamente");
@@ -444,5 +447,7 @@ namespace SisNomina
 
             BD.Disconnect();
         }
+
+        
     }
 }

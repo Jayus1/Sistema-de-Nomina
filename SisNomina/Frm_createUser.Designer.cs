@@ -980,6 +980,8 @@ namespace SisNomina
             this.comboBoxRango.Name = "comboBoxRango";
             this.comboBoxRango.Size = new System.Drawing.Size(184, 37);
             this.comboBoxRango.TabIndex = 5;
+            this.comboBoxRango.Text = "Privilegio";
+            this.comboBoxRango.SelectedIndexChanged += new System.EventHandler(this.comboBoxRango_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -1025,11 +1027,12 @@ namespace SisNomina
             // 
             this.textPasswordN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textPasswordN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPasswordN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPasswordN.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPasswordN.ForeColor = System.Drawing.Color.YellowGreen;
             this.textPasswordN.Location = new System.Drawing.Point(763, 284);
             this.textPasswordN.Multiline = true;
             this.textPasswordN.Name = "textPasswordN";
+            this.textPasswordN.PasswordChar = '*';
             this.textPasswordN.Size = new System.Drawing.Size(152, 24);
             this.textPasswordN.TabIndex = 4;
             // 
@@ -1058,11 +1061,12 @@ namespace SisNomina
             // 
             this.textPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPassword.ForeColor = System.Drawing.Color.YellowGreen;
             this.textPassword.Location = new System.Drawing.Point(292, 283);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
+            this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(172, 24);
             this.textPassword.TabIndex = 3;
             // 

@@ -455,7 +455,7 @@ namespace SisNomina
             textID.Clear();
             textPassword.Clear();
             textPasswordN.Clear();
-            comboBoxRango.Items.Clear();
+            comboBoxRango.Text = "Privilegio";
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -482,7 +482,7 @@ namespace SisNomina
                     command.Parameters.AddWithValue("@IdPersona", Convert.ToString(IdPersona));
                     command.Parameters.AddWithValue("@UserName", textUsername.Text);
                     command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
-                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items.ToString());
+                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Se ha creado el usuario exitosamente!!!");
@@ -491,7 +491,7 @@ namespace SisNomina
                     textID.Clear();
                     textPassword.Clear();
                     textPasswordN.Clear();
-                    comboBoxRango.Items.Clear();
+                    comboBoxRango.Text= "Privilegio";
                     BD.Disconnect();
                 }
                 else
@@ -503,6 +503,11 @@ namespace SisNomina
             {
                 MessageBox.Show("El empleado no se encuentra");
             }
+        }
+
+        private void comboBoxRango_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

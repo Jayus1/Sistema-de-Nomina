@@ -27,7 +27,7 @@ namespace SisNomina
 
             BD.Connect();
 
-            String querys = "SELECT * FROM NOMINA";
+            String querys = "SELECT * FROM Pagos";
             SqlDataAdapter adapter = new SqlDataAdapter(querys, BD._connection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);

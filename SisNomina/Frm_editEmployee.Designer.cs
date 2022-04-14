@@ -93,6 +93,7 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panelEditEmployee = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
             this.textBoxSueldo = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -139,7 +140,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button23 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -993,6 +993,17 @@ namespace SisNomina
             this.panelEditEmployee.TabIndex = 1;
             this.panelEditEmployee.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEditEmployee_Paint);
             // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.Location = new System.Drawing.Point(672, 126);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(117, 46);
+            this.button23.TabIndex = 93;
+            this.button23.Text = "Buscar";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
             // textBoxSueldo
             // 
             this.textBoxSueldo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -1071,8 +1082,8 @@ namespace SisNomina
             // 
             this.dateTimeFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeFecha.Location = new System.Drawing.Point(652, 386);
-            this.dateTimeFecha.MaxDate = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.Location = new System.Drawing.Point(626, 384);
+            this.dateTimeFecha.MaxDate = new System.DateTime(2022, 12, 24, 0, 0, 0, 0);
             this.dateTimeFecha.MinDate = new System.DateTime(1960, 1, 1, 0, 0, 0, 0);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(137, 31);
@@ -1086,9 +1097,9 @@ namespace SisNomina
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(600, 354);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(242, 29);
+            this.label8.Size = new System.Drawing.Size(201, 29);
             this.label8.TabIndex = 87;
-            this.label8.Text = "Fecha de Nacimiento";
+            this.label8.Text = "Fecha de Ingreso";
             // 
             // label10
             // 
@@ -1438,17 +1449,6 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 50;
             this.pictureBox3.TabStop = false;
-            // 
-            // button23
-            // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.Location = new System.Drawing.Point(672, 126);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(117, 46);
-            this.button23.TabIndex = 93;
-            this.button23.Text = "Buscar";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // Frm_editEmployee
             // 

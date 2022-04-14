@@ -407,12 +407,13 @@ namespace SisNomina
                 }
                 if (textPassword.Text == textPasswordN.Text)
                 {
+                    reader.Close();
                     querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
                     command = new SqlCommand(querys, BD._connection);
                     command.Parameters.AddWithValue("@IdPersona", IdPersona);
                     command.Parameters.AddWithValue("@UserName", textUsername.Text);
                     command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
-                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items.ToString());
+                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
                     command.ExecuteNonQuery();
 
                     MessageBox.Show("Se ha editado el usuario exitosamente!!!");
