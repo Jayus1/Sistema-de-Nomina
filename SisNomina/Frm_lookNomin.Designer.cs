@@ -101,6 +101,13 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Recortes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -918,13 +925,23 @@ namespace SisNomina
             // 
             // dataGridViewNomina
             // 
+            this.dataGridViewNomina.AllowUserToAddRows = false;
+            this.dataGridViewNomina.AllowUserToDeleteRows = false;
             this.dataGridViewNomina.AutoGenerateColumns = false;
             this.dataGridViewNomina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNomina.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewNomina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNomina.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEmpleado,
+            this.Nombre,
+            this.Apellido,
+            this.Puesto,
+            this.Departamento,
+            this.Sueldo,
+            this.Recortes});
             this.dataGridViewNomina.DataSource = this.dbSistemaNominaDataSetBindingSource;
-            this.dataGridViewNomina.Location = new System.Drawing.Point(140, 142);
+            this.dataGridViewNomina.Location = new System.Drawing.Point(147, 146);
             this.dataGridViewNomina.Name = "dataGridViewNomina";
             this.dataGridViewNomina.ReadOnly = true;
             this.dataGridViewNomina.RowHeadersVisible = false;
@@ -995,6 +1012,48 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 55;
             this.pictureBox3.TabStop = false;
+            // 
+            // IdEmpleado
+            // 
+            this.IdEmpleado.HeaderText = "IdEmpleado";
+            this.IdEmpleado.Name = "IdEmpleado";
+            this.IdEmpleado.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Puesto
+            // 
+            this.Puesto.HeaderText = "Puesto";
+            this.Puesto.Name = "Puesto";
+            this.Puesto.ReadOnly = true;
+            // 
+            // Departamento
+            // 
+            this.Departamento.HeaderText = "Departamento";
+            this.Departamento.Name = "Departamento";
+            this.Departamento.ReadOnly = true;
+            // 
+            // Sueldo
+            // 
+            this.Sueldo.HeaderText = "Sueldo";
+            this.Sueldo.Name = "Sueldo";
+            this.Sueldo.ReadOnly = true;
+            // 
+            // Recortes
+            // 
+            this.Recortes.HeaderText = "Recortes";
+            this.Recortes.Name = "Recortes";
+            this.Recortes.ReadOnly = true;
             // 
             // Frm_lookNomin
             // 
@@ -1127,6 +1186,13 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.BindingSource dbSistemaNominaDataSetBindingSource;
         private dbSistemaNominaDataSet dbSistemaNominaDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Recortes;
     }
 }
 

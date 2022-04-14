@@ -27,7 +27,7 @@ namespace SisNomina
 
             BD.Connect();
 
-            String querys = "SELECT * FROM Pagos";
+            String querys = "SELECT Empleado.ID, Persona.Nombres, Persona.Apellidos, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo, Recortes.Cantidad FROM Persona, Empleado, Recortes";
             SqlDataAdapter adapter = new SqlDataAdapter(querys, BD._connection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
