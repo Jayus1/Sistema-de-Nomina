@@ -93,6 +93,7 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panel16 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
             this.labelID = new System.Windows.Forms.Label();
             this.labelDireccion = new System.Windows.Forms.Label();
             this.labelSueldo = new System.Windows.Forms.Label();
@@ -111,7 +112,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -938,6 +938,17 @@ namespace SisNomina
             this.panel16.TabIndex = 1;
             this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(706, 125);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(128, 47);
+            this.button13.TabIndex = 83;
+            this.button13.Text = "Buscar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // labelID
             // 
             this.labelID.AutoSize = true;
@@ -1023,11 +1034,14 @@ namespace SisNomina
             // 
             // dataGridViewNomina
             // 
+            this.dataGridViewNomina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNomina.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewNomina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNomina.Location = new System.Drawing.Point(138, 283);
             this.dataGridViewNomina.Name = "dataGridViewNomina";
+            this.dataGridViewNomina.ReadOnly = true;
+            this.dataGridViewNomina.RowHeadersVisible = false;
             this.dataGridViewNomina.Size = new System.Drawing.Size(781, 319);
             this.dataGridViewNomina.TabIndex = 73;
             // 
@@ -1118,17 +1132,6 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 64;
             this.pictureBox3.TabStop = false;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(706, 125);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(128, 47);
-            this.button13.TabIndex = 83;
-            this.button13.Text = "Buscar";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Frm_lookInNomin
             // 

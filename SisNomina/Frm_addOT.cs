@@ -147,7 +147,10 @@ namespace SisNomina
 
         private void button4_Click(object sender, EventArgs e)
         {
-            processTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+               processTimer.Start();     
+             }
         }
 
         private void processTimer_Tick(object sender, EventArgs e)
@@ -185,7 +188,10 @@ namespace SisNomina
 
         private void button5_Click(object sender, EventArgs e)
         {
-            consultTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+                consultTimer.Start();
+             }
         }
 
         private void consultTimer_Tick(object sender, EventArgs e)
@@ -305,7 +311,10 @@ namespace SisNomina
 
         private void buttoMaintence(object sender, EventArgs e)
         {
-            maintenceTimer.Start();
+           if (BD.privilegio == "Administrador")
+             {
+               maintenceTimer.Start();  
+             } 
         }
 
         private void button9_Click(object sender, EventArgs e)

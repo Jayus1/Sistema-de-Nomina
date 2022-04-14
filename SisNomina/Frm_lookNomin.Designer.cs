@@ -183,7 +183,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 32);
+            this.label1.Size = new System.Drawing.Size(78, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -919,12 +919,17 @@ namespace SisNomina
             // dataGridViewNomina
             // 
             this.dataGridViewNomina.AutoGenerateColumns = false;
+            this.dataGridViewNomina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNomina.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewNomina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNomina.DataSource = this.dbSistemaNominaDataSetBindingSource;
             this.dataGridViewNomina.Location = new System.Drawing.Point(140, 142);
             this.dataGridViewNomina.Name = "dataGridViewNomina";
+            this.dataGridViewNomina.ReadOnly = true;
+            this.dataGridViewNomina.RowHeadersVisible = false;
+            this.dataGridViewNomina.RowTemplate.ReadOnly = true;
+            this.dataGridViewNomina.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewNomina.Size = new System.Drawing.Size(779, 427);
             this.dataGridViewNomina.TabIndex = 57;
             this.dataGridViewNomina.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

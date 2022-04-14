@@ -46,6 +46,7 @@ namespace SisNomina
             while (lector.Read())
             {
                 BD.IdPersona = lector.GetInt32(0);
+                BD.privilegio = lector.GetString(3);
             }
 
             if (lector.HasRows == true)
