@@ -382,7 +382,7 @@ namespace SisNomina
         private void button13_Click(object sender, EventArgs e)
         {
             BD.Connect();
-            string querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo, Empleado.ID, Persona.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
+            string querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Fijo], Empleado.ID, Persona.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@ID", textID.Text);
             SqlDataReader reader = command.ExecuteReader();

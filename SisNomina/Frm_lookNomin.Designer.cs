@@ -47,10 +47,12 @@ namespace SisNomina
             this.processContainer = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.panelPay = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.consultContainer = new System.Windows.Forms.Panel();
@@ -94,13 +96,6 @@ namespace SisNomina
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panel16 = new System.Windows.Forms.Panel();
             this.dataGridViewNomina = new System.Windows.Forms.DataGridView();
-            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Puesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Recortes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dbSistemaNominaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbSistemaNominaDataSet = new SisNomina.dbSistemaNominaDataSet();
             this.label3 = new System.Windows.Forms.Label();
@@ -108,8 +103,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panelPay = new System.Windows.Forms.Panel();
-            this.button23 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -120,8 +113,9 @@ namespace SisNomina
             this.panel2.SuspendLayout();
             this.processContainer.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panelPay.SuspendLayout();
             this.panel7.SuspendLayout();
             this.consultContainer.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -149,7 +143,6 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panelPay.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -373,6 +366,33 @@ namespace SisNomina
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.button9);
+            this.panel12.Location = new System.Drawing.Point(0, 55);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(209, 52);
+            this.panel12.TabIndex = 2;
+            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(-3, -13);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(221, 72);
+            this.button9.TabIndex = 1;
+            this.button9.Text = "           Agregar Empleado";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.button10);
@@ -400,32 +420,31 @@ namespace SisNomina
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // panel12
+            // panelPay
             // 
-            this.panel12.Controls.Add(this.button9);
-            this.panel12.Location = new System.Drawing.Point(0, 55);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(209, 52);
-            this.panel12.TabIndex = 2;
-            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.panelPay.Controls.Add(this.button23);
+            this.panelPay.Location = new System.Drawing.Point(0, 97);
+            this.panelPay.Name = "panelPay";
+            this.panelPay.Size = new System.Drawing.Size(220, 57);
+            this.panelPay.TabIndex = 58;
             // 
-            // button9
+            // button23
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = global::SisNomina.Properties.Resources.SubMenu;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(-3, -13);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(221, 72);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "           Agregar Empleado";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.ForeColor = System.Drawing.Color.White;
+            this.button23.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(-4, -22);
+            this.button23.Name = "button23";
+            this.button23.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button23.Size = new System.Drawing.Size(228, 94);
+            this.button23.TabIndex = 1;
+            this.button23.Text = "           Agregar Pago";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // panel7
             // 
@@ -931,20 +950,10 @@ namespace SisNomina
             // 
             this.dataGridViewNomina.AllowUserToAddRows = false;
             this.dataGridViewNomina.AllowUserToDeleteRows = false;
-            this.dataGridViewNomina.AutoGenerateColumns = false;
             this.dataGridViewNomina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNomina.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewNomina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewNomina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewNomina.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdEmpleado,
-            this.Nombre,
-            this.Apellido,
-            this.Puesto,
-            this.Departamento,
-            this.Sueldo,
-            this.Recortes});
-            this.dataGridViewNomina.DataSource = this.dbSistemaNominaDataSetBindingSource;
             this.dataGridViewNomina.Location = new System.Drawing.Point(147, 146);
             this.dataGridViewNomina.Name = "dataGridViewNomina";
             this.dataGridViewNomina.ReadOnly = true;
@@ -954,48 +963,6 @@ namespace SisNomina
             this.dataGridViewNomina.Size = new System.Drawing.Size(779, 427);
             this.dataGridViewNomina.TabIndex = 57;
             this.dataGridViewNomina.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // IdEmpleado
-            // 
-            this.IdEmpleado.HeaderText = "IdEmpleado";
-            this.IdEmpleado.Name = "IdEmpleado";
-            this.IdEmpleado.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Puesto
-            // 
-            this.Puesto.HeaderText = "Puesto";
-            this.Puesto.Name = "Puesto";
-            this.Puesto.ReadOnly = true;
-            // 
-            // Departamento
-            // 
-            this.Departamento.HeaderText = "Departamento";
-            this.Departamento.Name = "Departamento";
-            this.Departamento.ReadOnly = true;
-            // 
-            // Sueldo
-            // 
-            this.Sueldo.HeaderText = "Sueldo";
-            this.Sueldo.Name = "Sueldo";
-            this.Sueldo.ReadOnly = true;
-            // 
-            // Recortes
-            // 
-            this.Recortes.HeaderText = "Recortes";
-            this.Recortes.Name = "Recortes";
-            this.Recortes.ReadOnly = true;
             // 
             // dbSistemaNominaDataSetBindingSource
             // 
@@ -1059,32 +1026,6 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 55;
             this.pictureBox3.TabStop = false;
             // 
-            // panelPay
-            // 
-            this.panelPay.Controls.Add(this.button23);
-            this.panelPay.Location = new System.Drawing.Point(0, 97);
-            this.panelPay.Name = "panelPay";
-            this.panelPay.Size = new System.Drawing.Size(220, 57);
-            this.panelPay.TabIndex = 58;
-            // 
-            // button23
-            // 
-            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.Color.White;
-            this.button23.Image = global::SisNomina.Properties.Resources.SubMenu;
-            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.Location = new System.Drawing.Point(-4, -22);
-            this.button23.Name = "button23";
-            this.button23.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button23.Size = new System.Drawing.Size(228, 94);
-            this.button23.TabIndex = 1;
-            this.button23.Text = "           Agregar Pago";
-            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button23.UseVisualStyleBackColor = false;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
-            // 
             // Frm_lookNomin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1110,8 +1051,9 @@ namespace SisNomina
             this.panel2.ResumeLayout(false);
             this.processContainer.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panelPay.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.consultContainer.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
@@ -1140,7 +1082,6 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panelPay.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1217,13 +1158,6 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.BindingSource dbSistemaNominaDataSetBindingSource;
         private dbSistemaNominaDataSet dbSistemaNominaDataSet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Puesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Departamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Recortes;
         private System.Windows.Forms.Panel panelPay;
         private System.Windows.Forms.Button button23;
     }

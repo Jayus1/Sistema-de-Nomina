@@ -21,6 +21,7 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -105,7 +106,7 @@ namespace SisNomina
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            exitTimer.Start();
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -363,7 +364,7 @@ namespace SisNomina
 
         private void button11_Click(object sender, EventArgs e)
         {
-            new Frm_addReduce().Show();
+            new Frm_addPayment().Show();
             this.Hide();
         }
 
@@ -442,6 +443,53 @@ namespace SisNomina
         private void panelMenuPrincipal_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button190_Click(object sender, EventArgs e)
+        {
+            new Frm_addReduce().Show();
+            this.Hide();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button23_Click_1(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
         }
     }
 }

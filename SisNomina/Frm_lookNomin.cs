@@ -24,11 +24,11 @@ namespace SisNomina
         public Frm_lookNomin()
         {
             InitializeComponent();
-
             BD.Connect();
 
-            String querys = "SELECT Empleado.ID, Persona.Nombres, Persona.Apellidos, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo, Recortes.Cantidad FROM Persona, Empleado, Recortes";
-            SqlDataAdapter adapter = new SqlDataAdapter(querys, BD._connection);
+            String querys = "SELECT Empleado.ID, Persona.Nombres AS Nombre, Persona.Apellidos AS Apellido, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Fijo], Recortes.Cantidad AS [Reduccion Total] FROM Persona, Empleado, Recortes";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
 
@@ -392,7 +392,17 @@ namespace SisNomina
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            BD.Connect();
 
+            String querys = "SELECT Empleado.ID, Persona.Nombres, Persona.Apellidos, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo, Recortes.Cantidad FROM Persona, Empleado, Recortes";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            dataGridViewNomina.DataSource = dataTable;
+
+            BD.Disconnect();
         }
 
         private void panel16_Paint(object sender, PaintEventArgs e)

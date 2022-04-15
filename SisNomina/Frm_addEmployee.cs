@@ -20,6 +20,7 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
 
         public Frm_addEmployee()
         {
@@ -503,6 +504,47 @@ namespace SisNomina
         private void processContainer_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
         }
     }
 }

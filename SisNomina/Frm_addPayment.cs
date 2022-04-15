@@ -457,7 +457,7 @@ namespace SisNomina
                     sueldoFijo = reader.GetInt32(0);
                 }
                 reader.Close();
-                querys = "SELECT ExtraTotal FROM HorasExtras WHERE ID= @ot AND Estado= @estado ";
+                querys = "SELECT ExtraTotal FROM HorasExtras WHERE ID= @ot AND Estado= @estado";
                 command = new SqlCommand(querys, BD._connection);
                 command.Parameters.AddWithValue("@ot", textOT.Text);
                 command.Parameters.AddWithValue("@estado", "No Pagadas");
@@ -470,8 +470,8 @@ namespace SisNomina
                         extra = reader.GetInt32(0);
                     }
                         reader.Close();
-                    querys = "INSERT INTO Pagos (IdEmpleado, RecortesTotal, HorasExtras, SueldoTotal, FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha );" +
-                        "UPDATE HorasExtras SET Estado= 'Pagadas' WHERE ID= @horas;";
+                    querys = "INSERT INTO Pagos (IdEmpleado, RecorteTotal, HorasExtras, SueldoTotal, FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha );" +
+                        "UPDATE HorasExtras SET Estado='Pagadas' WHERE ID= @horas;";
                     command = new SqlCommand(querys, BD._connection);
                     command.Parameters.AddWithValue("@id", textID.Text);
                     command.Parameters.AddWithValue("@horas", textOT.Text);
@@ -480,9 +480,10 @@ namespace SisNomina
                     {
                         recortesTotal += Convert.ToSingle(dataGridRecortes.Rows[i].Cells[1].Value.ToString());
                     }
-                    command.Parameters.AddWithValue("@hrecorte", recortesTotal);
-                    command.Parameters.AddWithValue("@hsueldo",extra+(sueldoFijo-recortesTotal));
+                    command.Parameters.AddWithValue("@recorte", recortesTotal);
+                    command.Parameters.AddWithValue("@sueldo",extra+(sueldoFijo-recortesTotal));
                     command.Parameters.AddWithValue("@fecha", DateTime.Now.ToShortDateString());
+                    command.ExecuteNonQuery();
 
                     MessageBox.Show("El pago se efectuo correctamente");
 

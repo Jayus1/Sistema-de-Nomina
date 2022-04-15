@@ -394,7 +394,7 @@ namespace SisNomina
 
             BD.Connect();
 
-            String querys = "SELECT IdEmpleado,Fecha,HoraInicio,HoraFin FROM HorasExtras WHERE IdEmpleado= @IdEmpleado";
+            String querys = "SELECT IdEmpleado AS [ID], Fecha AS [Fecha de Realizacion], HoraInicio AS [Hora de Inicio], HoraFin AS [Hora de Finalizacion], ExtraTotal AS [Pago Por Horas Extras], Estado FROM HorasExtras WHERE IdEmpleado= @IdEmpleado";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
 
@@ -414,7 +414,7 @@ namespace SisNomina
             dataGridViewOT.Rows.Clear();
             BD.Connect();
 
-            String querys = "SELECT * FROM HorasExtras";
+            String querys = "SELECT IdEmpleado AS [ID], Fecha AS [Fecha de Realizacion], HoraInicio AS [Hora de Inicio], HoraFin AS [Hora de Finalizacion], ExtraTotal AS [Pago Por Horas Extras], Estado FROM HorasExtras";
             SqlCommand command = new SqlCommand(querys,BD._connection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
