@@ -405,7 +405,7 @@ namespace SisNomina
                 MessageBox.Show("El ID no pertenece a ningun empleado");
             }
             reader.Close();
-            querys = "SELECT * FROM Pagos Where IdEmpleado= @Id";
+            querys = "SELECT * FROM Pagos WHERE IdEmpleado= @Id";
             command = new SqlCommand(querys,BD._connection);
             command.Parameters.AddWithValue("@Id",labelID.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -418,6 +418,12 @@ namespace SisNomina
 
         private void panel16_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
         }
     }
 }

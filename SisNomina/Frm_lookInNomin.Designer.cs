@@ -112,6 +112,8 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -149,6 +151,7 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel40.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -334,11 +337,12 @@ namespace SisNomina
             // 
             this.processContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.processContainer.Controls.Add(this.panel14);
-            this.processContainer.Controls.Add(this.panel13);
             this.processContainer.Controls.Add(this.panel12);
+            this.processContainer.Controls.Add(this.panel13);
+            this.processContainer.Controls.Add(this.panel40);
             this.processContainer.Controls.Add(this.panel7);
             this.processContainer.Location = new System.Drawing.Point(3, 204);
-            this.processContainer.MaximumSize = new System.Drawing.Size(213, 202);
+            this.processContainer.MaximumSize = new System.Drawing.Size(213, 259);
             this.processContainer.MinimumSize = new System.Drawing.Size(213, 54);
             this.processContainer.Name = "processContainer";
             this.processContainer.Size = new System.Drawing.Size(213, 54);
@@ -347,9 +351,9 @@ namespace SisNomina
             // panel14
             // 
             this.panel14.Controls.Add(this.button11);
-            this.panel14.Location = new System.Drawing.Point(0, 150);
+            this.panel14.Location = new System.Drawing.Point(2, 202);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(210, 52);
+            this.panel14.Size = new System.Drawing.Size(210, 60);
             this.panel14.TabIndex = 2;
             this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
@@ -374,9 +378,9 @@ namespace SisNomina
             // panel13
             // 
             this.panel13.Controls.Add(this.button10);
-            this.panel13.Location = new System.Drawing.Point(0, 102);
+            this.panel13.Location = new System.Drawing.Point(2, 154);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(210, 52);
+            this.panel13.Size = new System.Drawing.Size(210, 60);
             this.panel13.TabIndex = 2;
             this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
@@ -1133,6 +1137,32 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 64;
             this.pictureBox3.TabStop = false;
             // 
+            // panel40
+            // 
+            this.panel40.Controls.Add(this.button23);
+            this.panel40.Location = new System.Drawing.Point(3, 97);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(220, 59);
+            this.panel40.TabIndex = 84;
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.ForeColor = System.Drawing.Color.White;
+            this.button23.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(-6, -18);
+            this.button23.Name = "button23";
+            this.button23.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button23.Size = new System.Drawing.Size(228, 94);
+            this.button23.TabIndex = 1;
+            this.button23.Text = "           Agregar Pago";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
             // Frm_lookInNomin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1186,6 +1216,7 @@ namespace SisNomina
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel40.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1273,6 +1304,8 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.Button button23;
     }
 }
 

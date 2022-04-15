@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace SisNomina
 {   
     
-    public partial class MenuPrincipal : Form
+    public partial class Frm_addPayment : Form
     {
         bool sidebarExpand=true;
         bool maintenceExpand;
@@ -21,41 +21,19 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
-        public MenuPrincipal()
+        List<int> ln = new List<int>();
+        public Frm_addPayment()
         {
             InitializeComponent();
 
             BD.Connect();
 
-            String querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion, Persona.Telefono, Empleado.SueldoFijo, Empleado.ID, Empleado.Puesto, Empleado.Departamento FROM Persona INNER JOIN Empleado ON Persona.Id=Empleado.IdPersona WHERE Persona.Id= @IdPersona";
-            SqlCommand command = new SqlCommand(querys,BD._connection);
-            command.Parameters.AddWithValue("@IdPersona", BD.IdPersona);
-            SqlDataReader reader = command.ExecuteReader();
+            string querys = "SELECT Nombre, Cantidad, Descripcion FROM Recortes";
+            SqlDataAdapter adapter = new SqlDataAdapter(querys, BD._connection);
+            DataTable dataTable = new DataTable();
 
-            while (reader.Read())
-            {
-                labelNombre.Text = reader.GetString(0) + " " + reader.GetString(1);
-                labelDireccion.Text = reader.GetString(2);
-                labelTelefono.Text = Convert.ToString(reader.GetInt64(3));
-
-                labelSueldoXHora.Text =Convert.ToString(reader.GetInt32(4));
-                labelPuestoDeTrabajo.Text = reader.GetString(6);
-                labeID.Text = Convert.ToString(reader.GetInt32(5));
-                BD.IdEmpleado = reader.GetInt32(5);
-                labeDepartamento.Text = reader.GetString(7);
-            }
-            reader.Close();
-            querys = "SELECT Privilegio FROM Usuario WHERE Id = @IdPersona ";
-            command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@IdPersona", BD.IdPersona);
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                labelPrivilegio.Text = reader.GetString(0);
-                BD.privilegio= reader.GetString(0);
-            }
-            reader.Close();
+            adapter.Fill(dataTable);
+            dataGridRecortes.DataSource = dataTable;
             BD.Disconnect();
         }
 
@@ -442,6 +420,115 @@ namespace SisNomina
         private void panelMenuPrincipal_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textID.Clear();
+            textOT.Clear();
+            dataGridRecortes.ClearSelection();
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            BD.Connect();
+            String querys = " SELECT SueldoFijo FROM Empleado WHERE ID= @Id";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            command.Parameters.AddWithValue("@Id", textID.Text);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if(reader.HasRows)
+            {
+                float recortesTotal=0;
+                int sueldoFijo = 0;
+                while (reader.Read())
+                {
+                    sueldoFijo = reader.GetInt32(0);
+                }
+                reader.Close();
+                querys = "SELECT ExtraTotal FROM HorasExtras WHERE ID= @ot AND Estado= @estado ";
+                command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@ot", textOT.Text);
+                command.Parameters.AddWithValue("@estado", "No Pagadas");
+                reader = command.ExecuteReader();
+                if(reader.HasRows)
+                {
+                    int extra = 0;
+                    while (reader.Read())
+                    {
+                        extra = reader.GetInt32(0);
+                    }
+                        reader.Close();
+                    querys = "INSERT INTO Pagos (IdEmpleado, RecortesTotal, HorasExtras, SueldoTotal, FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha );" +
+                        "UPDATE HorasExtras SET Estado= 'Pagadas' WHERE ID= @horas;";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@id", textID.Text);
+                    command.Parameters.AddWithValue("@horas", textOT.Text);
+
+                    foreach(int i in ln)
+                    {
+                        recortesTotal += Convert.ToSingle(dataGridRecortes.Rows[i].Cells[1].Value.ToString());
+                    }
+                    command.Parameters.AddWithValue("@hrecorte", recortesTotal);
+                    command.Parameters.AddWithValue("@hsueldo",extra+(sueldoFijo-recortesTotal));
+                    command.Parameters.AddWithValue("@fecha", DateTime.Now.ToShortDateString());
+
+                    MessageBox.Show("El pago se efectuo correctamente");
+
+                    textID.Clear();
+                    textOT.Clear();
+                    dataGridRecortes.ClearSelection();
+
+                }
+                else
+                {
+                    MessageBox.Show("Estas horas extras ya fueron pagadas anteriormente");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este empleado no existe");
+            }
+            BD.Disconnect();
+        }
+
+        private void dataGridRecortes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int n = dataGridRecortes.CurrentRow.Index;
+
+            dataGridRecortes.Rows[n].Selected = false;
+
+            if (ln.Contains(n))
+                ln.Remove(n);
+            else
+                ln.Add(n);
+
+            foreach(var i in ln)
+            {
+                dataGridRecortes.Rows[i].Selected = true;
+            }
+        }
+
+        private void textID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
         }
     }
 }

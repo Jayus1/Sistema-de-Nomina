@@ -372,5 +372,11 @@ namespace SisNomina
             new Frm_question().Show();
             this.Hide();
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
     }
 }

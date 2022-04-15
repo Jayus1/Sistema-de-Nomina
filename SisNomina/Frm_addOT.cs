@@ -439,13 +439,14 @@ namespace SisNomina
             sueldoExtraTotal = (Convert.ToInt32(numericFin.Value)-Convert.ToInt32(numericInicio.Value)) * sueldoExtra;
             sueldoExtraTotal = Convert.ToSingle(sueldoExtraTotal.ToString("N2"));
 
-            querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total)";
+            querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal, Estado) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total, @estado)";
             command= new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@Id",Convert.ToInt32(textUsername.Text));
             command.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
             command.Parameters.AddWithValue("@Inicio", numericInicio.Value);
             command.Parameters.AddWithValue("@Fin", numericFin.Value);
             command.Parameters.AddWithValue("@Total", sueldoExtraTotal);
+            command.Parameters.AddWithValue("@estado", "No Pagadas");
             command.ExecuteNonQuery();
 
 
@@ -463,6 +464,12 @@ namespace SisNomina
         private void dateTimeInico_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
         }
     }
 }

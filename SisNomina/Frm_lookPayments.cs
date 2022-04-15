@@ -418,7 +418,7 @@ namespace SisNomina
             dataGridViewPay.Rows.Clear();
             BD.Connect();
 
-            String querys = "SELECT * FROM Nomina";
+            String querys = "SELECT * FROM Pagos";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
@@ -427,6 +427,13 @@ namespace SisNomina
             dataGridViewPay.DataSource = dataTable;
 
             BD.Disconnect();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+
+            new Frm_addPayment().Show();
+            this.Hide();
         }
     }
 }

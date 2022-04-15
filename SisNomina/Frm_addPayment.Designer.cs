@@ -48,10 +48,12 @@ namespace SisNomina
             this.processContainer = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.consultContainer = new System.Windows.Forms.Panel();
@@ -94,6 +96,18 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panelMenuPrincipal = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textOT = new System.Windows.Forms.TextBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.dataGridRecortes = new System.Windows.Forms.DataGridView();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -109,8 +123,9 @@ namespace SisNomina
             this.panel2.SuspendLayout();
             this.processContainer.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel40.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel7.SuspendLayout();
             this.consultContainer.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -131,6 +146,7 @@ namespace SisNomina
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelMenuPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecortes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -320,11 +336,12 @@ namespace SisNomina
             // 
             this.processContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
             this.processContainer.Controls.Add(this.panel14);
-            this.processContainer.Controls.Add(this.panel13);
             this.processContainer.Controls.Add(this.panel12);
+            this.processContainer.Controls.Add(this.panel40);
+            this.processContainer.Controls.Add(this.panel13);
             this.processContainer.Controls.Add(this.panel7);
             this.processContainer.Location = new System.Drawing.Point(3, 204);
-            this.processContainer.MaximumSize = new System.Drawing.Size(213, 202);
+            this.processContainer.MaximumSize = new System.Drawing.Size(213, 249);
             this.processContainer.MinimumSize = new System.Drawing.Size(213, 54);
             this.processContainer.Name = "processContainer";
             this.processContainer.Size = new System.Drawing.Size(213, 54);
@@ -333,9 +350,9 @@ namespace SisNomina
             // panel14
             // 
             this.panel14.Controls.Add(this.button11);
-            this.panel14.Location = new System.Drawing.Point(0, 150);
+            this.panel14.Location = new System.Drawing.Point(3, 188);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(210, 52);
+            this.panel14.Size = new System.Drawing.Size(210, 61);
             this.panel14.TabIndex = 2;
             this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
@@ -347,7 +364,7 @@ namespace SisNomina
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = global::SisNomina.Properties.Resources.SubMenu;
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(-3, -13);
+            this.button11.Location = new System.Drawing.Point(-8, -11);
             this.button11.Name = "button11";
             this.button11.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button11.Size = new System.Drawing.Size(221, 72);
@@ -356,33 +373,6 @@ namespace SisNomina
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.button10);
-            this.panel13.Location = new System.Drawing.Point(0, 102);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(210, 52);
-            this.panel13.TabIndex = 2;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = global::SisNomina.Properties.Resources.SubMenu;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(-3, -13);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(221, 72);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "           Poner Horas Extras";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // panel12
             // 
@@ -410,6 +400,59 @@ namespace SisNomina
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // panel40
+            // 
+            this.panel40.Controls.Add(this.button23);
+            this.panel40.Location = new System.Drawing.Point(0, 97);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(220, 46);
+            this.panel40.TabIndex = 98;
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.ForeColor = System.Drawing.Color.White;
+            this.button23.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(-4, -22);
+            this.button23.Name = "button23";
+            this.button23.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button23.Size = new System.Drawing.Size(228, 94);
+            this.button23.TabIndex = 1;
+            this.button23.Text = "           Agregar Pago";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.button10);
+            this.panel13.Location = new System.Drawing.Point(3, 140);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(210, 61);
+            this.panel13.TabIndex = 2;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(-9, -11);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(221, 72);
+            this.button10.TabIndex = 1;
+            this.button10.Text = "           Poner Horas Extras";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // panel7
             // 
@@ -898,6 +941,18 @@ namespace SisNomina
             // 
             // panelMenuPrincipal
             // 
+            this.panelMenuPrincipal.Controls.Add(this.label3);
+            this.panelMenuPrincipal.Controls.Add(this.textOT);
+            this.panelMenuPrincipal.Controls.Add(this.panel16);
+            this.panelMenuPrincipal.Controls.Add(this.panel26);
+            this.panelMenuPrincipal.Controls.Add(this.dataGridRecortes);
+            this.panelMenuPrincipal.Controls.Add(this.button14);
+            this.panelMenuPrincipal.Controls.Add(this.button13);
+            this.panelMenuPrincipal.Controls.Add(this.label8);
+            this.panelMenuPrincipal.Controls.Add(this.label5);
+            this.panelMenuPrincipal.Controls.Add(this.textID);
+            this.panelMenuPrincipal.Controls.Add(this.panel17);
+            this.panelMenuPrincipal.Controls.Add(this.panel30);
             this.panelMenuPrincipal.Controls.Add(this.label2);
             this.panelMenuPrincipal.Controls.Add(this.pictureBox2);
             this.panelMenuPrincipal.Controls.Add(this.pictureBox1);
@@ -909,6 +964,126 @@ namespace SisNomina
             this.panelMenuPrincipal.Size = new System.Drawing.Size(1073, 678);
             this.panelMenuPrincipal.TabIndex = 1;
             this.panelMenuPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuPrincipal_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(588, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(216, 29);
+            this.label3.TabIndex = 97;
+            this.label3.Text = "Id del la Hora Extra";
+            // 
+            // textOT
+            // 
+            this.textOT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textOT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textOT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textOT.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textOT.Location = new System.Drawing.Point(810, 188);
+            this.textOT.Multiline = true;
+            this.textOT.Name = "textOT";
+            this.textOT.Size = new System.Drawing.Size(133, 24);
+            this.textOT.TabIndex = 94;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel16.Location = new System.Drawing.Point(660, 214);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(300, 1);
+            this.panel16.TabIndex = 96;
+            // 
+            // panel26
+            // 
+            this.panel26.Location = new System.Drawing.Point(660, 210);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(232, 1);
+            this.panel26.TabIndex = 95;
+            // 
+            // dataGridRecortes
+            // 
+            this.dataGridRecortes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridRecortes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRecortes.Location = new System.Drawing.Point(335, 264);
+            this.dataGridRecortes.Name = "dataGridRecortes";
+            this.dataGridRecortes.ReadOnly = true;
+            this.dataGridRecortes.Size = new System.Drawing.Size(444, 150);
+            this.dataGridRecortes.TabIndex = 93;
+            this.dataGridRecortes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridRecortes.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridRecortes_RowHeaderMouseClick);
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(629, 445);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(124, 49);
+            this.button14.TabIndex = 79;
+            this.button14.Text = "Guardar";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(307, 445);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(124, 49);
+            this.button13.TabIndex = 78;
+            this.button13.Text = "Limpiar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(441, 236);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(216, 25);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Recortes Disponibles";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(139, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(190, 29);
+            this.label5.TabIndex = 87;
+            this.label5.Text = "Id del Empleado";
+            // 
+            // textID
+            // 
+            this.textID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textID.ForeColor = System.Drawing.Color.YellowGreen;
+            this.textID.Location = new System.Drawing.Point(335, 189);
+            this.textID.Multiline = true;
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(133, 24);
+            this.textID.TabIndex = 76;
+            this.textID.TextChanged += new System.EventHandler(this.textID_TextChanged);
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel17.Location = new System.Drawing.Point(185, 215);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(300, 1);
+            this.panel17.TabIndex = 86;
+            // 
+            // panel30
+            // 
+            this.panel30.Location = new System.Drawing.Point(185, 211);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(232, 1);
+            this.panel30.TabIndex = 83;
             // 
             // label2
             // 
@@ -987,8 +1162,9 @@ namespace SisNomina
             this.panel2.ResumeLayout(false);
             this.processContainer.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel40.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.consultContainer.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
@@ -1010,6 +1186,7 @@ namespace SisNomina
             this.panel5.ResumeLayout(false);
             this.panelMenuPrincipal.ResumeLayout(false);
             this.panelMenuPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRecortes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1087,6 +1264,20 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DataGridView dataGridRecortes;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textOT;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.Button button23;
     }
 }
 

@@ -420,7 +420,7 @@ namespace SisNomina
         {
             BD.Connect();
 
-            string querys = "INSERT INTO Recortes (Nombre, Recorte, Descripcion) Values ( @nombre, @recorte, @descripcion) ";
+            string querys = "INSERT INTO Recortes (Nombre, Cantidad, Descripcion) Values ( @nombre, @recorte, @descripcion) ";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@nombre", textRecorte.Text);
             command.Parameters.AddWithValue("@recorte", textBoxCantidad.Text);
@@ -434,6 +434,12 @@ namespace SisNomina
             textBoxDescripcion.Clear();
 
             BD.Disconnect();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
         }
     }
 }

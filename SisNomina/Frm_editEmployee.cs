@@ -499,5 +499,11 @@ namespace SisNomina
 
             BD.Disconnect();
         }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
     }
 }

@@ -399,5 +399,11 @@ namespace SisNomina
         {
 
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
     }
 }

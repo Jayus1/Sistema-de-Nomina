@@ -51,3 +51,4 @@ C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomi
 C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_editEmployee.resources
 C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_changePassword.resources
 C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_instrution.resources
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_addPayment.resources
