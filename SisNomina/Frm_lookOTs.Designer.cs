@@ -93,6 +93,7 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panelLookOTs = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
             this.checkBoxTodos = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textID = new System.Windows.Forms.TextBox();
@@ -104,7 +105,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -185,7 +185,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -924,6 +924,17 @@ namespace SisNomina
             this.panelLookOTs.TabIndex = 1;
             this.panelLookOTs.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLookOTs_Paint);
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(519, 145);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(128, 47);
+            this.button13.TabIndex = 84;
+            this.button13.Text = "Buscar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // checkBoxTodos
             // 
             this.checkBoxTodos.AutoSize = true;
@@ -980,6 +991,7 @@ namespace SisNomina
             this.dataGridViewOT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOT.Location = new System.Drawing.Point(124, 211);
             this.dataGridViewOT.Name = "dataGridViewOT";
+            this.dataGridViewOT.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewOT.Size = new System.Drawing.Size(795, 365);
             this.dataGridViewOT.TabIndex = 73;
             // 
@@ -1033,17 +1045,6 @@ namespace SisNomina
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 71;
             this.pictureBox3.TabStop = false;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(519, 145);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(128, 47);
-            this.button13.TabIndex = 84;
-            this.button13.Text = "Buscar";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Frm_lookOTs
             // 
