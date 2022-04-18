@@ -20,6 +20,7 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
 
         public Frm_lookInNomin()
         {
@@ -385,33 +386,13 @@ namespace SisNomina
             string querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Fijo], Empleado.ID, Persona.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@ID", textID.Text);
-            SqlDataReader reader = command.ExecuteReader();
-
-            if(reader.HasRows)
-            {
-                while(reader.Read())
-                {
-                    labelNombre.Text = reader.GetString(0)+ " "+reader.GetString(1);
-                    labelPuetoDeTrabajo.Text = reader.GetString(3);
-                    labelDireccion.Text = reader.GetString(2);
-                    labelDepartamento.Text = reader.GetString(4);
-                    labelSueldo.Text = Convert.ToString(reader.GetInt32(5));
-                    labelID.Text = Convert.ToString(reader.GetInt32(6));
-                    labelTelefono.Text = Convert.ToString(reader.GetInt64(7));
-                }
-            }
-            else
-            {
-                MessageBox.Show("El ID no pertenece a ningun empleado");
-            }
-            reader.Close();
-            querys = "SELECT * FROM Pagos WHERE IdEmpleado= @Id";
-            command = new SqlCommand(querys,BD._connection);
-            command.Parameters.AddWithValue("@Id",labelID.Text);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
+
             adapter.Fill(dataTable);
+
             dataGridViewNomina.DataSource = dataTable;
+
 
             BD.Disconnect();
         }
@@ -424,6 +405,47 @@ namespace SisNomina
         {
             new Frm_addPayment().Show();
             this.Hide();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
         }
     }
 }

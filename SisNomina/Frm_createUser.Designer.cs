@@ -47,10 +47,12 @@ namespace SisNomina
             this.processContainer = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.consultContainer = new System.Windows.Forms.Panel();
@@ -83,8 +85,13 @@ namespace SisNomina
             this.button21 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.exitContainer = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.button24 = new System.Windows.Forms.Button();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.button25 = new System.Windows.Forms.Button();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.button26 = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.maintenceTimer = new System.Windows.Forms.Timer(this.components);
             this.processTimer = new System.Windows.Forms.Timer(this.components);
@@ -117,8 +124,7 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel40 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
+            this.exitTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
@@ -129,8 +135,9 @@ namespace SisNomina
             this.panel2.SuspendLayout();
             this.processContainer.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
+            this.panel40.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel7.SuspendLayout();
             this.consultContainer.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -149,13 +156,15 @@ namespace SisNomina
             this.panel25.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.exitContainer.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel33.SuspendLayout();
+            this.panel34.SuspendLayout();
             this.panelAddUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel40.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -169,7 +178,7 @@ namespace SisNomina
             this.sidebar.Controls.Add(this.reportContainer);
             this.sidebar.Controls.Add(this.toolContainer);
             this.sidebar.Controls.Add(this.helpContainer);
-            this.sidebar.Controls.Add(this.panel5);
+            this.sidebar.Controls.Add(this.exitContainer);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.MaximumSize = new System.Drawing.Size(213, 678);
@@ -379,32 +388,31 @@ namespace SisNomina
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
-            // panel13
+            // panel40
             // 
-            this.panel13.Controls.Add(this.button10);
-            this.panel13.Location = new System.Drawing.Point(-3, 151);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(219, 61);
-            this.panel13.TabIndex = 2;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.panel40.Controls.Add(this.button13);
+            this.panel40.Location = new System.Drawing.Point(3, 106);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(220, 48);
+            this.panel40.TabIndex = 59;
             // 
-            // button10
+            // button13
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = global::SisNomina.Properties.Resources.SubMenu;
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(-3, -13);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(221, 72);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "           Poner Horas Extras";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.White;
+            this.button13.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.Location = new System.Drawing.Point(-6, -29);
+            this.button13.Name = "button13";
+            this.button13.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button13.Size = new System.Drawing.Size(228, 94);
+            this.button13.TabIndex = 1;
+            this.button13.Text = "           Agregar Pago";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // panel12
             // 
@@ -432,6 +440,33 @@ namespace SisNomina
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click_1);
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.button10);
+            this.panel13.Location = new System.Drawing.Point(-3, 151);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(219, 61);
+            this.panel13.TabIndex = 2;
+            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.Location = new System.Drawing.Point(-3, -13);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(221, 72);
+            this.button10.TabIndex = 1;
+            this.button10.Text = "           Agregar Horas \r\n                   Extras";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // panel7
             // 
@@ -586,7 +621,7 @@ namespace SisNomina
             this.button18.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button18.Size = new System.Drawing.Size(221, 62);
             this.button18.TabIndex = 2;
-            this.button18.Text = "           Ver Historial \r\n          de Horas Extras";
+            this.button18.Text = "           Ver Historial \r\n           de Horas Extras";
             this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click_1);
@@ -611,7 +646,7 @@ namespace SisNomina
             this.button17.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.button17.Size = new System.Drawing.Size(221, 62);
             this.button17.TabIndex = 2;
-            this.button17.Text = "           Ver Historial \r\n           de Horas Trabajadas";
+            this.button17.Text = "           Ver Recortes";
             this.button17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button16_Click);
@@ -854,31 +889,96 @@ namespace SisNomina
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // panel5
+            // exitContainer
             // 
-            this.panel5.Controls.Add(this.buttonExit);
-            this.panel5.Location = new System.Drawing.Point(3, 506);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(213, 52);
-            this.panel5.TabIndex = 2;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            this.exitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.exitContainer.Controls.Add(this.panel16);
+            this.exitContainer.Controls.Add(this.panel33);
+            this.exitContainer.Controls.Add(this.panel34);
+            this.exitContainer.Location = new System.Drawing.Point(3, 506);
+            this.exitContainer.MaximumSize = new System.Drawing.Size(213, 173);
+            this.exitContainer.MinimumSize = new System.Drawing.Size(213, 51);
+            this.exitContainer.Name = "exitContainer";
+            this.exitContainer.Size = new System.Drawing.Size(213, 51);
+            this.exitContainer.TabIndex = 59;
             // 
-            // buttonExit
+            // panel16
             // 
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.ForeColor = System.Drawing.Color.White;
-            this.buttonExit.Image = global::SisNomina.Properties.Resources.Salir;
-            this.buttonExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExit.Location = new System.Drawing.Point(-3, -13);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.buttonExit.Size = new System.Drawing.Size(221, 72);
-            this.buttonExit.TabIndex = 15;
-            this.buttonExit.Text = "           Salir";
-            this.buttonExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.button2_Click);
+            this.panel16.Controls.Add(this.button24);
+            this.panel16.Location = new System.Drawing.Point(3, 115);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(203, 52);
+            this.panel16.TabIndex = 2;
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.ForeColor = System.Drawing.Color.White;
+            this.button24.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button24.Location = new System.Drawing.Point(-3, -7);
+            this.button24.Name = "button24";
+            this.button24.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button24.Size = new System.Drawing.Size(221, 70);
+            this.button24.TabIndex = 1;
+            this.button24.Text = "           Salir del Programa";
+            this.button24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // panel33
+            // 
+            this.panel33.Controls.Add(this.button25);
+            this.panel33.Location = new System.Drawing.Point(3, 57);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(203, 52);
+            this.panel33.TabIndex = 2;
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button25.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button25.ForeColor = System.Drawing.Color.White;
+            this.button25.Image = global::SisNomina.Properties.Resources.SubMenu;
+            this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button25.Location = new System.Drawing.Point(-3, -7);
+            this.button25.Name = "button25";
+            this.button25.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button25.Size = new System.Drawing.Size(221, 70);
+            this.button25.TabIndex = 1;
+            this.button25.Text = "           Cerrar Sesion";
+            this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // panel34
+            // 
+            this.panel34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(45)))));
+            this.panel34.Controls.Add(this.button26);
+            this.panel34.Location = new System.Drawing.Point(0, 0);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(214, 63);
+            this.panel34.TabIndex = 2;
+            // 
+            // button26
+            // 
+            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button26.ForeColor = System.Drawing.Color.White;
+            this.button26.Image = global::SisNomina.Properties.Resources.Salir;
+            this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button26.Location = new System.Drawing.Point(-1, -9);
+            this.button26.Name = "button26";
+            this.button26.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button26.Size = new System.Drawing.Size(221, 72);
+            this.button26.TabIndex = 8;
+            this.button26.Text = "           Salir";
+            this.button26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
             // sidebarTimer
             // 
@@ -1190,31 +1290,10 @@ namespace SisNomina
             this.pictureBox3.TabIndex = 38;
             this.pictureBox3.TabStop = false;
             // 
-            // panel40
+            // exitTimer
             // 
-            this.panel40.Controls.Add(this.button13);
-            this.panel40.Location = new System.Drawing.Point(3, 106);
-            this.panel40.Name = "panel40";
-            this.panel40.Size = new System.Drawing.Size(220, 48);
-            this.panel40.TabIndex = 59;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Image = global::SisNomina.Properties.Resources.SubMenu;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(-6, -29);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(228, 94);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "           Agregar Pago";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.exitTimer.Interval = 1;
+            this.exitTimer.Tick += new System.EventHandler(this.exitTimer_Tick);
             // 
             // Frm_createUser
             // 
@@ -1242,8 +1321,9 @@ namespace SisNomina
             this.panel2.ResumeLayout(false);
             this.processContainer.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
+            this.panel40.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.consultContainer.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
@@ -1262,14 +1342,16 @@ namespace SisNomina
             this.panel25.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
+            this.exitContainer.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel33.ResumeLayout(false);
+            this.panel34.ResumeLayout(false);
             this.panelAddUser.ResumeLayout(false);
             this.panelAddUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel40.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1291,8 +1373,6 @@ namespace SisNomina
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Timer maintenceTimer;
         private System.Windows.Forms.Panel processContainer;
         private System.Windows.Forms.Panel panel14;
@@ -1364,6 +1444,14 @@ namespace SisNomina
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel40;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Panel exitContainer;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Timer exitTimer;
     }
 }
 

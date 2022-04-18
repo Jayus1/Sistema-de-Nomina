@@ -442,9 +442,11 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
+
+            decimal id = 0;
             BD.Connect();
 
-            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeIngreso,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)";
+            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeIngreso,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)"; ;
             SqlCommand command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@nombre",textNombre.Text);
             command.Parameters.AddWithValue("@apellido", textApellido.Text);
@@ -467,16 +469,22 @@ namespace SisNomina
             }
 
             reader.Close();
-            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoFijo, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo)";
+            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoFijo, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo);" +
+                "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];";
             command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@IdPersona", identificador);
             command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
             command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
             command.Parameters.AddWithValue("@sueldo", textBoxSueldo.Text);
             command.Parameters.AddWithValue("@activo", 1);
-            command.ExecuteNonQuery();
+            reader = command.ExecuteReader();
 
-            MessageBox.Show("Empleado registrado existosamente");
+            while(reader.Read())
+            {
+                 id = reader.GetDecimal(0);
+            }
+
+            MessageBox.Show("Empleado registrado existosamente \n Id de Empleado: "+ id);
             textNombre.Clear();
             textApellido.Clear();
             textBoxDepartamento.Clear();
@@ -545,6 +553,11 @@ namespace SisNomina
                     exitTimer.Stop();
                 }
             }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

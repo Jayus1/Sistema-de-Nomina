@@ -491,5 +491,10 @@ namespace SisNomina
             BD.IdPersona = 0;
             BD.privilegio = null;
         }
+
+        private void exitContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

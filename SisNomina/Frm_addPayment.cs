@@ -21,6 +21,7 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
         List<int> ln = new List<int>();
         public Frm_addPayment()
         {
@@ -435,7 +436,6 @@ namespace SisNomina
         private void button13_Click(object sender, EventArgs e)
         {
             textID.Clear();
-            textOT.Clear();
             dataGridRecortes.ClearSelection();
 
         }
@@ -452,50 +452,51 @@ namespace SisNomina
             {
                 float recortesTotal=0;
                 int sueldoFijo = 0;
+                int extra = 0;
                 while (reader.Read())
                 {
                     sueldoFijo = reader.GetInt32(0);
                 }
                 reader.Close();
-                querys = "SELECT ExtraTotal FROM HorasExtras WHERE ID= @ot AND Estado= @estado";
+                querys = "SELECT ExtraTotal FROM HorasExtras WHERE IdEmpleado= @ot AND Estado= @estado";
                 command = new SqlCommand(querys, BD._connection);
-                command.Parameters.AddWithValue("@ot", textOT.Text);
+                command.Parameters.AddWithValue("@ot", textID.Text);
                 command.Parameters.AddWithValue("@estado", "No Pagadas");
                 reader = command.ExecuteReader();
                 if(reader.HasRows)
                 {
-                    int extra = 0;
+                    
                     while (reader.Read())
                     {
-                        extra = reader.GetInt32(0);
+                        extra =+ reader.GetInt32(0);
                     }
-                        reader.Close();
-                    querys = "INSERT INTO Pagos (IdEmpleado, RecorteTotal, HorasExtras, SueldoTotal, FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha );" +
-                        "UPDATE HorasExtras SET Estado='Pagadas' WHERE ID= @horas;";
-                    command = new SqlCommand(querys, BD._connection);
-                    command.Parameters.AddWithValue("@id", textID.Text);
-                    command.Parameters.AddWithValue("@horas", textOT.Text);
-
-                    foreach(int i in ln)
-                    {
-                        recortesTotal += Convert.ToSingle(dataGridRecortes.Rows[i].Cells[1].Value.ToString());
-                    }
-                    command.Parameters.AddWithValue("@recorte", recortesTotal);
-                    command.Parameters.AddWithValue("@sueldo",extra+(sueldoFijo-recortesTotal));
-                    command.Parameters.AddWithValue("@fecha", DateTime.Now.ToShortDateString());
-                    command.ExecuteNonQuery();
-
-                    MessageBox.Show("El pago se efectuo correctamente");
-
-                    textID.Clear();
-                    textOT.Clear();
-                    dataGridRecortes.ClearSelection();
 
                 }
-                else
+                reader.Close();
+                querys = "INSERT INTO Pagos (IdEmpleado, RecorteTotal, HorasExtras, SueldoTotal , FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha );" +
+                    "UPDATE HorasExtras SET Estado='Pagadas' WHERE IdEmpleado= @horas;";
+                command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@id", textID.Text);
+                command.Parameters.AddWithValue("@horas", extra);
+
+                foreach (int i in ln)
                 {
-                    MessageBox.Show("Estas horas extras ya fueron pagadas anteriormente");
+                    recortesTotal += Convert.ToSingle(dataGridRecortes.Rows[i].Cells[1].Value.ToString());
                 }
+                command.Parameters.AddWithValue("@recorte", recortesTotal);
+                command.Parameters.AddWithValue("@sueldo", extra + (sueldoFijo - recortesTotal));
+                command.Parameters.AddWithValue("@fecha", DateTime.Now.ToShortDateString());
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("El pago se efectuo correctamente");
+
+                querys = "UPDATE HorasExtras SET Estado= 'Pagadas' WHERE IdEmpleado= @id";
+                command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@id", textID.Text);
+                command.ExecuteNonQuery();
+
+                textID.Clear();
+                dataGridRecortes.ClearSelection();
             }
             else
             {
@@ -530,6 +531,47 @@ namespace SisNomina
         {
             new Frm_addPayment().Show();
             this.Hide();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
         }
     }
 }
