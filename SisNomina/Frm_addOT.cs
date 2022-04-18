@@ -20,6 +20,7 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
 
         public Frm_addOT()
         {
@@ -147,7 +148,10 @@ namespace SisNomina
 
         private void button4_Click(object sender, EventArgs e)
         {
-            processTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+               processTimer.Start();     
+             }
         }
 
         private void processTimer_Tick(object sender, EventArgs e)
@@ -185,7 +189,10 @@ namespace SisNomina
 
         private void button5_Click(object sender, EventArgs e)
         {
-            consultTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+                consultTimer.Start();
+             }
         }
 
         private void consultTimer_Tick(object sender, EventArgs e)
@@ -305,7 +312,10 @@ namespace SisNomina
 
         private void buttoMaintence(object sender, EventArgs e)
         {
-            maintenceTimer.Start();
+           if (BD.privilegio == "Administrador")
+             {
+               maintenceTimer.Start();  
+             } 
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -408,52 +418,139 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BD.Connect();
-            float sueldo=0;
-            float sueldoXHora;
-            float sueldoExtra;
-            float sueldoExtraTotal;
-
-
-            string querys = "SELECT SueldoFijo FROM Empleado WHERE ID= @id";
-            SqlCommand command = new SqlCommand(querys,BD._connection);
-            command.Parameters.AddWithValue("@id", textUsername.Text);
-
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+            if (textUsername.Text != "")
             {
-                sueldo =(float)reader.GetInt32(0);
+                if(Convert.ToInt32(numericFin.Value) - Convert.ToInt32(numericInicio.Value) > 0)
+                {
+                    BD.Connect();
+                    float sueldo = 0;
+                    float sueldoXHora;
+                    float sueldoExtra;
+                    float sueldoExtraTotal;
+
+
+                    string querys = "SELECT SueldoFijo FROM Empleado WHERE ID= @id";
+                    SqlCommand command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@id", textUsername.Text);
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        sueldo = (float)reader.GetInt32(0);
+                    }
+                    reader.Close();
+                    sueldoXHora = (sueldo / 30) / 8;
+                    sueldoExtra = sueldoXHora + (sueldoXHora * 0.35f);
+                    sueldoExtraTotal = (Convert.ToInt32(numericFin.Value) - Convert.ToInt32(numericInicio.Value)) * sueldoExtra;
+                    sueldoExtraTotal = Convert.ToSingle(sueldoExtraTotal.ToString("N2"));
+
+                    querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal, Estado) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total, @estado)";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@Id", Convert.ToInt32(textUsername.Text));
+                    command.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
+                    command.Parameters.AddWithValue("@Inicio", numericInicio.Value);
+                    command.Parameters.AddWithValue("@Fin", numericFin.Value);
+                    command.Parameters.AddWithValue("@Total", sueldoExtraTotal);
+                    command.Parameters.AddWithValue("@estado", "No Pagadas");
+                    command.ExecuteNonQuery();
+
+
+
+                    MessageBox.Show("Las Horas extras fueron registradas exitosamente");
+
+                    textUsername.Clear();
+                    numericFin.Value = 1;
+                    numericInicio.Value = 1;
+                    dateTimeFecha.Value = DateTime.Today;
+
+                    BD.Disconnect();
+                }
+                else
+                {
+                    MessageBox.Show("El resultado final de las horas extras debe ser un numero mayor o igual a 1");
+                }
             }
-            reader.Close();
-            sueldoXHora = (sueldo / 30) / 8;
-            sueldoExtra = sueldoXHora + (sueldoXHora * 0.35f);
-            sueldoExtraTotal = (Convert.ToInt32(numericFin.Value)-Convert.ToInt32(numericInicio.Value)) * sueldoExtra;
-            sueldoExtraTotal = Convert.ToSingle(sueldoExtraTotal.ToString("N2"));
-
-            querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total)";
-            command= new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@Id",Convert.ToInt32(textUsername.Text));
-            command.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
-            command.Parameters.AddWithValue("@Inicio", numericInicio.Value);
-            command.Parameters.AddWithValue("@Fin", numericFin.Value);
-            command.Parameters.AddWithValue("@Total", sueldoExtraTotal);
-            command.ExecuteNonQuery();
-
-
-
-            MessageBox.Show("Las Horas extras fueron registradas exitosamente");
-
-            textUsername.Clear();
-            numericFin.Value = 1;
-            numericInicio.Value = 1;
-            dateTimeFecha.Value = DateTime.Today;
-
-            BD.Disconnect();
+            else
+            {
+                MessageBox.Show("No puede haber campos vacios");
+            }
         }
 
         private void dateTimeInico_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
+        }
+
+        private void textUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            } 
         }
     }
 }

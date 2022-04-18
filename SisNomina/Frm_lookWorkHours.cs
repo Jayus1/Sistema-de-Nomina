@@ -20,18 +20,21 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
 
         public Frm_lookWorkHours()
         {
             InitializeComponent();
-            if (BD.privilegio == "Administrador")
-            {
-                checkBoxTodos.Enabled = true;
-            }
-            else
-            {
-                checkBoxTodos.Enabled = false;
-            }
+
+            BD.Connect();
+
+            string querys = "SELECT * FROM Recortes;";
+            SqlDataAdapter adapter = new SqlDataAdapter(querys, BD._connection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            dataGridViewHT.DataSource = dataTable;
+
+            BD.Disconnect();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -152,7 +155,10 @@ namespace SisNomina
 
         private void button4_Click(object sender, EventArgs e)
         {
-            processTimer.Start();
+           if (BD.privilegio == "Administrador")
+             {
+               processTimer.Start();    
+             } 
         }
 
         private void processTimer_Tick(object sender, EventArgs e)
@@ -190,7 +196,10 @@ namespace SisNomina
 
         private void button5_Click(object sender, EventArgs e)
         {
-            consultTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+                  consultTimer.Start();
+             }
         }
 
         private void consultTimer_Tick(object sender, EventArgs e)
@@ -310,7 +319,10 @@ namespace SisNomina
 
         private void buttoMaintence(object sender, EventArgs e)
         {
-            maintenceTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+               maintenceTimer.Start();   
+             }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -397,22 +409,54 @@ namespace SisNomina
 
         private void button13_Click(object sender, EventArgs e)
         {
-            dataGridViewHT.DataSource = null;
-            dataGridViewHT.Rows.Clear();
+            
+        }
 
-            BD.Connect();
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
 
-            String querys = "SELECT IdEmpleado, Dia, HoraInicio, HoraFin, Total FROM HorasLaborales WHERE IdEmpleado= @IdEmpleado";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@IdEmpleado", textBoxID.Text);
+        private void button24_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
+        }
 
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
 
-            dataGridViewHT.DataSource = dataTable;
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-            BD.Disconnect();
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
         }
     }
 }

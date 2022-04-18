@@ -20,15 +20,16 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
 
         public Frm_lookNomin()
         {
             InitializeComponent();
-
             BD.Connect();
 
-            String querys = "SELECT * FROM Pagos";
-            SqlDataAdapter adapter = new SqlDataAdapter(querys, BD._connection);
+            String querys = "SELECT Empleado.ID, Persona.Nombres AS Nombre, Persona.Apellidos AS Apellido, Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Fijo] FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Activo= 1";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
 
@@ -155,7 +156,10 @@ namespace SisNomina
 
         private void button4_Click(object sender, EventArgs e)
         {
-            processTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+                processTimer.Start(); 
+             }
         }
 
         private void processTimer_Tick(object sender, EventArgs e)
@@ -193,7 +197,10 @@ namespace SisNomina
 
         private void button5_Click(object sender, EventArgs e)
         {
-            consultTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+                 consultTimer.Start();
+             }
         }
 
         private void consultTimer_Tick(object sender, EventArgs e)
@@ -313,7 +320,10 @@ namespace SisNomina
 
         private void buttoMaintence(object sender, EventArgs e)
         {
-            maintenceTimer.Start();
+           if (BD.privilegio == "Administrador")
+             {
+               maintenceTimer.Start();
+             } 
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -383,12 +393,69 @@ namespace SisNomina
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            BD.Connect();
 
+            String querys = "SELECT Empleado.ID AS [ID de Empleado], Persona.Nombres AS [Nombre], Persona.Apellidos AS [Apellido], Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Bruto] FROM Persona INNER JOIN Empleado ON Persona.ID=Empleado.IdPersona";
+            SqlCommand command = new SqlCommand(querys, BD._connection);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            dataGridViewNomina.DataSource = dataTable;
+
+            BD.Disconnect();
         }
 
         private void panel16_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
         }
     }
 }

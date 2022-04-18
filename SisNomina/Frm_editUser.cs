@@ -20,6 +20,7 @@ namespace SisNomina
         bool reportExpand;
         bool toolExpand;
         bool helpExpand;
+        bool exitExpand;
         int IdPersona;
         //int IdEmpleado;
         public Frm_editUser()
@@ -145,7 +146,10 @@ namespace SisNomina
 
         private void button4_Click(object sender, EventArgs e)
         {
-            processTimer.Start();
+            if (BD.privilegio == "Administrador")
+             {
+                processTimer.Start(); 
+             }
         }
 
         private void processTimer_Tick(object sender, EventArgs e)
@@ -183,7 +187,10 @@ namespace SisNomina
 
         private void button5_Click(object sender, EventArgs e)
         {
-            consultTimer.Start();
+           if (BD.privilegio == "Administrador")
+             {
+                 consultTimer.Start();
+             } 
         }
 
         private void consultTimer_Tick(object sender, EventArgs e)
@@ -303,7 +310,10 @@ namespace SisNomina
 
         private void buttoMaintence(object sender, EventArgs e)
         {
-            maintenceTimer.Start();
+           if (BD.privilegio == "Administrador")
+             {
+                maintenceTimer.Start();  
+             } 
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -387,7 +397,7 @@ namespace SisNomina
             textID.Clear();
             textPassword.Clear();
             textPasswordN.Clear();
-            comboBoxRango.Items.Clear();
+            comboBoxRango.Text = "Privilegio";
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -405,23 +415,41 @@ namespace SisNomina
                 {
                     IdPersona = reader.GetInt32(0);
                 }
-                if (textPassword.Text == textPasswordN.Text)
+               if(textPasswordN.Text == "")
                 {
-                    reader.Close();
-                    querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
-                    command = new SqlCommand(querys, BD._connection);
-                    command.Parameters.AddWithValue("@IdPersona", IdPersona);
-                    command.Parameters.AddWithValue("@UserName", textUsername.Text);
-                    command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
-                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
-                    command.ExecuteNonQuery();
 
-                    MessageBox.Show("Se ha editado el usuario exitosamente!!!");
+                        reader.Close();
+                        querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                        command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                        command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                        command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Se ha editado el usuario exitosamente!!!");
 
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas son diferentes");
+                    if (textPassword.Text == textPasswordN.Text)
+                    {
+                        reader.Close();
+                        querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                        command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                        command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                        command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Se ha editado el usuario exitosamente!!!");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas son diferentes");
+                    }
                 }
             }
             else
@@ -432,7 +460,7 @@ namespace SisNomina
             textID.Clear();
             textPassword.Clear();
             textPasswordN.Clear();
-            comboBoxRango.Items.Clear();
+            comboBoxRango.Text = "Privilegio";
             BD.Disconnect();
         }
 
@@ -471,6 +499,53 @@ namespace SisNomina
                 MessageBox.Show("El empleado no se encuentra");
             }
             BD.Disconnect();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            new Frm_addPayment().Show();
+            this.Hide();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            exitTimer.Start();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Hide();
+            BD.IdEmpleado = 0;
+            BD.IdPersona = 0;
+            BD.privilegio = null;
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void exitTimer_Tick(object sender, EventArgs e)
+        {
+            if (exitExpand)
+            {
+                exitContainer.Height += 10;
+                if (exitContainer.Height == exitContainer.MaximumSize.Height)
+                {
+                    exitExpand = false;
+                    exitTimer.Stop();
+                }
+            }
+            else
+            {
+                exitContainer.Height -= 10;
+                if (exitContainer.Height == exitContainer.MinimumSize.Height)
+                {
+                    exitExpand = true;
+                    exitTimer.Stop();
+                }
+            }
         }
     }
 }
