@@ -1140,6 +1140,8 @@ namespace SisNomina
             this.dateTimeFecha.Size = new System.Drawing.Size(148, 35);
             this.dateTimeFecha.TabIndex = 2;
             this.dateTimeFecha.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.ValueChanged += new System.EventHandler(this.dateTimeFecha_ValueChanged);
+            this.dateTimeFecha.VisibleChanged += new System.EventHandler(this.dateTimeFecha_VisibleChanged);
             // 
             // label8
             // 

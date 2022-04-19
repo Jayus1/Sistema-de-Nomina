@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace SisNomina
 {
+    
     public partial class Frm_addOT : Form
     {
         bool sidebarExpand=true;
@@ -21,13 +22,18 @@ namespace SisNomina
         bool toolExpand;
         bool helpExpand;
         bool exitExpand;
+        
+        
 
         public Frm_addOT()
         {
             InitializeComponent();
             dateTimeFecha.MaxDate=DateTime.Today;
+            dateTimeFecha.Value= DateTime.Today;
             numericInicio.Value = 1;
             numericFin.Value = 1;
+            dateTimeFecha.Visible=false;
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -80,7 +86,7 @@ namespace SisNomina
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void homeTimer_Tick(object sender, EventArgs e)
@@ -427,9 +433,10 @@ namespace SisNomina
                     float sueldoXHora;
                     float sueldoExtra;
                     float sueldoExtraTotal;
+                    DateTime fecha=  DateTime.Now; 
 
 
-                    string querys = "SELECT SueldoFijo FROM Empleado WHERE ID= @id";
+                    string querys = "SELECT Empleado.SueldoFijo, Persona.FechaDeIngreso FROM Empleado INNER JOIN Persona On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @id";
                     SqlCommand command = new SqlCommand(querys, BD._connection);
                     command.Parameters.AddWithValue("@id", textUsername.Text);
 
@@ -439,35 +446,36 @@ namespace SisNomina
                         sueldo = (float)reader.GetInt32(0);
                     }
                     reader.Close();
-                    sueldoXHora = (sueldo / 30) / 8;
-                    sueldoExtra = sueldoXHora + (sueldoXHora * 0.35f);
-                    sueldoExtraTotal = (Convert.ToInt32(numericFin.Value) - Convert.ToInt32(numericInicio.Value)) * sueldoExtra;
-                    sueldoExtraTotal = Convert.ToSingle(sueldoExtraTotal.ToString("N2"));
 
-                    querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal, Estado) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total, @estado)";
-                    command = new SqlCommand(querys, BD._connection);
-                    command.Parameters.AddWithValue("@Id", Convert.ToInt32(textUsername.Text));
-                    command.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
-                    command.Parameters.AddWithValue("@Inicio", numericInicio.Value);
-                    command.Parameters.AddWithValue("@Fin", numericFin.Value);
-                    command.Parameters.AddWithValue("@Total", sueldoExtraTotal);
-                    command.Parameters.AddWithValue("@estado", "No Pagadas");
-                    command.ExecuteNonQuery();
+                        sueldoXHora = (sueldo / 30) / 8;
+                        sueldoExtra = sueldoXHora + (sueldoXHora * 0.35f);
+                        sueldoExtraTotal = (Convert.ToInt32(numericFin.Value) - Convert.ToInt32(numericInicio.Value)) * sueldoExtra;
+                        sueldoExtraTotal = Convert.ToSingle(sueldoExtraTotal.ToString("N2"));
+
+                        querys = "Insert into HorasExtras (IdEmpleado,Fecha,HoraInicio,HoraFin,ExtraTotal, Estado) VALUES ( @Id, @Fecha, @Inicio, @Fin, @Total, @estado)";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@Id", Convert.ToInt32(textUsername.Text));
+                        command.Parameters.AddWithValue("@Fecha", dateTimeFecha.Value);
+                        command.Parameters.AddWithValue("@Inicio", numericInicio.Value);
+                        command.Parameters.AddWithValue("@Fin", numericFin.Value);
+                        command.Parameters.AddWithValue("@Total", sueldoExtraTotal);
+                        command.Parameters.AddWithValue("@estado", "No Pagadas");
+                        command.ExecuteNonQuery();
 
 
 
-                    MessageBox.Show("Las Horas extras fueron registradas exitosamente");
+                        MessageBox.Show("Las Horas extras fueron registradas exitosamente");
 
-                    textUsername.Clear();
-                    numericFin.Value = 1;
-                    numericInicio.Value = 1;
-                    dateTimeFecha.Value = DateTime.Today;
+                        textUsername.Clear();
+                        numericFin.Value = 1;
+                        numericInicio.Value = 1;
+                        dateTimeFecha.Value = DateTime.Today;
 
                     BD.Disconnect();
                 }
                 else
                 {
-                    MessageBox.Show("El resultado final de las horas extras debe ser un numero mayor o igual a 1");
+                    MessageBox.Show("La cantidad total de horas extras debe ser un numero mayor o igual a 1");
                 }
             }
             else
@@ -530,7 +538,7 @@ namespace SisNomina
 
         private void textUsername_TextChanged(object sender, EventArgs e)
         {
-
+            dateTimeFecha.Visible = true;
         }
 
         private void textUsername_KeyPress(object sender, KeyPressEventArgs e)
@@ -551,6 +559,33 @@ namespace SisNomina
             {
                 e.Handled = true;
             } 
+
+
+        }
+
+        private void dateTimeFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimeFecha_VisibleChanged(object sender, EventArgs e)
+        {
+            if (textUsername.Text != "")
+            {
+                BD.Connect();
+                DateTime fecha = DateTime.Now;
+                string querys = "SELECT FechaDeIngreso FROM Persona WHERE Empleado.ID= @id";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@id", textUsername.Text);
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    fecha = reader.GetDateTime(0);
+                }  
+                dateTimeFecha.MinDate = fecha;
+                BD.Disconnect();
+            }
         }
     }
 }
