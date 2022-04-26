@@ -390,27 +390,31 @@ namespace SisNomina
 
         private void button13_Click(object sender, EventArgs e)
         {
-            dataGridViewOT.DataSource = null;
-            dataGridViewOT.Rows.Clear();
+            if(textID.Text != "")
+            {
+                dataGridViewOT.DataSource = null;
+                dataGridViewOT.Rows.Clear();
 
-            BD.Connect();
+                BD.Connect();
 
-            String querys = "SELECT IdEmpleado AS [ID], Fecha AS [Fecha de Realizacion], HoraInicio AS [Hora de Inicio], HoraFin AS [Hora de Finalizacion], ExtraTotal AS [Pago Por Horas Extras], Estado FROM HorasExtras WHERE IdEmpleado= @IdEmpleado";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
+                String querys = "SELECT IdEmpleado AS [ID], Fecha AS [Fecha de Realizacion], HoraInicio AS [Hora de Inicio], HoraFin AS [Hora de Finalizacion], ExtraTotal AS [Pago Por Horas Extras], Estado FROM HorasExtras WHERE IdEmpleado= @IdEmpleado";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
 
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
 
-            dataGridViewOT.DataSource = dataTable;
+                dataGridViewOT.DataSource = dataTable;
 
-            BD.Disconnect();
+                BD.Disconnect();
+                checkBoxTodos.Checked = false;
+            }   
         }
 
         private void checkBoxTodos_CheckedChanged(object sender, EventArgs e)
         {
-
+            textID.Clear();
             dataGridViewOT.DataSource = null;
             dataGridViewOT.Rows.Clear();
             BD.Connect();
@@ -470,6 +474,26 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

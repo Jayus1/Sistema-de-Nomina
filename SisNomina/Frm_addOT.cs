@@ -32,7 +32,7 @@ namespace SisNomina
             dateTimeFecha.Value= DateTime.Today;
             numericInicio.Value = 1;
             numericFin.Value = 1;
-            dateTimeFecha.Visible=false;
+            
 
         }
 
@@ -429,23 +429,37 @@ namespace SisNomina
                 if(Convert.ToInt32(numericFin.Value) - Convert.ToInt32(numericInicio.Value) > 0)
                 {
                     BD.Connect();
-                    float sueldo = 0;
-                    float sueldoXHora;
-                    float sueldoExtra;
-                    float sueldoExtraTotal;
-                    DateTime fecha=  DateTime.Now; 
-
-
-                    string querys = "SELECT Empleado.SueldoFijo, Persona.FechaDeIngreso FROM Empleado INNER JOIN Persona On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @id";
+                    DateTime fecha = DateTime.Now;
+                    string querys = "SELECT Persona.FechaDeIngreso FROM Empleado INNER JOIN Persona On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @id";
                     SqlCommand command = new SqlCommand(querys, BD._connection);
                     command.Parameters.AddWithValue("@id", textUsername.Text);
 
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        sueldo = (float)reader.GetInt32(0);
+                        fecha = reader.GetDateTime(0);
                     }
-                    reader.Close();
+                    BD.Disconnect();
+                    if (DateTime.Compare(fecha, dateTimeFecha.Value) <= 0)
+                    {
+                        BD.Connect();
+                        float sueldo = 0;
+                        float sueldoXHora;
+                        float sueldoExtra;
+                        float sueldoExtraTotal;
+                         fecha = DateTime.Now;
+
+
+                        querys = "SELECT Empleado.SueldoFijo, Persona.FechaDeIngreso FROM Empleado INNER JOIN Persona On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @id";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@id", textUsername.Text);
+
+                        reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            sueldo = (float)reader.GetInt32(0);
+                        }
+                        reader.Close();
 
                         sueldoXHora = (sueldo / 30) / 8;
                         sueldoExtra = sueldoXHora + (sueldoXHora * 0.35f);
@@ -471,7 +485,13 @@ namespace SisNomina
                         numericInicio.Value = 1;
                         dateTimeFecha.Value = DateTime.Today;
 
-                    BD.Disconnect();
+                        BD.Disconnect();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La fecha de realizacion de las horas extras debe ser luego de la fecha de ingreso de empleado");
+                    }
+                   
                 }
                 else
                 {
@@ -559,8 +579,6 @@ namespace SisNomina
             {
                 e.Handled = true;
             } 
-
-
         }
 
         private void dateTimeFecha_ValueChanged(object sender, EventArgs e)
@@ -572,19 +590,8 @@ namespace SisNomina
         {
             if (textUsername.Text != "")
             {
-                BD.Connect();
-                DateTime fecha = DateTime.Now;
-                string querys = "SELECT FechaDeIngreso FROM Persona WHERE Empleado.ID= @id";
-                SqlCommand command = new SqlCommand(querys, BD._connection);
-                command.Parameters.AddWithValue("@id", textUsername.Text);
-
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    fecha = reader.GetDateTime(0);
-                }  
-                dateTimeFecha.MinDate = fecha;
-                BD.Disconnect();
+                
+                
             }
         }
     }

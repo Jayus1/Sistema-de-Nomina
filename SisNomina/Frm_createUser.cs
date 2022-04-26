@@ -473,49 +473,58 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            int IdPersona=0;
-            BD.Connect();
-
-            String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@ID",textID.Text);
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if(textID.Text != "" && textPassword.Text != "" && textPasswordN.Text != "" && textUsername.Text != "")
             {
-                while (reader.Read())
-                {
-                    IdPersona = reader.GetInt32(0);
-                }
-                if (textPassword.Text == textPasswordN.Text)
-                {
-                    reader.Close();
-                    querys = "INSERT INTO Usuario (IdPersona, Username, Contraseña, Privilegio) VALUES ( @IdPersona, @UserName, @Contraseña, @Privilegio)";
-                    command = new SqlCommand(querys, BD._connection);
-                    command.Parameters.AddWithValue("@IdPersona", Convert.ToString(IdPersona));
-                    command.Parameters.AddWithValue("@UserName", textUsername.Text);
-                    command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
-                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
-                    command.ExecuteNonQuery();
+                int IdPersona = 0;
+                BD.Connect();
 
-                    MessageBox.Show("Se ha creado el usuario exitosamente!!!");
+                String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@ID", textID.Text);
+                SqlDataReader reader = command.ExecuteReader();
 
-                    textUsername.Clear();
-                    textID.Clear();
-                    textPassword.Clear();
-                    textPasswordN.Clear();
-                    comboBoxRango.Text= "Privilegio";
-                    BD.Disconnect();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        IdPersona = reader.GetInt32(0);
+                    }
+                    if (textPassword.Text == textPasswordN.Text)
+                    {
+                        reader.Close();
+                        querys = "INSERT INTO Usuario (IdPersona, Username, Contraseña, Privilegio) VALUES ( @IdPersona, @UserName, @Contraseña, @Privilegio)";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@IdPersona", Convert.ToString(IdPersona));
+                        command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                        command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                        command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Se ha creado el usuario exitosamente!!!");
+
+                        textUsername.Clear();
+                        textID.Clear();
+                        textPassword.Clear();
+                        textPasswordN.Clear();
+                        comboBoxRango.Text = "Privilegio";
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas son diferentes");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas son diferentes");
+                    MessageBox.Show("El empleado no se encuentra");
                 }
+                BD.Disconnect();
             }
             else
             {
-                MessageBox.Show("El empleado no se encuentra");
+                MessageBox.Show("No puede haber campos vacios");
             }
+           
         }
 
         private void comboBoxRango_SelectedIndexChanged(object sender, EventArgs e)
@@ -567,6 +576,26 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

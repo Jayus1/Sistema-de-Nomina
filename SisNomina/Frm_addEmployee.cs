@@ -625,5 +625,10 @@ namespace SisNomina
                 e.Handled = true;
             }
         }
+
+        private void textNombre_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

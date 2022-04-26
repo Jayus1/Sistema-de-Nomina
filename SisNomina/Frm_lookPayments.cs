@@ -395,26 +395,36 @@ namespace SisNomina
 
         private void button13_Click(object sender, EventArgs e)
         {
-            dataGridViewPay.DataSource = null;
-            dataGridViewPay.Rows.Clear();
+           if(textBoxID.Text != "")
+            {
+                checkBoxTodos.Checked = false;
+                dataGridViewPay.DataSource = null;
+                dataGridViewPay.Rows.Clear();
 
-            BD.Connect();
+                BD.Connect();
 
-            String querys = "SELECT * FROM Pagos WHERE IdEmpleado= @IdEmpleado";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@IdEmpleado", textBoxID.Text);
+                String querys = "SELECT * FROM Pagos WHERE IdEmpleado= @IdEmpleado";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@IdEmpleado", textBoxID.Text);
 
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
 
-            dataGridViewPay.DataSource = dataTable;
+                dataGridViewPay.DataSource = dataTable;
 
-            BD.Disconnect();
+                BD.Disconnect();
+            }
+            else
+            {
+                MessageBox.Show("El campo ID esta vacio");
+            }
         }
 
         private void checkBoxTodos_CheckedChanged(object sender, EventArgs e)
         {
+
+            textBoxID.Clear();
             dataGridViewPay.DataSource = null;
             dataGridViewPay.Rows.Clear();
             BD.Connect();
@@ -475,6 +485,26 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textBoxID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

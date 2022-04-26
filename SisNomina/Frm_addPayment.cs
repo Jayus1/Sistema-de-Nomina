@@ -442,67 +442,75 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BD.Connect();
-            String querys = " SELECT SueldoFijo FROM Empleado WHERE ID= @Id";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@Id", textID.Text);
-            SqlDataReader reader = command.ExecuteReader();
-
-            if(reader.HasRows)
+            if(textID.Text != "")
             {
-                float recortesTotal=0;
-                int sueldoFijo = 0;
-                int extra = 0;
-                while (reader.Read())
+                BD.Connect();
+                String querys = " SELECT SueldoFijo FROM Empleado WHERE ID= @Id";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@Id", textID.Text);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    sueldoFijo = reader.GetInt32(0);
-                }
-                reader.Close();
-                querys = "SELECT ExtraTotal FROM HorasExtras WHERE IdEmpleado= @ot AND Estado= @estado";
-                command = new SqlCommand(querys, BD._connection);
-                command.Parameters.AddWithValue("@ot", textID.Text);
-                command.Parameters.AddWithValue("@estado", "No Pagadas");
-                reader = command.ExecuteReader();
-                if(reader.HasRows)
-                {
-                    
+                    float recortesTotal = 0;
+                    int sueldoFijo = 0;
+                    int extra = 0;
                     while (reader.Read())
                     {
-                        extra =+ reader.GetInt32(0);
+                        sueldoFijo = reader.GetInt32(0);
                     }
+                    reader.Close();
+                    querys = "SELECT ExtraTotal FROM HorasExtras WHERE IdEmpleado= @ot AND Estado= @estado";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@ot", textID.Text);
+                    command.Parameters.AddWithValue("@estado", "No Pagadas");
+                    reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
 
+                        while (reader.Read())
+                        {
+                            extra = +reader.GetInt32(0);
+                        }
+
+                    }
+                    reader.Close();
+                    querys = "INSERT INTO Pagos (IdEmpleado, RecorteTotal, HorasExtras, SueldoTotal , FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha);" +
+                        "UPDATE HorasExtras SET Estado='Pagadas' WHERE IdEmpleado= @horas;";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@id", textID.Text);
+                    command.Parameters.AddWithValue("@horas", extra);
+
+                    foreach (int i in ln)
+                    {
+                        recortesTotal += Convert.ToSingle(dataGridRecortes.Rows[i].Cells[1].Value.ToString());
+                    }
+                    command.Parameters.AddWithValue("@recorte", recortesTotal);
+                    command.Parameters.AddWithValue("@sueldo", extra + (sueldoFijo - recortesTotal));
+                    command.Parameters.AddWithValue("@fecha", DateTime.Now);
+                    command.ExecuteNonQuery();
+
+                    MessageBox.Show("El pago se efectuo correctamente");
+
+                    querys = "UPDATE HorasExtras SET Estado= 'Pagadas' WHERE IdEmpleado= @id";
+                    command = new SqlCommand(querys, BD._connection);
+                    command.Parameters.AddWithValue("@id", textID.Text);
+                    command.ExecuteNonQuery();
+
+                    textID.Clear();
+                    dataGridRecortes.ClearSelection();
                 }
-                reader.Close();
-                querys = "INSERT INTO Pagos (IdEmpleado, RecorteTotal, HorasExtras, SueldoTotal , FechaDePago) VALUES ( @id, @recorte, @horas, @sueldo, @fecha);" +
-                    "UPDATE HorasExtras SET Estado='Pagadas' WHERE IdEmpleado= @horas;";
-                command = new SqlCommand(querys, BD._connection);
-                command.Parameters.AddWithValue("@id", textID.Text);
-                command.Parameters.AddWithValue("@horas", extra);
-
-                foreach (int i in ln)
+                else
                 {
-                    recortesTotal += Convert.ToSingle(dataGridRecortes.Rows[i].Cells[1].Value.ToString());
+                    MessageBox.Show("Este empleado no existe");
                 }
-                command.Parameters.AddWithValue("@recorte", recortesTotal);
-                command.Parameters.AddWithValue("@sueldo", extra + (sueldoFijo - recortesTotal));
-                command.Parameters.AddWithValue("@fecha", DateTime.Now);
-                command.ExecuteNonQuery();
-
-                MessageBox.Show("El pago se efectuo correctamente");
-
-                querys = "UPDATE HorasExtras SET Estado= 'Pagadas' WHERE IdEmpleado= @id";
-                command = new SqlCommand(querys, BD._connection);
-                command.Parameters.AddWithValue("@id", textID.Text);
-                command.ExecuteNonQuery();
-
-                textID.Clear();
-                dataGridRecortes.ClearSelection();
+                BD.Disconnect();
             }
             else
             {
-                MessageBox.Show("Este empleado no existe");
+                MessageBox.Show("El campo de ID no puede estar vacio");
             }
-            BD.Disconnect();
+            
         }
 
         private void dataGridRecortes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -571,6 +579,26 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

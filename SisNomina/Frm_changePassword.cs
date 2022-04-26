@@ -419,43 +419,50 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BD.Connect();
-
-            string querys = "SELECT Contraseña FROM Usuario WHERE Contraseña= @Password AND IdPersona= @id";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@Password", textPasswordC.Text);
-            command.Parameters.AddWithValue("@id", BD.IdPersona);
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if(textPasswordC.Text != "" && textPasswordN.Text != "" && textPasswordNN.Text != "")
             {
-                if(textPasswordN.Text==textPasswordNN.Text)
-                {
-                    reader.Close();
-                    querys = "UPDATE Usuario SET Contraseña= @PasswordN WHERE Contraseña= @Password AND IdPersona= @id";
-                    command=new SqlCommand(querys, BD._connection);
-                    command.Parameters.AddWithValue("@PasswordN", textPasswordN.Text);
-                    command.Parameters.AddWithValue("@Password", textPasswordC.Text);
-                    command.Parameters.AddWithValue("@id", BD.IdPersona);
-                    command.ExecuteNonQuery();
+                BD.Connect();
 
-                    MessageBox.Show("Contraseña cambiada exitosamente");
+                string querys = "SELECT Contraseña FROM Usuario WHERE Contraseña= @Password AND IdPersona= @id";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@Password", textPasswordC.Text);
+                command.Parameters.AddWithValue("@id", BD.IdPersona);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    if (textPasswordN.Text == textPasswordNN.Text)
+                    {
+                        reader.Close();
+                        querys = "UPDATE Usuario SET Contraseña= @PasswordN WHERE Contraseña= @Password AND IdPersona= @id";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@PasswordN", textPasswordN.Text);
+                        command.Parameters.AddWithValue("@Password", textPasswordC.Text);
+                        command.Parameters.AddWithValue("@id", BD.IdPersona);
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Contraseña cambiada exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas no coinciden");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden");
+                    MessageBox.Show("La contraseña actual es incorrecta");
                 }
+
+                textPasswordC.Clear();
+                textPasswordN.Clear();
+                textPasswordNN.Clear();
+
+                BD.Disconnect();
             }
             else
             {
-                MessageBox.Show("La contraseña actual es incorrecta");
-            }
-
-            textPasswordC.Clear();
-            textPasswordN.Clear();
-            textPasswordNN.Clear();
-
-            BD.Disconnect();
+                MessageBox.Show("Todos los campos deben ser llenados");
+            }   
         }
 
         private void button23_Click(object sender, EventArgs e)

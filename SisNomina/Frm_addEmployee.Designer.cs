@@ -1403,6 +1403,7 @@ namespace SisNomina
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(190, 24);
             this.textNombre.TabIndex = 1;
+            this.textNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyDown);
             // 
             // panel29
             // 
@@ -1525,6 +1526,7 @@ namespace SisNomina
             // 
             // Frm_addEmployee
             // 
+            this.AcceptButton = this.button14;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

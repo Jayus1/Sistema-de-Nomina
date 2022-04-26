@@ -382,19 +382,27 @@ namespace SisNomina
 
         private void button13_Click(object sender, EventArgs e)
         {
-            BD.Connect();
-            string querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Fijo], Empleado.ID, Persona.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@ID", textID.Text);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
+            if(textID.Text != "")
+            {
+                BD.Connect();
+                string querys = "SELECT Persona.Nombres, Persona.Apellidos,  Persona.Direccion,  Empleado.Puesto, Empleado.Departamento, Empleado.SueldoFijo AS [Sueldo Fijo], Empleado.ID, Persona.Telefono FROM Persona INNER JOIN Empleado On Persona.ID=Empleado.IdPersona WHERE Empleado.ID= @ID";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@ID", textID.Text);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
 
-            adapter.Fill(dataTable);
+                adapter.Fill(dataTable);
 
-            dataGridViewNomina.DataSource = dataTable;
+                dataGridViewNomina.DataSource = dataTable;
 
 
-            BD.Disconnect();
+                BD.Disconnect();
+            }
+            else
+            {
+                MessageBox.Show("El campo ID no puede estar vacia");
+            }
+            
         }
 
         private void panel16_Paint(object sender, PaintEventArgs e)
@@ -446,6 +454,26 @@ namespace SisNomina
         private void button25_Click(object sender, EventArgs e)
         {
             exitTimer.Start();
+        }
+
+        private void textID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
