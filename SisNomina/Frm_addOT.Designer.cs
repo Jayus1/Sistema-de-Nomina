@@ -208,7 +208,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -1140,6 +1140,8 @@ namespace SisNomina
             this.dateTimeFecha.Size = new System.Drawing.Size(148, 35);
             this.dateTimeFecha.TabIndex = 2;
             this.dateTimeFecha.Value = new System.DateTime(2022, 3, 30, 0, 0, 0, 0);
+            this.dateTimeFecha.ValueChanged += new System.EventHandler(this.dateTimeFecha_ValueChanged);
+            this.dateTimeFecha.VisibleChanged += new System.EventHandler(this.dateTimeFecha_VisibleChanged);
             // 
             // label8
             // 
@@ -1213,6 +1215,8 @@ namespace SisNomina
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(133, 24);
             this.textUsername.TabIndex = 1;
+            this.textUsername.TextChanged += new System.EventHandler(this.textUsername_TextChanged);
+            this.textUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textUsername_KeyPress);
             // 
             // panel27
             // 
@@ -1298,6 +1302,7 @@ namespace SisNomina
             // 
             // Frm_addOT
             // 
+            this.AcceptButton = this.button14;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

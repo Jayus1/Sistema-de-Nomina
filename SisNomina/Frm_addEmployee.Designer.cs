@@ -229,7 +229,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -1210,6 +1210,7 @@ namespace SisNomina
             this.textTelefono.Size = new System.Drawing.Size(188, 24);
             this.textTelefono.TabIndex = 4;
             this.textTelefono.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             // 
             // textApellido
             // 
@@ -1316,6 +1317,7 @@ namespace SisNomina
             this.textBoxSueldo.Size = new System.Drawing.Size(123, 24);
             this.textBoxSueldo.TabIndex = 9;
             this.textBoxSueldo.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBoxSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSueldo_KeyPress);
             // 
             // textBoxPuesto
             // 
@@ -1340,7 +1342,8 @@ namespace SisNomina
             this.textCedula.Name = "textCedula";
             this.textCedula.Size = new System.Drawing.Size(166, 24);
             this.textCedula.TabIndex = 3;
-            this.textCedula.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textCedula.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCedula_KeyPress_1);
             // 
             // panel36
             // 
@@ -1400,6 +1403,7 @@ namespace SisNomina
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(190, 24);
             this.textNombre.TabIndex = 1;
+            this.textNombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textNombre_KeyDown);
             // 
             // panel29
             // 
@@ -1522,6 +1526,7 @@ namespace SisNomina
             // 
             // Frm_addEmployee
             // 
+            this.AcceptButton = this.button14;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

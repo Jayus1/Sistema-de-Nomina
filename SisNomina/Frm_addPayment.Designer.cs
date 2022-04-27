@@ -199,7 +199,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -1102,6 +1102,7 @@ namespace SisNomina
             this.textID.Size = new System.Drawing.Size(133, 24);
             this.textID.TabIndex = 76;
             this.textID.TextChanged += new System.EventHandler(this.textID_TextChanged);
+            this.textID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textID_KeyPress);
             // 
             // panel17
             // 
@@ -1177,6 +1178,7 @@ namespace SisNomina
             // 
             // Frm_addPayment
             // 
+            this.AcceptButton = this.button14;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;

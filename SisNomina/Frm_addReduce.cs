@@ -418,22 +418,29 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BD.Connect();
+            if (textRecorte.Text != "" && textBoxCantidad.Text != "")
+            {
+                BD.Connect();
 
-            string querys = "INSERT INTO Recortes (Nombre, Cantidad, Descripcion) Values ( @nombre, @recorte, @descripcion) ";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@nombre", textRecorte.Text);
-            command.Parameters.AddWithValue("@recorte", textBoxCantidad.Text);
-            command.Parameters.AddWithValue("@descripcion",textBoxDescripcion.Text);
-            command.ExecuteNonQuery();
+                string querys = "INSERT INTO Recortes (Nombre, Cantidad, Descripcion) Values ( @nombre, @recorte, @descripcion) ";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@nombre", textRecorte.Text);
+                command.Parameters.AddWithValue("@recorte", textBoxCantidad.Text);
+                command.Parameters.AddWithValue("@descripcion", textBoxDescripcion.Text);
+                command.ExecuteNonQuery();
 
-            MessageBox.Show("El recorte fue agregado exitosamente");
+                MessageBox.Show("El recorte fue agregado exitosamente");
 
-            textRecorte.Clear();
-            textBoxCantidad.Clear();
-            textBoxDescripcion.Clear();
+                textRecorte.Clear();
+                textBoxCantidad.Clear();
+                textBoxDescripcion.Clear();
 
-            BD.Disconnect();
+                BD.Disconnect();
+            }
+            else
+            {
+                MessageBox.Show("Tienes que tener el campo nombre y el campo cantidad lleno");
+            }          
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -477,6 +484,31 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textRecorte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBoxCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

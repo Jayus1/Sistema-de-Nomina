@@ -459,47 +459,56 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BD.Connect();
-
-            String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeIngreso= @fecha, Direccion= @direccion, Telefono= @telefono WHERE ID= @IdPersona;" +
-                "UPDATE Empleado SET Puesto= @puesto, Departamento= @departamento, SueldoFijo= @Sueldo, Activo= @activo WHERE ID= @IdEmpleado;";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@nombre", textNombre.Text);
-            command.Parameters.AddWithValue("@apellido", textApellido.Text);
-            command.Parameters.AddWithValue("@cedula",textCedula.Text);
-            command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
-            command.Parameters.AddWithValue("@direccion", textDireccion.Text);
-            command.Parameters.AddWithValue("@telefono", textTelefono.Text);
-            command.Parameters.AddWithValue("@IdPersona",IdPersona);
-            command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
-            command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
-            command.Parameters.AddWithValue("@Sueldo", textBoxSueldo.Text);
-            command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
-            if (checkBoxActivo.Checked==true)
+            if(textID.Text != "" && textNombre.Text != "" && textTelefono.Text != "" && textApellido.Text != "" && textBoxDepartamento.Text != "" && textBoxPuesto.Text != "" && textCedula.Text != "" && textDireccion.Text != "" )
             {
-                command.Parameters.AddWithValue("@activo",1);
+                BD.Connect();
+
+                String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeIngreso= @fecha, Direccion= @direccion, Telefono= @telefono, FechaDeSalida= @salida WHERE ID= @IdPersona;" +
+                    "UPDATE Empleado SET Puesto= @puesto, Departamento= @departamento, SueldoFijo= @Sueldo, Activo= @activo WHERE ID= @IdEmpleado;";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@nombre", textNombre.Text);
+                command.Parameters.AddWithValue("@apellido", textApellido.Text);
+                command.Parameters.AddWithValue("@cedula", textCedula.Text);
+                command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
+                command.Parameters.AddWithValue("@direccion", textDireccion.Text);
+                command.Parameters.AddWithValue("@telefono", textTelefono.Text);
+                command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
+                command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
+                command.Parameters.AddWithValue("@Sueldo", textBoxSueldo.Text);
+                command.Parameters.AddWithValue("@IdEmpleado", textID.Text);
+                if (checkBoxActivo.Checked == true)
+                {
+                    command.Parameters.AddWithValue("@activo", 1);
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@activo", 0);
+                    command.Parameters.AddWithValue("@salida", DateTime.Now.Date);
+                }
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("El empleado fue actualizado exitosamente");
+
+                textID.Clear();
+                textNombre.Clear();
+                textApellido.Clear();
+                textBoxDepartamento.Clear();
+                textBoxPuesto.Clear();
+                textBoxSueldo.Clear();
+                textTelefono.Clear();
+                textCedula.Clear();
+                textDireccion.Clear();
+                dateTimeFecha.Text = DateTime.Now.ToShortDateString();
+                checkBoxActivo.Checked = true;
+
+                BD.Disconnect();
             }
             else
             {
-                command.Parameters.AddWithValue("@activo", 0);
+                MessageBox.Show("No pueden habe campos vacios");
             }
-            command.ExecuteNonQuery();
-
-            MessageBox.Show("El empleado fue actualizado exitosamente");
-
-            textID.Clear();
-            textNombre.Clear();
-            textApellido.Clear();
-            textBoxDepartamento.Clear();
-            textBoxPuesto.Clear();
-            textBoxSueldo.Clear();
-            textTelefono.Clear();
-            textCedula.Clear();
-            textDireccion.Clear();
-            dateTimeFecha.Text = DateTime.Now.ToShortDateString();
-            checkBoxActivo.Checked = true;
-
-            BD.Disconnect();
+            
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -546,6 +555,26 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }

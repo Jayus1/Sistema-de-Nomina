@@ -442,60 +442,66 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-
-            decimal id = 0;
-            BD.Connect();
-
-            string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeIngreso,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)"; ;
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@nombre",textNombre.Text);
-            command.Parameters.AddWithValue("@apellido", textApellido.Text);
-            command.Parameters.AddWithValue("@Departamento", textBoxDepartamento.Text);
-            command.Parameters.AddWithValue("@cedula", textCedula.Text);
-            command.Parameters.AddWithValue("@direccion", textDireccion.Text);
-            command.Parameters.AddWithValue("@telefono", textTelefono.Text);
-            command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
-            command.ExecuteNonQuery();
-
-            querys = "Select ID FROM Persona WHERE Cedula= @cedula";
-            command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@cedula", textCedula.Text);
-            SqlDataReader reader = command.ExecuteReader();
-            Int32 identificador=0;
-
-            while(reader.Read())
+            if (textApellido.Text != "" && textNombre.Text != "" && textCedula.Text != "" && textBoxSueldo.Text != "" && textBoxPuesto.Text != "" && textTelefono.Text != "" && textDireccion.Text != "")
             {
-                identificador = reader.GetInt32(0);
+                decimal id = 0;
+                BD.Connect();
+
+                string querys = $"Insert into Persona(Nombres, Apellidos, Cedula, FechaDeIngreso,Direccion,Telefono) values ( @nombre, @apellido, @cedula, @fecha, @Direccion, @telefono)"; ;
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@nombre", textNombre.Text);
+                command.Parameters.AddWithValue("@apellido", textApellido.Text);
+                command.Parameters.AddWithValue("@Departamento", textBoxDepartamento.Text);
+                command.Parameters.AddWithValue("@cedula", textCedula.Text);
+                command.Parameters.AddWithValue("@direccion", textDireccion.Text);
+                command.Parameters.AddWithValue("@telefono", textTelefono.Text);
+                command.Parameters.AddWithValue("@fecha", dateTimeFecha.Value);
+                command.ExecuteNonQuery();
+
+                querys = "Select ID FROM Persona WHERE Cedula= @cedula";
+                command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@cedula", textCedula.Text);
+                SqlDataReader reader = command.ExecuteReader();
+                Int32 identificador = 0;
+
+                while (reader.Read())
+                {
+                    identificador = reader.GetInt32(0);
+                }
+
+                reader.Close();
+                querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoFijo, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo);" +
+                    "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];";
+                command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@IdPersona", identificador);
+                command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
+                command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
+                command.Parameters.AddWithValue("@sueldo", textBoxSueldo.Text);
+                command.Parameters.AddWithValue("@activo", 1);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    id = reader.GetDecimal(0);
+                }
+
+                MessageBox.Show("Empleado registrado existosamente \n Id de Empleado: " + id);
+                textNombre.Clear();
+                textApellido.Clear();
+                textBoxDepartamento.Clear();
+                textBoxPuesto.Clear();
+                textBoxSueldo.Clear();
+                textCedula.Clear();
+                textDireccion.Clear();
+                textTelefono.Clear();
+                dateTimeFecha.Text = DateTime.Now.ToShortDateString();
+
+                BD.Disconnect();
             }
-
-            reader.Close();
-            querys = "INSERT INTO Empleado(IdPersona, Puesto, Departamento, SueldoFijo, Activo) VALUES ( @IdPersona, @puesto, @departamento, @sueldo, @activo);" +
-                "SELECT SCOPE_IDENTITY() AS [SCOPE_IDENTITY];";
-            command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@IdPersona", identificador);
-            command.Parameters.AddWithValue("@puesto", textBoxPuesto.Text);
-            command.Parameters.AddWithValue("@departamento", textBoxDepartamento.Text);
-            command.Parameters.AddWithValue("@sueldo", textBoxSueldo.Text);
-            command.Parameters.AddWithValue("@activo", 1);
-            reader = command.ExecuteReader();
-
-            while(reader.Read())
+            else
             {
-                 id = reader.GetDecimal(0);
+                MessageBox.Show("No pueden haber campos vacios");
             }
-
-            MessageBox.Show("Empleado registrado existosamente \n Id de Empleado: "+ id);
-            textNombre.Clear();
-            textApellido.Clear();
-            textBoxDepartamento.Clear();
-            textBoxPuesto.Clear();
-            textBoxSueldo.Clear();
-            textCedula.Clear();
-            textDireccion.Clear();
-            textTelefono.Clear();
-            dateTimeFecha.Text = DateTime.Now.ToShortDateString();
-
-            BD.Disconnect();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -556,6 +562,71 @@ namespace SisNomina
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textCedula_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                 e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+             else
+             {
+                 e.Handled = true;
+             }
+        }
+
+        private void textTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textNombre_KeyDown(object sender, KeyEventArgs e)
         {
 
         }

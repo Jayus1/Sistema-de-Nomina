@@ -402,48 +402,74 @@ namespace SisNomina
 
         private void button14_Click(object sender, EventArgs e)
         {
-            BD.Connect();
-
-            String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
-            SqlCommand command = new SqlCommand(querys, BD._connection);
-            command.Parameters.AddWithValue("@ID", textID.Text);
-            SqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if(textID.Text != "" && textUsername.Text != "" && textPassword.Text != "" && textPasswordN.Text != "")
             {
-                while (reader.Read())
-                {
-                    IdPersona = reader.GetInt32(0);
-                }
-                if (textPassword.Text == textPasswordN.Text)
-                {
-                    reader.Close();
-                    querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
-                    command = new SqlCommand(querys, BD._connection);
-                    command.Parameters.AddWithValue("@IdPersona", IdPersona);
-                    command.Parameters.AddWithValue("@UserName", textUsername.Text);
-                    command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
-                    command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
-                    command.ExecuteNonQuery();
+                BD.Connect();
 
-                    MessageBox.Show("Se ha editado el usuario exitosamente!!!");
+                String querys = "SELECT Persona.ID, Empleado.ID FROM Empleado INNER JOIN Persona ON Empleado.IdPersona=Persona.ID WHERE Empleado.ID= @ID ";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@ID", textID.Text);
+                SqlDataReader reader = command.ExecuteReader();
 
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        IdPersona = reader.GetInt32(0);
+                    }
+                    if (textPasswordN.Text == "")
+                    {
+
+                        reader.Close();
+                        querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
+                        command = new SqlCommand(querys, BD._connection);
+                        command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                        command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                        command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                        command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Se ha editado el usuario exitosamente!!!");
+
+                    }
+                    else
+                    {
+                        if (textPassword.Text == textPasswordN.Text)
+                        {
+                            reader.Close();
+                            querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
+                            command = new SqlCommand(querys, BD._connection);
+                            command.Parameters.AddWithValue("@IdPersona", IdPersona);
+                            command.Parameters.AddWithValue("@UserName", textUsername.Text);
+                            command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
+                            command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("Se ha editado el usuario exitosamente!!!");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las contraseñas son diferentes");
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas son diferentes");
+                    MessageBox.Show("El empleado no se encuentra");
                 }
+                textUsername.Clear();
+                textID.Clear();
+                textPassword.Clear();
+                textPasswordN.Clear();
+                comboBoxRango.Text = "Privilegio";
+                BD.Disconnect();
             }
             else
             {
-                MessageBox.Show("El empleado no se encuentra");
+                MessageBox.Show("No puede haber algun campo vacio");
             }
-            textUsername.Clear();
-            textID.Clear();
-            textPassword.Clear();
-            textPasswordN.Clear();
-            comboBoxRango.Text = "Privilegio";
-            BD.Disconnect();
+            
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -527,6 +553,26 @@ namespace SisNomina
                     exitExpand = true;
                     exitTimer.Stop();
                 }
+            }
+        }
+
+        private void textID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
             }
         }
     }
