@@ -1114,11 +1114,12 @@ namespace SisNomina
             this.textBoxSueldo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSueldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSueldo.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textBoxSueldo.Location = new System.Drawing.Point(349, 517);
+            this.textBoxSueldo.Location = new System.Drawing.Point(302, 517);
             this.textBoxSueldo.Multiline = true;
             this.textBoxSueldo.Name = "textBoxSueldo";
-            this.textBoxSueldo.Size = new System.Drawing.Size(110, 24);
+            this.textBoxSueldo.Size = new System.Drawing.Size(157, 24);
             this.textBoxSueldo.TabIndex = 11;
+            this.textBoxSueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSueldo_KeyPress);
             // 
             // button14
             // 
@@ -1258,6 +1259,7 @@ namespace SisNomina
             this.textTelefono.Name = "textTelefono";
             this.textTelefono.Size = new System.Drawing.Size(194, 24);
             this.textTelefono.TabIndex = 5;
+            this.textTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTelefono_KeyPress);
             // 
             // textApellido
             // 
@@ -1373,6 +1375,7 @@ namespace SisNomina
             this.textCedula.Size = new System.Drawing.Size(190, 24);
             this.textCedula.TabIndex = 4;
             this.textCedula.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCedula_KeyPress);
             // 
             // panel36
             // 

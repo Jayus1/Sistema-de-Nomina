@@ -101,16 +101,13 @@ namespace SisNomina
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panel16 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
-            this.textPasswordN = new System.Windows.Forms.TextBox();
             this.button23 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.comboBoxRango = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textUsername = new System.Windows.Forms.TextBox();
-            this.panel31 = new System.Windows.Forms.Panel();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.panel27 = new System.Windows.Forms.Panel();
             this.textID = new System.Windows.Forms.TextBox();
@@ -1020,16 +1017,13 @@ namespace SisNomina
             // panel16
             // 
             this.panel16.Controls.Add(this.button13);
-            this.panel16.Controls.Add(this.textPasswordN);
             this.panel16.Controls.Add(this.button23);
             this.panel16.Controls.Add(this.button14);
             this.panel16.Controls.Add(this.comboBoxRango);
             this.panel16.Controls.Add(this.label5);
-            this.panel16.Controls.Add(this.label6);
             this.panel16.Controls.Add(this.label3);
             this.panel16.Controls.Add(this.label4);
             this.panel16.Controls.Add(this.textUsername);
-            this.panel16.Controls.Add(this.panel31);
             this.panel16.Controls.Add(this.textPassword);
             this.panel16.Controls.Add(this.panel27);
             this.panel16.Controls.Add(this.textID);
@@ -1059,19 +1053,6 @@ namespace SisNomina
             this.button13.Text = "Buscar";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // textPasswordN
-            // 
-            this.textPasswordN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textPasswordN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPasswordN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPasswordN.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textPasswordN.Location = new System.Drawing.Point(748, 375);
-            this.textPasswordN.Multiline = true;
-            this.textPasswordN.Name = "textPasswordN";
-            this.textPasswordN.PasswordChar = '*';
-            this.textPasswordN.Size = new System.Drawing.Size(180, 24);
-            this.textPasswordN.TabIndex = 4;
             // 
             // button23
             // 
@@ -1112,21 +1093,11 @@ namespace SisNomina
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(151, 370);
+            this.label5.Location = new System.Drawing.Point(385, 360);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 29);
             this.label5.TabIndex = 77;
             this.label5.Text = "Contraseña";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(486, 368);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(258, 29);
-            this.label6.TabIndex = 76;
-            this.label6.Text = "Constraseña de Nuevo";
             // 
             // label3
             // 
@@ -1160,21 +1131,13 @@ namespace SisNomina
             this.textUsername.Size = new System.Drawing.Size(180, 24);
             this.textUsername.TabIndex = 2;
             // 
-            // panel31
-            // 
-            this.panel31.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel31.Location = new System.Drawing.Point(508, 400);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(420, 1);
-            this.panel31.TabIndex = 73;
-            // 
             // textPassword
             // 
             this.textPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPassword.ForeColor = System.Drawing.Color.YellowGreen;
-            this.textPassword.Location = new System.Drawing.Point(293, 373);
+            this.textPassword.Location = new System.Drawing.Point(527, 363);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
@@ -1206,14 +1169,14 @@ namespace SisNomina
             // panel29
             // 
             this.panel29.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.panel29.Location = new System.Drawing.Point(171, 399);
+            this.panel29.Location = new System.Drawing.Point(405, 389);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(300, 1);
             this.panel29.TabIndex = 71;
             // 
             // panel28
             // 
-            this.panel28.Location = new System.Drawing.Point(171, 395);
+            this.panel28.Location = new System.Drawing.Point(405, 385);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(232, 1);
             this.panel28.TabIndex = 66;
@@ -1413,16 +1376,13 @@ namespace SisNomina
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox textPasswordN;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.ComboBox comboBoxRango;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textUsername;
-        private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.TextBox textID;

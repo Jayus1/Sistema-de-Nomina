@@ -496,5 +496,10 @@ namespace SisNomina
         {
 
         }
+
+        private void labelSueldoXHora_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
