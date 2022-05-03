@@ -26,6 +26,7 @@ namespace SisNomina
         {
             InitializeComponent();
             dateTimeFecha.MaxDate = DateTime.Today;
+            dateTimeFecha.Value = DateTime.Today;
         }
 
         private void timer1_Tick(object sender, EventArgs e)

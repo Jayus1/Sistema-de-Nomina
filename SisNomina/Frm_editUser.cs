@@ -396,13 +396,12 @@ namespace SisNomina
             textUsername.Clear();
             textID.Clear();
             textPassword.Clear();
-            textPasswordN.Clear();
             comboBoxRango.Text = "Privilegio";
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            if(textID.Text != "" && textUsername.Text != "" && textPassword.Text != "" && textPasswordN.Text != "")
+            if(textID.Text != "" && textUsername.Text != "" && textPassword.Text != "")
             {
                 BD.Connect();
 
@@ -417,8 +416,6 @@ namespace SisNomina
                     {
                         IdPersona = reader.GetInt32(0);
                     }
-                    if (textPasswordN.Text == "")
-                    {
 
                         reader.Close();
                         querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
@@ -431,28 +428,7 @@ namespace SisNomina
 
                         MessageBox.Show("Se ha editado el usuario exitosamente!!!");
 
-                    }
-                    else
-                    {
-                        if (textPassword.Text == textPasswordN.Text)
-                        {
-                            reader.Close();
-                            querys = "UPDATE Usuario SET Username= @UserName, Contraseña= @Contraseña, Privilegio= @Privilegio WHERE IdPersona= @IdPersona";
-                            command = new SqlCommand(querys, BD._connection);
-                            command.Parameters.AddWithValue("@IdPersona", IdPersona);
-                            command.Parameters.AddWithValue("@UserName", textUsername.Text);
-                            command.Parameters.AddWithValue("@Contraseña", textPassword.Text);
-                            command.Parameters.AddWithValue("@Privilegio", comboBoxRango.Items[comboBoxRango.SelectedIndex].ToString());
-                            command.ExecuteNonQuery();
-
-                            MessageBox.Show("Se ha editado el usuario exitosamente!!!");
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Las contraseñas son diferentes");
-                        }
-                    }
+                   
                 }
                 else
                 {
@@ -461,7 +437,6 @@ namespace SisNomina
                 textUsername.Clear();
                 textID.Clear();
                 textPassword.Clear();
-                textPasswordN.Clear();
                 comboBoxRango.Text = "Privilegio";
                 BD.Disconnect();
             }
