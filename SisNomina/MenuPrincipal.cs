@@ -504,5 +504,10 @@ namespace SisNomina
         {
 
         }
+
+        private void labelNombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

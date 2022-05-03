@@ -737,7 +737,7 @@ namespace SisNomina
             this.toolContainer.MaximumSize = new System.Drawing.Size(213, 175);
             this.toolContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.toolContainer.Name = "toolContainer";
-            this.toolContainer.Size = new System.Drawing.Size(213, 51);
+            this.toolContainer.Size = new System.Drawing.Size(213, 175);
             this.toolContainer.TabIndex = 3;
             // 
             // panel24
@@ -825,7 +825,7 @@ namespace SisNomina
             this.helpContainer.Controls.Add(this.panel25);
             this.helpContainer.Controls.Add(this.panel23);
             this.helpContainer.Controls.Add(this.panel4);
-            this.helpContainer.Location = new System.Drawing.Point(3, 449);
+            this.helpContainer.Location = new System.Drawing.Point(3, 573);
             this.helpContainer.MaximumSize = new System.Drawing.Size(213, 181);
             this.helpContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.helpContainer.Name = "helpContainer";
@@ -919,7 +919,7 @@ namespace SisNomina
             this.exitContainer.Controls.Add(this.panel43);
             this.exitContainer.Controls.Add(this.panel44);
             this.exitContainer.Controls.Add(this.panel45);
-            this.exitContainer.Location = new System.Drawing.Point(3, 506);
+            this.exitContainer.Location = new System.Drawing.Point(3, 630);
             this.exitContainer.MaximumSize = new System.Drawing.Size(213, 173);
             this.exitContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.exitContainer.Name = "exitContainer";

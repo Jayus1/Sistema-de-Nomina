@@ -87,6 +87,13 @@ namespace SisNomina
             this.button21 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
+            this.exitContainer = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.button13 = new System.Windows.Forms.Button();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.button24 = new System.Windows.Forms.Button();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.maintenceTimer = new System.Windows.Forms.Timer(this.components);
             this.processTimer = new System.Windows.Forms.Timer(this.components);
@@ -106,13 +113,6 @@ namespace SisNomina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.exitContainer = new System.Windows.Forms.Panel();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.button24 = new System.Windows.Forms.Button();
             this.exitTimer = new System.Windows.Forms.Timer(this.components);
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -145,15 +145,15 @@ namespace SisNomina
             this.panel25.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.exitContainer.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel27.SuspendLayout();
+            this.panel28.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.exitContainer.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel27.SuspendLayout();
-            this.panel28.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidebar
@@ -197,7 +197,7 @@ namespace SisNomina
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(59, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(77, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Menu";
             // 
@@ -720,7 +720,7 @@ namespace SisNomina
             this.toolContainer.MaximumSize = new System.Drawing.Size(213, 175);
             this.toolContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.toolContainer.Name = "toolContainer";
-            this.toolContainer.Size = new System.Drawing.Size(213, 51);
+            this.toolContainer.Size = new System.Drawing.Size(213, 175);
             this.toolContainer.TabIndex = 3;
             // 
             // panel24
@@ -772,6 +772,7 @@ namespace SisNomina
             this.button19.Text = "          Editar Informacion \r\n          de Empleado";
             this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // panel10
             // 
@@ -806,7 +807,7 @@ namespace SisNomina
             this.helpContainer.Controls.Add(this.panel25);
             this.helpContainer.Controls.Add(this.panel23);
             this.helpContainer.Controls.Add(this.panel4);
-            this.helpContainer.Location = new System.Drawing.Point(3, 449);
+            this.helpContainer.Location = new System.Drawing.Point(3, 573);
             this.helpContainer.MaximumSize = new System.Drawing.Size(213, 181);
             this.helpContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.helpContainer.Name = "helpContainer";
@@ -892,185 +893,13 @@ namespace SisNomina
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // sidebarTimer
-            // 
-            this.sidebarTimer.Enabled = true;
-            this.sidebarTimer.Interval = 1;
-            this.sidebarTimer.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // maintenceTimer
-            // 
-            this.maintenceTimer.Enabled = true;
-            this.maintenceTimer.Interval = 1;
-            this.maintenceTimer.Tick += new System.EventHandler(this.homeTimer_Tick);
-            // 
-            // processTimer
-            // 
-            this.processTimer.Interval = 1;
-            this.processTimer.Tick += new System.EventHandler(this.processTimer_Tick);
-            // 
-            // consultTimer
-            // 
-            this.consultTimer.Enabled = true;
-            this.consultTimer.Interval = 1;
-            this.consultTimer.Tick += new System.EventHandler(this.consultTimer_Tick);
-            // 
-            // reportTimer
-            // 
-            this.reportTimer.Interval = 1;
-            this.reportTimer.Tick += new System.EventHandler(this.reportTimer_Tick);
-            // 
-            // toolTimer
-            // 
-            this.toolTimer.Interval = 1;
-            this.toolTimer.Tick += new System.EventHandler(this.toolTimer_Tick);
-            // 
-            // helpTimer
-            // 
-            this.helpTimer.Interval = 1;
-            this.helpTimer.Tick += new System.EventHandler(this.helpTimer_Tick);
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.label9);
-            this.panel16.Controls.Add(this.label8);
-            this.panel16.Controls.Add(this.label3);
-            this.panel16.Controls.Add(this.linkLabel2);
-            this.panel16.Controls.Add(this.label4);
-            this.panel16.Controls.Add(this.label5);
-            this.panel16.Controls.Add(this.label2);
-            this.panel16.Controls.Add(this.pictureBox2);
-            this.panel16.Controls.Add(this.pictureBox1);
-            this.panel16.Controls.Add(this.pictureBox4);
-            this.panel16.Controls.Add(this.pictureBox3);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(62, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1073, 678);
-            this.panel16.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(211, 318);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(682, 50);
-            this.label9.TabIndex = 59;
-            this.label9.Text = "Estamos ubicados en la Republica Dominicana, Santo Domingo Este, \r\nen el Farolito" +
-    "";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(228, 184);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(593, 50);
-            this.label8.TabIndex = 60;
-            this.label8.Text = "Somos una empresa que se encarga de distribuir nominas a \r\ndiferentes empresas pa" +
-    "ra el manejo de sus empleado";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(290, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(498, 54);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "Preguntas Frecuentes";
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(346, 441);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(415, 25);
-            this.linkLabel2.TabIndex = 57;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Preguntas Frecuentes Sobre la Aplicacion";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bauhaus 93", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(406, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 26);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "¿Quienes son?";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bauhaus 93", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(406, 403);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(275, 26);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "Mas Preguntas Frecuentes";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(406, 281);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 26);
-            this.label2.TabIndex = 56;
-            this.label2.Text = "¿Donde estan ubicados?";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox2.Location = new System.Drawing.Point(943, -98);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(238, 201);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 50;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox1.Location = new System.Drawing.Point(954, 564);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(244, 195);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox4.Location = new System.Drawing.Point(-103, -102);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(256, 205);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 52;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
-            this.pictureBox3.Location = new System.Drawing.Point(-100, 571);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(244, 195);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 53;
-            this.pictureBox3.TabStop = false;
-            // 
             // exitContainer
             // 
             this.exitContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(60)))));
             this.exitContainer.Controls.Add(this.panel26);
             this.exitContainer.Controls.Add(this.panel27);
             this.exitContainer.Controls.Add(this.panel28);
-            this.exitContainer.Location = new System.Drawing.Point(3, 506);
+            this.exitContainer.Location = new System.Drawing.Point(3, 630);
             this.exitContainer.MaximumSize = new System.Drawing.Size(213, 173);
             this.exitContainer.MinimumSize = new System.Drawing.Size(213, 51);
             this.exitContainer.Name = "exitContainer";
@@ -1155,6 +984,178 @@ namespace SisNomina
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
+            // sidebarTimer
+            // 
+            this.sidebarTimer.Enabled = true;
+            this.sidebarTimer.Interval = 1;
+            this.sidebarTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // maintenceTimer
+            // 
+            this.maintenceTimer.Enabled = true;
+            this.maintenceTimer.Interval = 1;
+            this.maintenceTimer.Tick += new System.EventHandler(this.homeTimer_Tick);
+            // 
+            // processTimer
+            // 
+            this.processTimer.Interval = 1;
+            this.processTimer.Tick += new System.EventHandler(this.processTimer_Tick);
+            // 
+            // consultTimer
+            // 
+            this.consultTimer.Enabled = true;
+            this.consultTimer.Interval = 1;
+            this.consultTimer.Tick += new System.EventHandler(this.consultTimer_Tick);
+            // 
+            // reportTimer
+            // 
+            this.reportTimer.Interval = 1;
+            this.reportTimer.Tick += new System.EventHandler(this.reportTimer_Tick);
+            // 
+            // toolTimer
+            // 
+            this.toolTimer.Interval = 1;
+            this.toolTimer.Tick += new System.EventHandler(this.toolTimer_Tick);
+            // 
+            // helpTimer
+            // 
+            this.helpTimer.Interval = 1;
+            this.helpTimer.Tick += new System.EventHandler(this.helpTimer_Tick);
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.label9);
+            this.panel16.Controls.Add(this.label8);
+            this.panel16.Controls.Add(this.label3);
+            this.panel16.Controls.Add(this.linkLabel2);
+            this.panel16.Controls.Add(this.label4);
+            this.panel16.Controls.Add(this.label5);
+            this.panel16.Controls.Add(this.label2);
+            this.panel16.Controls.Add(this.pictureBox2);
+            this.panel16.Controls.Add(this.pictureBox1);
+            this.panel16.Controls.Add(this.pictureBox4);
+            this.panel16.Controls.Add(this.pictureBox3);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(62, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(1073, 678);
+            this.panel16.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(211, 318);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(682, 50);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "Estamos ubicados en la Republica Dominicana, Santo Domingo Este, \r\nen el Farolito" +
+    "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(228, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(593, 50);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Somos una empresa que se encarga de distribuir nominas a \r\ndiferentes empresas pa" +
+    "ra el manejo de sus empleado";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label3.Location = new System.Drawing.Point(290, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(518, 55);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Preguntas Frecuentes";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(346, 441);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(415, 25);
+            this.linkLabel2.TabIndex = 57;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Preguntas Frecuentes Sobre la Aplicacion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(406, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(173, 29);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "¿Quienes son?";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(406, 403);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(300, 29);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "Mas Preguntas Frecuentes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(406, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(277, 29);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "¿Donde estan ubicados?";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox2.Location = new System.Drawing.Point(943, -98);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(238, 201);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 50;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox1.Location = new System.Drawing.Point(954, 564);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(244, 195);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox4.Location = new System.Drawing.Point(-103, -102);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(256, 205);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 52;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SisNomina.Properties.Resources.Espiral;
+            this.pictureBox3.Location = new System.Drawing.Point(-100, 571);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(244, 195);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 53;
+            this.pictureBox3.TabStop = false;
+            // 
             // exitTimer
             // 
             this.exitTimer.Interval = 1;
@@ -1207,16 +1208,16 @@ namespace SisNomina
             this.panel25.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.exitContainer.ResumeLayout(false);
+            this.panel26.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
+            this.panel28.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.exitContainer.ResumeLayout(false);
-            this.panel26.ResumeLayout(false);
-            this.panel27.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

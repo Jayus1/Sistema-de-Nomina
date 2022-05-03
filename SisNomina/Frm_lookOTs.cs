@@ -28,10 +28,26 @@ namespace SisNomina
             if (BD.privilegio == "Administrador")
             {
                 checkBoxTodos.Enabled = true;
+                button13.Enabled = true;
             }
             else
             {
                 checkBoxTodos.Enabled = false;
+                button13.Enabled = false;
+
+                BD.Connect();
+
+                String querys = "SELECT IdEmpleado AS [ID], Fecha AS [Fecha de Realizacion], HoraInicio AS [Hora de Inicio], HoraFin AS [Hora de Finalizacion], ExtraTotal AS [Pago Por Horas Extras], Estado FROM HorasExtras WHERE IdEmpleado= @IdEmpleado";
+                SqlCommand command = new SqlCommand(querys, BD._connection);
+                command.Parameters.AddWithValue("@IdEmpleado", BD.IdEmpleado);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                dataGridViewOT.DataSource = dataTable;
+
+                BD.Disconnect();
             }    
         }
 
@@ -361,8 +377,11 @@ namespace SisNomina
 
         private void button19_Click(object sender, EventArgs e)
         {
-            new Frm_editEmployee().Show();
-            this.Hide();
+            if (BD.privilegio == "Administrador")
+            {
+                new Frm_editEmployee().Show();
+                this.Hide();
+            }
         }
 
         private void button20_Click(object sender, EventArgs e)
