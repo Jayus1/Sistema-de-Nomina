@@ -101,6 +101,7 @@ namespace SisNomina
             this.toolTimer = new System.Windows.Forms.Timer(this.components);
             this.helpTimer = new System.Windows.Forms.Timer(this.components);
             this.panelMenuPrincipal = new System.Windows.Forms.Panel();
+            this.labelPrivilegio = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.labeID = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@ namespace SisNomina
             this.label8 = new System.Windows.Forms.Label();
             this.labeDepartamento = new System.Windows.Forms.Label();
             this.labelPuestoDeTrabajo = new System.Windows.Forms.Label();
-            this.labelPrivilegio = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -1020,6 +1020,7 @@ namespace SisNomina
             // 
             // panelMenuPrincipal
             // 
+            this.panelMenuPrincipal.Controls.Add(this.labelPrivilegio);
             this.panelMenuPrincipal.Controls.Add(this.label3);
             this.panelMenuPrincipal.Controls.Add(this.pictureBox6);
             this.panelMenuPrincipal.Controls.Add(this.labeID);
@@ -1031,7 +1032,6 @@ namespace SisNomina
             this.panelMenuPrincipal.Controls.Add(this.label8);
             this.panelMenuPrincipal.Controls.Add(this.labeDepartamento);
             this.panelMenuPrincipal.Controls.Add(this.labelPuestoDeTrabajo);
-            this.panelMenuPrincipal.Controls.Add(this.labelPrivilegio);
             this.panelMenuPrincipal.Controls.Add(this.labelNombre);
             this.panelMenuPrincipal.Controls.Add(this.label2);
             this.panelMenuPrincipal.Controls.Add(this.pictureBox5);
@@ -1046,11 +1046,21 @@ namespace SisNomina
             this.panelMenuPrincipal.TabIndex = 1;
             this.panelMenuPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenuPrincipal_Paint);
             // 
+            // labelPrivilegio
+            // 
+            this.labelPrivilegio.AutoSize = true;
+            this.labelPrivilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPrivilegio.Location = new System.Drawing.Point(379, 323);
+            this.labelPrivilegio.Name = "labelPrivilegio";
+            this.labelPrivilegio.Size = new System.Drawing.Size(145, 37);
+            this.labelPrivilegio.TabIndex = 27;
+            this.labelPrivilegio.Text = "Privilegio";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(246, 316);
+            this.label3.Location = new System.Drawing.Point(245, 325);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 37);
             this.label3.TabIndex = 26;
@@ -1070,7 +1080,7 @@ namespace SisNomina
             // 
             this.labeID.AutoSize = true;
             this.labeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeID.Location = new System.Drawing.Point(305, 318);
+            this.labeID.Location = new System.Drawing.Point(304, 327);
             this.labeID.Name = "labeID";
             this.labeID.Size = new System.Drawing.Size(44, 33);
             this.labeID.TabIndex = 23;
@@ -1156,17 +1166,6 @@ namespace SisNomina
             this.labelPuestoDeTrabajo.Size = new System.Drawing.Size(252, 33);
             this.labelPuestoDeTrabajo.TabIndex = 16;
             this.labelPuestoDeTrabajo.Text = "Puesto de Trabajo";
-            // 
-            // labelPrivilegio
-            // 
-            this.labelPrivilegio.AutoSize = true;
-            this.labelPrivilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrivilegio.Location = new System.Drawing.Point(404, 318);
-            this.labelPrivilegio.Name = "labelPrivilegio";
-            this.labelPrivilegio.Size = new System.Drawing.Size(135, 33);
-            this.labelPrivilegio.TabIndex = 15;
-            this.labelPrivilegio.Text = "Privilegio";
-            this.labelPrivilegio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelNombre
             // 
@@ -1380,7 +1379,6 @@ namespace SisNomina
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labeDepartamento;
         private System.Windows.Forms.Label labelPuestoDeTrabajo;
-        private System.Windows.Forms.Label labelPrivilegio;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -1399,6 +1397,7 @@ namespace SisNomina
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelPrivilegio;
     }
 }
 

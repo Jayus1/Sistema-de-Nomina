@@ -46,7 +46,7 @@ namespace SisNomina
                 labeDepartamento.Text = reader.GetString(7);
             }
             reader.Close();
-            querys = "SELECT Privilegio FROM Usuario WHERE Id = @IdPersona ";
+            querys = "SELECT Privilegio FROM Usuario WHERE IdPersona = @IdPersona";
             command = new SqlCommand(querys, BD._connection);
             command.Parameters.AddWithValue("@IdPersona", BD.IdPersona);
             reader = command.ExecuteReader();
@@ -388,8 +388,11 @@ namespace SisNomina
 
         private void button19_Click(object sender, EventArgs e)
         {
-            new Frm_editEmployee().Show();
-            this.Hide();
+            if (BD.privilegio == "Administrador")
+            {
+                new Frm_editEmployee().Show();
+                this.Hide();
+            }
         }
 
         private void button20_Click(object sender, EventArgs e)

@@ -1,21 +1,8 @@
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\bin\Debug\SisNomina.exe.config
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\bin\Debug\SisNomina.exe
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\bin\Debug\SisNomina.pdb
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.AssemblyReference.cache
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.SuggestedBindingRedirects.cache
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Login.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.MenuPrincipal.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Properties.Resources.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Splash.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.GenerateResource.cache
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.csproj.CoreCompileInputs.cache
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.exe
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.pdb
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_createUser.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.exe.config
 C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.exe
 C:\Users\julio\source\repos\SisNomina\SisNomina\bin\Debug\SisNomina.pdb
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.AssemblyReference.cache
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.SuggestedBindingRedirects.cache
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_addEmployee.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Login.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_createUser.resources
@@ -31,6 +18,7 @@ C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_addReduc
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_editEmployee.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_changePassword.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_instrution.resources
+C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_addPayment.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.MenuPrincipal.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Properties.Resources.resources
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Splash.resources
@@ -38,18 +26,3 @@ C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.Gener
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.csproj.CoreCompileInputs.cache
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.exe
 C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.pdb
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_addEmployee.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_question.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_lookWorkHours.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_lookPayments.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_lookOTs.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_lookNomin.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_lookInNomin.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_editUser.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_addOT.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_addReduce.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_editEmployee.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_changePassword.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_instrution.resources
-C:\Users\julio\source\repos\SisNomina\SisNomina\obj\Debug\SisNomina.Frm_addPayment.resources
-C:\Users\Julio Sierra\source\repos\Sistema-de-Nomina\SisNomina\obj\Debug\SisNomina.Frm_addPayment.resources

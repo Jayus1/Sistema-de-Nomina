@@ -10,7 +10,7 @@ namespace SisNomina
     public class BD
     {
 
-        private static string _connectionstring= "Data Source=192.168.2.51,1433;Initial Catalog=BdNomina;Integrated Security=True";
+        private static string _connectionstring= "Data Source=DESKTOP-0SC2BM1;Initial Catalog=BdNomina;Integrated Security=True";
         public static SqlConnection _connection;
         public static int IdPersona;
         public static int IdEmpleado;
