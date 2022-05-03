@@ -631,5 +631,14 @@ namespace SisNomina
         {
 
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (BD.privilegio == "Administrador")
+            {
+                new Frm_editEmployee().Show();
+                this.Hide();
+            }
+        }
     }
 }

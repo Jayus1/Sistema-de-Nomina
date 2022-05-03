@@ -785,6 +785,7 @@ namespace SisNomina
             this.button19.Text = "          Editar Informacion \r\n          de Empleado";
             this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // panel10
             // 
