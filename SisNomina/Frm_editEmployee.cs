@@ -469,7 +469,7 @@ namespace SisNomina
             {
                 BD.Connect();
 
-                String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeIngreso= @fecha, Direccion= @direccion, Telefono= @telefono, FechaDeSalida= @salida WHERE ID= @IdPersona;" +
+                String querys = "UPDATE Persona SET Nombres= @nombre, Apellidos= @apellido, Cedula= @cedula, FechaDeIngreso= @fecha, Direccion= @direccion, Telefono= @telefono WHERE ID= @IdPersona;" +
                     "UPDATE Empleado SET Puesto= @puesto, Departamento= @departamento, SueldoFijo= @Sueldo, Activo= @activo WHERE ID= @IdEmpleado;";
                 SqlCommand command = new SqlCommand(querys, BD._connection);
                 command.Parameters.AddWithValue("@nombre", textNombre.Text);
@@ -486,10 +486,13 @@ namespace SisNomina
                 if (checkBoxActivo.Checked == true)
                 {
                     command.Parameters.AddWithValue("@activo", 1);
+                    command.ExecuteNonQuery();
                 }
                 else
                 {
                     command.Parameters.AddWithValue("@activo", 0);
+
+                    querys= "UPDATE Persona SET FechaDeSalida= @salida WHERE ID= @IdPersona;";
                     command.Parameters.AddWithValue("@salida", DateTime.Now.Date);
                 }
                 command.ExecuteNonQuery();
