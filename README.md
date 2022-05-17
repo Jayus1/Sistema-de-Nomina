@@ -6,6 +6,7 @@ El programa consta de varios forms cada uno con sus funciones en especificas,
 todos estos comparten un SideBar de lado izquierdo donde se encuentran los diferentes botones para cambiar de form o ventana.<br/><br/>
 Entre estos estan:<br/>
 <h4>Menu Principal</h4><br/>
+![myimage-alt-tag](https://github.com/Jayus1/Sistema-de-Nomina/blob/main/README%20Pictures/MainWIndows.png?raw=true)
 <h4>Login</h4><br/>
 <h4>Splash</h4><br/>
 <h4>Añadir Empleados</h4><br/>
