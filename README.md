@@ -41,3 +41,5 @@ v<img src="https://github.com/Jayus1/Sistema-de-Nomina/blob/main/README%20Pictur
 <img src="https://github.com/Jayus1/Sistema-de-Nomina/blob/main/README%20Pictures/ReduceList.png" alt="Buscar Reducciones">
 <h4>Preguntas Frecuentes:</h4><br/>
 <img src="https://github.com/Jayus1/Sistema-de-Nomina/blob/main/README%20Pictures/Question.png" alt="Pregunta Frecuentes">
+<h4>SideBar:</h4><br/>
+<img src="https://github.com/Jayus1/Sistema-de-Nomina/blob/main/README%20Pictures/SideBarPart1.png" alt="SideBar">
